@@ -23,7 +23,7 @@ public class WalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 1表示成功，-1表示用户信息错误，0其他错误
 	 */
-	public static int balance_add(String itcode,String username, String amount ,Locale locale, JdbcTemplate jdbcTemplate) {
+	public static int balance_add(String itcode,String username, int amount ,Locale locale, JdbcTemplate jdbcTemplate) {
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
 		try {
 			dc_user user = jdbcTemplate.queryForObject("select * from dc_user where itcode=? and username=?;", user_mapper, new Object[] {itcode, username});
@@ -34,9 +34,9 @@ public class WalletDAO {
 			Date date = new Date();
 			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 			String formattedDate = dateFormat.format(date);
-			int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,\"无\");", new Object[] {wallet.getWid(),amount,formattedDate});
+			int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,null);", new Object[] {wallet.getWid(),amount,formattedDate});
 			if(i>0) {
-				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ?;", amount);
+				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ? where wid=?;", new Object[] {amount,wallet.getWid()});
 				if(j>0) {
 					return 1;
 				}

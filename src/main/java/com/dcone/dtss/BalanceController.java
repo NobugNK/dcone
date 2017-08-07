@@ -72,7 +72,7 @@ public class BalanceController {
 		return "balance_add";
 	}
 	else {
-		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount()+"", locale, jdbcTemplate);
+		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount(), locale, jdbcTemplate);
 	
 		if(i == 1) {
 			result = "≥‰÷µ≥…π¶";
