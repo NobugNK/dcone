@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dcone.dtss.DAO.LuckyDAO;
 import com.dcone.dtss.DAO.WalletDAO;
 import com.dcone.dtss.model.dc_wallet;
-
+/**
+ * 
+ * @author dell
+ *
+ */
 @Controller
 public class AdminController {
 	@Autowired
