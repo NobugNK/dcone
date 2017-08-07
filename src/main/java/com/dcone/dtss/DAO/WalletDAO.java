@@ -138,6 +138,9 @@ public class WalletDAO {
 		}
 		return wallets;
 	}
-	
+	public static int walletAdd(int wid,int number)
+	{
+		return 0;
+	}
 
 }

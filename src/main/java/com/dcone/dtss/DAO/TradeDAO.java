@@ -104,7 +104,7 @@ public class TradeDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回True表示创建成功 ，false表示失败
 	 */
-	public static boolean createTrade(int wid,int amount,String date,String memo,JdbcTemplate jdbcTemplate) {
+	public static int createTrade(int wid,int amount,String date,String memo,JdbcTemplate jdbcTemplate) {
 		if(preTrade(wid,amount,jdbcTemplate)) {
 			RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
 //			Date nowdate = new Date();
@@ -114,13 +114,13 @@ public class TradeDAO {
 			try {
 				int i=jdbcTemplate.update("insert into dc_trade values(null,?,?,?,?);",trade_mapper,new Object[] {wid,amount,date,memo});
 				if(i>0)
-					return true;
+					return 1;
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			return false;
+			return 0;
 		}else {
-		return false;
+		return 0;
 		}
 		
 	}
