@@ -1,5 +1,6 @@
 package MyThread;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -53,7 +54,7 @@ public class LuckyNumberThread extends Thread{
 		System.out.println(temp);
 	//获取到了所有的用户
 		if(flag) {
-			int total =LuckyNumberDAO.getTotalbyRound(round);
+			int total =LuckyNumberDAO.getTotalbyRound(round,jdbcTemplate);
 			int lucknumber=0;
 			Random r= new Random();
 			if(total > 0)
@@ -68,6 +69,7 @@ public class LuckyNumberThread extends Thread{
 				}
 			}else
 			{
+			this.setFlag(false);
 			break;	
 			}
 			//LuckyDAO.LuckyRain(jdbcTemplate);
@@ -75,17 +77,40 @@ public class LuckyNumberThread extends Thread{
 			//发红包的调用微信的一个函数
 			try {
 				Thread.sleep(1000);
-				int i=LuckyNumberDAO.luckyRain(round, lucknumber);
-				int j=LuckyNumberRecordDAO.newRecord();
-				int k=WalletDAO.walletAdd(temp.getWid(), lucknumber);
-				int l=TradeDAO.createTrade(temp.getWid(), lucknumber, new Date().toString(), "红包雨", jdbcTemplate);
+				int i=LuckyNumberDAO.luckyRain(round, lucknumber,jdbcTemplate);
+				int j=LuckyNumberRecordDAO.newRecord(temp.getWid(),lucknumber,round,jdbcTemplate);
+				int k=WalletDAO.walletAdd(temp.getWid(), lucknumber,jdbcTemplate);
+				
+				Date date = new Date();
+				SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+				String formattedDate2=fdate.format(date);
+				int l=TradeDAO.createTrade(temp.getWid(), lucknumber,formattedDate2, "红包雨", jdbcTemplate);
 			
+				System.out.println(i+" "+ j+" " +k +" "+ l);
+				
 				if(i*j*k*l>0)
 				{
+					System.out.println("给用户"+temp.getUid()+"派送的红包"+lucknumber+"元，成功！恭喜恭喜");
 					//ok
 				}else
 				{
-					//error
+					if(i==0)
+					{
+						System.out.println("错误1：红包派送失败");
+					}
+					if(j==0)
+					{
+						System.out.println("错误2：红包记录插入失败");
+					}
+					if(k==0)
+					{
+						System.out.println("错误3：用户账户金额添加失败");
+					}
+					if(l==0)
+					{
+						System.out.println("错误4：交易记录添加失败");
+					}
+					//{}/error
 				}
 			}catch (Exception e) {
 				// TODO: handle exception

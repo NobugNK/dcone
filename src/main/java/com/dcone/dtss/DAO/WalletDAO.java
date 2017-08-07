@@ -1,6 +1,6 @@
 ﻿package com.dcone.dtss.DAO;
 
-import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -32,15 +32,19 @@ public class WalletDAO {
 			RowMapper<dc_wallet> wallet_mapper = new BeanPropertyRowMapper<dc_wallet>(dc_wallet.class);
 			dc_wallet wallet  = jdbcTemplate.queryForObject("select * from dc_wallet where uid  = ?;", wallet_mapper, user.getUid());
 			System.out.println(wallet);//test
+			
 			Date date = new Date();
-			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");   ;
-			String formattedDate = dateFormat.format(date);
+			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 			String formattedDate2=fdate.format(date);
-			System.out.println(formattedDate);
+			//DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+			//String formattedDate = dateFormat.format(date);
+		
+		//	System.out.println(formattedDate);
 			System.out.println(formattedDate2);
 			//int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,null);", new Object[] {wallet.getWid(),amount,formattedDate});
 			int i = TradeDAO.createTrade(wallet.getWid(), amount, formattedDate2, "无", jdbcTemplate);
+			System.out.println(i);
 			if(i>0) {
 				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ? where wid=?;", new Object[] {amount,wallet.getWid()});
 				if(j>0) {
@@ -143,8 +147,25 @@ public class WalletDAO {
 		}
 		return wallets;
 	}
-	public static int walletAdd(int wid,int number)
+	/**
+	 * 给用户的账户添加增加的红包
+	 * @param wid 用户的wid
+	 * @param number 红包的金额
+	 * @param jdbcTemplate Spring对象
+	 * @return 返回1表示添加成功，0表示添加失败
+	 */
+	public static int walletAdd(int wid,int number,JdbcTemplate jdbcTemplate)
 	{
+		try {
+	
+				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ? where wid=?;", new Object[] {number,wid});
+				if(j>0) {
+					return 1;
+				}
+		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return 0;
 	}
 

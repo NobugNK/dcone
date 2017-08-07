@@ -75,7 +75,7 @@ public class BalanceController {
 		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount(), locale, jdbcTemplate);
 	
 		if(i == 1) {
-			result = "充值成功";
+			result = "充值成功"+walletForm.getAmount();
 		} else if(i == -1) {
 			result = "用户信息填写错误!";
 		}else {

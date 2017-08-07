@@ -1,11 +1,13 @@
 package com.dcone.dtss.model;
 
-public class lucky_money {
+public class luckyNumber {
 	int l_id;
 	int round;
 	int total;
-	public lucky_money() {}
-	public lucky_money(int l_id, int round, int total) {
+	public luckyNumber() {
+		// TODO Auto-generated constructor stub
+	}
+	public luckyNumber(int l_id, int round, int total) {
 		super();
 		this.l_id = l_id;
 		this.round = round;

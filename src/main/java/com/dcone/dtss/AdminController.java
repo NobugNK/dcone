@@ -37,6 +37,7 @@ public class AdminController {
 			// TODO: handle exception
 		}
 		t.setRound(r);
+		t.setFlag(true);
 		t.start();
 		return "luckyon";		
 	}
