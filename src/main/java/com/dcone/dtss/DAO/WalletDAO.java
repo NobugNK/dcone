@@ -1,6 +1,7 @@
 ﻿package com.dcone.dtss.DAO;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -27,22 +28,26 @@ public class WalletDAO {
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
 		try {
 			dc_user user = jdbcTemplate.queryForObject("select * from dc_user where itcode=? and username=?;", user_mapper, new Object[] {itcode, username});
-			
+			System.out.println(user);//test
 			RowMapper<dc_wallet> wallet_mapper = new BeanPropertyRowMapper<dc_wallet>(dc_wallet.class);
 			dc_wallet wallet  = jdbcTemplate.queryForObject("select * from dc_wallet where uid  = ?;", wallet_mapper, user.getUid());
-			
+			System.out.println(wallet);//test
 			Date date = new Date();
 			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");   ;
 			String formattedDate = dateFormat.format(date);
-			int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,null);", new Object[] {wallet.getWid(),amount,formattedDate});
+			String formattedDate2=fdate.format(date);
+			System.out.println(formattedDate);
+			System.out.println(formattedDate2);
+			//int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,null);", new Object[] {wallet.getWid(),amount,formattedDate});
+			int i = TradeDAO.createTrade(wallet.getWid(), amount, formattedDate2, "无", jdbcTemplate);
 			if(i>0) {
 				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ? where wid=?;", new Object[] {amount,wallet.getWid()});
 				if(j>0) {
 					return 1;
 				}
 			}
-			
-			
+	
 		}catch(Exception e) {
 			return -1;
 		}

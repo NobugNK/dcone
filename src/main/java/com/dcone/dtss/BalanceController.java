@@ -83,6 +83,7 @@ public class BalanceController {
 		}
 
 		}
+	model.addAttribute("username",walletForm.getUsername());
 	model.addAttribute("result",result);
 	
 	return "balance_add_result";

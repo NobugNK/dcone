@@ -106,13 +106,13 @@ public class TradeDAO {
 	 */
 	public static int createTrade(int wid,int amount,String date,String memo,JdbcTemplate jdbcTemplate) {
 		if(preTrade(wid,amount,jdbcTemplate)) {
-			RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
+			//RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
 //			Date nowdate = new Date();
 //			SimpleDateFormat myFmt=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //			String nowtime=myFmt.format(nowdate);
 //			
 			try {
-				int i=jdbcTemplate.update("insert into dc_trade values(null,?,?,?,?);",trade_mapper,new Object[] {wid,amount,date,memo});
+				int i=jdbcTemplate.update("insert into dc_trade values(null,?,?,?,?);",new Object[] {wid,amount,date,memo});
 				if(i>0)
 					return 1;
 			} catch (Exception e) {
