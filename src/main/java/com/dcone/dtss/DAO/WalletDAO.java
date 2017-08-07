@@ -1,4 +1,4 @@
-package com.dcone.dtss.DAO;
+ï»¿package com.dcone.dtss.DAO;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,13 +15,13 @@ import com.dcone.dtss.model.dc_wallet;
 public class WalletDAO {
 
 	/**
-	 * ÓÃ»§ÕË»§³äÖµ
-	 * @param itcode ³äÖµµÄÔ±¹¤ºÅ
-	 * @param username ³äÖµµÄÔ±¹¤ĞÕÃû
-	 * @param amount ³äÖµµÄ½ğ¶î
-	 * @param locale Ê±¼äÇøÓò
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return 1±íÊ¾³É¹¦£¬-1±íÊ¾ÓÃ»§ĞÅÏ¢´íÎó£¬0ÆäËû´íÎó
+	 * ç”¨æˆ·è´¦æˆ·å……å€¼
+	 * @param itcode å……å€¼çš„å‘˜å·¥å·
+	 * @param username å……å€¼çš„å‘˜å·¥å§“å
+	 * @param amount å……å€¼çš„é‡‘é¢
+	 * @param locale æ—¶é—´åŒºåŸŸ
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return 1è¡¨ç¤ºæˆåŠŸï¼Œ-1è¡¨ç¤ºç”¨æˆ·ä¿¡æ¯é”™è¯¯ï¼Œ0å…¶ä»–é”™è¯¯
 	 */
 	public static int balance_add(String itcode,String username, int amount ,Locale locale, JdbcTemplate jdbcTemplate) {
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
@@ -50,9 +50,9 @@ public class WalletDAO {
 		return 0;
 	}
 	/**
-	 * Í¨¹ıuid»ñÈ¡Ç®°üµÄĞÅÏ¢
-	 * @param uid ÓÃ»§Ç®°üµÄµÄuid
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * é€šè¿‡uidè·å–é’±åŒ…çš„ä¿¡æ¯
+	 * @param uid ç”¨æˆ·é’±åŒ…çš„çš„uid
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static dc_wallet getWalletByUid(int uid,JdbcTemplate jdbcTemplate) {
@@ -68,9 +68,9 @@ public class WalletDAO {
 		return wallet;
 	}
 	/**
-	 * Í¨¹ıwid»ñÈ¡Ç®°üµÄĞÅÏ¢
-	 * @param wid ÓÃ»§Ç®°üµÄµÄwid
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * é€šè¿‡widè·å–é’±åŒ…çš„ä¿¡æ¯
+	 * @param wid ç”¨æˆ·é’±åŒ…çš„çš„wid
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static dc_wallet getWalletByWid(int wid,JdbcTemplate jdbcTemplate) {
@@ -86,9 +86,9 @@ public class WalletDAO {
 		return wallet;
 	}
 	/**
-	 * Í¨¹ıitcode»ñÈ¡Ç®°üµÄĞÅÏ¢
-	 * @param itcode ÓÃ»§Ç®°üµÄµÄitcode
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * é€šè¿‡itcodeè·å–é’±åŒ…çš„ä¿¡æ¯
+	 * @param itcode ç”¨æˆ·é’±åŒ…çš„çš„itcode
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static dc_wallet getWalletByItcode(String itcode,JdbcTemplate jdbcTemplate) {
@@ -97,9 +97,9 @@ public class WalletDAO {
 		return wallet;
 	}
 	/**
-	 * Í¨¹ıuidÀ´³õÊ¼»¯Ç®°ü
-	 * @param uid ÓÃ»§µÄuid 
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * é€šè¿‡uidæ¥åˆå§‹åŒ–é’±åŒ…
+	 * @param uid ç”¨æˆ·çš„uid 
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static boolean initWalletById(int uid,JdbcTemplate jdbcTemplate) {
@@ -114,9 +114,9 @@ public class WalletDAO {
 		return false;
 	}
 	/**
-	 * Í¨¹ıitcodeÀ´³õÊ¼»¯Ç®°ü
-	 * @param itcode ÓÃ»§µÄitcode 
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * é€šè¿‡itcodeæ¥åˆå§‹åŒ–é’±åŒ…
+	 * @param itcode ç”¨æˆ·çš„itcode 
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static boolean initWalletByItcode(String itcode,JdbcTemplate jdbcTemplate) {
@@ -124,9 +124,9 @@ public class WalletDAO {
 		return WalletDAO.initWalletById(user.getUid(), jdbcTemplate);
 	}
 	/**
-	 * ÏÔÊ¾ËùÓĞµÄÇ®°üµÄĞÅÏ¢
+	 * æ˜¾ç¤ºæ‰€æœ‰çš„é’±åŒ…çš„ä¿¡æ¯
 	 * @param jdbcTemplate
-	 * @return ·µ»ØÒ»¸öÇ®°üĞÅÏ¢µÄwallet
+	 * @return è¿”å›ä¸€ä¸ªé’±åŒ…ä¿¡æ¯çš„wallet
 	 */
 	public static List<dc_wallet> getAllWallets(JdbcTemplate jdbcTemplate) {
 		RowMapper<dc_wallet> walletMapper=new BeanPropertyRowMapper<dc_wallet>(dc_wallet.class);

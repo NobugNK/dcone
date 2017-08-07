@@ -1,4 +1,4 @@
-package com.dcone.dtss.DAO;
+ï»¿package com.dcone.dtss.DAO;
 
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -10,10 +10,10 @@ import com.dcone.dtss.model.*;
 public class UserDAO {
 
 	/**
-	 * 					Í¨¹ıÒ»¸öitcode²éÑ¯µ½ÓÃ»§
-	 * @param itcode	´«ÈëÒ»¸öÔ±¹¤ºÅ	
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return 			·µ»ØÒ»¸ödc_user¶ÔÏóuser
+	 * 					é€šè¿‡ä¸€ä¸ªitcodeæŸ¥è¯¢åˆ°ç”¨æˆ·
+	 * @param itcode	ä¼ å…¥ä¸€ä¸ªå‘˜å·¥å·	
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return 			è¿”å›ä¸€ä¸ªdc_userå¯¹è±¡user
 	 */
 	public static dc_user getUserByItcode(String itcode,JdbcTemplate jdbcTemplate) {
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
@@ -28,10 +28,10 @@ public class UserDAO {
 		return user;	
 	}
 	/**
-	 * 					Í¨¹ıÒ»¸öuid²éÑ¯µ½ÓÃ»§
-	 * @param uid		´«ÈëÒ»¸öÔ±¹¤µÄid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return			·µ»ØÒ»¸ödc_user¶ÔÏóuser
+	 * 					é€šè¿‡ä¸€ä¸ªuidæŸ¥è¯¢åˆ°ç”¨æˆ·
+	 * @param uid		ä¼ å…¥ä¸€ä¸ªå‘˜å·¥çš„id
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return			è¿”å›ä¸€ä¸ªdc_userå¯¹è±¡user
 	 */
 	public static dc_user getUserByUid(int uid,JdbcTemplate jdbcTemplate) {
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
@@ -44,12 +44,12 @@ public class UserDAO {
 		return user;
 	}
 	/**
-	 *  				ÓÃÓÚ´´½¨Ò»¸öĞÂµÄÓÃ»§
-	 * @param itcode	ÓÃ»§µÄÔ±¹¤ºÅ
-	 * @param username	ÓÃ»§µÄĞÕÃû
-	 * @param isOnthescene	ÓÃ»§ÊÇ·ñÔÚÏÖ³¡
-	 * @param jdbcTemplate  Spring¶ÔÏó
-	 * @return ·µ»Ø1±íÊ¾´´½¨³É¹¦£¬·µ»Ø0±íÊ¾ÆäËû´íÎó£¬·µ»Ø-1±íÊ¾ÓÃ»§ĞÅÏ¢´íÎó
+	 *  				ç”¨äºåˆ›å»ºä¸€ä¸ªæ–°çš„ç”¨æˆ·
+	 * @param itcode	ç”¨æˆ·çš„å‘˜å·¥å·
+	 * @param username	ç”¨æˆ·çš„å§“å
+	 * @param isOnthescene	ç”¨æˆ·æ˜¯å¦åœ¨ç°åœº
+	 * @param jdbcTemplate  Springå¯¹è±¡
+	 * @return è¿”å›1è¡¨ç¤ºåˆ›å»ºæˆåŠŸï¼Œè¿”å›0è¡¨ç¤ºå…¶ä»–é”™è¯¯ï¼Œè¿”å›-1è¡¨ç¤ºç”¨æˆ·ä¿¡æ¯é”™è¯¯
 	 */
 	public static int createUser(String itcode,String username,int isOnthescene,JdbcTemplate jdbcTemplate) {
 		int i=0;
@@ -77,11 +77,11 @@ public class UserDAO {
 	}
 	
 	/**
-	 * ²é¿´ÓÃ»§µÄĞÅÏ¢ÊÇ·ñ´æÔÚ
-	 * @param itcode ´«ÈëÓÃ»§µÄÔ±¹¤ºÅ
-	 * @param username ´«ÈëÓÃ»§µÄĞÕÃû
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Øtrue±íÊ¾´æÔÚ£¬·µ»Øfalse±íÊ¾²»´æÔÚ
+	 * æŸ¥çœ‹ç”¨æˆ·çš„ä¿¡æ¯æ˜¯å¦å­˜åœ¨
+	 * @param itcode ä¼ å…¥ç”¨æˆ·çš„å‘˜å·¥å·
+	 * @param username ä¼ å…¥ç”¨æˆ·çš„å§“å
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›trueè¡¨ç¤ºå­˜åœ¨ï¼Œè¿”å›falseè¡¨ç¤ºä¸å­˜åœ¨
 	 */
 	public static boolean checkUserInfo(String itcode,String username,JdbcTemplate jdbcTemplate) {
 		int i=0;
@@ -97,9 +97,9 @@ public class UserDAO {
 		return false;
 	}
 	/**
-	 * @param uid Í¨¹ıÓÃ»§µÄidÀ´Ëø¶¨ÓÃ»§
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Øtrue±íÊ¾ÉèÖÃ³É¹¦£¬false±íÊ¾Ê§°Ü
+	 * @param uid é€šè¿‡ç”¨æˆ·çš„idæ¥é”å®šç”¨æˆ·
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›trueè¡¨ç¤ºè®¾ç½®æˆåŠŸï¼Œfalseè¡¨ç¤ºå¤±è´¥
 	 */
 	public static boolean lockUserById(int uid,JdbcTemplate jdbcTemplate) {
 		int i=0;
@@ -114,10 +114,10 @@ public class UserDAO {
 		return false;
 	}
 	/**
-	 * ½â³ıÓÃ»§µÄËø¶¨
-	 * @param uid ´«Èë½â³ıËø¶¨µÄÓÃ»§µÄuid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return false±íÊ¾½â³ıÊ§°Ü£¬true±íÊ¾½â³ı³É¹¦
+	 * è§£é™¤ç”¨æˆ·çš„é”å®š
+	 * @param uid ä¼ å…¥è§£é™¤é”å®šçš„ç”¨æˆ·çš„uid
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return falseè¡¨ç¤ºè§£é™¤å¤±è´¥ï¼Œtrueè¡¨ç¤ºè§£é™¤æˆåŠŸ
 	 */
 	public static boolean unlockUserById(int uid,JdbcTemplate jdbcTemplate)
 	{
@@ -134,9 +134,9 @@ public class UserDAO {
 	}
 	
 	/**
-	 * ĞèÒªÔÚÊı¾İ¿âÖĞ¼ÓÒ»ĞĞ£¬islock,ĞŞ¸ÄÊı¾İ¿â£¬»¹µÃ¸Ämodel£¬Íê³ÉÓÃ»§Ëø¶¨
-	 * @param itcode ÓÃ»§µÄitcode
-	 * @param jdbcTemplate Spring¶ÔÏó
+	 * éœ€è¦åœ¨æ•°æ®åº“ä¸­åŠ ä¸€è¡Œï¼Œislock,ä¿®æ”¹æ•°æ®åº“ï¼Œè¿˜å¾—æ”¹modelï¼Œå®Œæˆç”¨æˆ·é”å®š
+	 * @param itcode ç”¨æˆ·çš„itcode
+	 * @param jdbcTemplate Springå¯¹è±¡
 	 * @return
 	 */
 	public static boolean lockUserByItcode(String itcode,JdbcTemplate jdbcTemplate)
@@ -153,10 +153,10 @@ public class UserDAO {
 		return false;
 	}
 	/**
-	 * ÅĞ¶¨Ò»ÏÂÓÃ»§ÊÇ·ñ±»Ëø¶¨
-	 * @param uid ´«ÈëÓÃ»§µÄuid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return false±íÊ¾Î´±»Ëø¶¨ £¬true±íÊ¾±»Ëø¶¨
+	 * åˆ¤å®šä¸€ä¸‹ç”¨æˆ·æ˜¯å¦è¢«é”å®š
+	 * @param uid ä¼ å…¥ç”¨æˆ·çš„uid
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return falseè¡¨ç¤ºæœªè¢«é”å®š ï¼Œtrueè¡¨ç¤ºè¢«é”å®š
 	 */
 	public static boolean isLock(int uid,JdbcTemplate jdbcTemplate)
 	{
@@ -174,10 +174,10 @@ public class UserDAO {
 	}
 	
 	/**
-	 * ²é¿´ÓÃ»§ÊÇÔÚ³¡ÄÚ»¹ÊÇ³¡Íâ
-	 * @param uid ´«ÈëÓÃ»§µÄuid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Øtrue±íÊ¾ÔÚ³¡ÄÚ£¬false±íÊ¾²»ÔÚ³¡ÄÚ
+	 * æŸ¥çœ‹ç”¨æˆ·æ˜¯åœ¨åœºå†…è¿˜æ˜¯åœºå¤–
+	 * @param uid ä¼ å…¥ç”¨æˆ·çš„uid
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›trueè¡¨ç¤ºåœ¨åœºå†…ï¼Œfalseè¡¨ç¤ºä¸åœ¨åœºå†…
 	 */
 	public static boolean isOnthesceneById(int uid,JdbcTemplate jdbcTemplate)
 	{

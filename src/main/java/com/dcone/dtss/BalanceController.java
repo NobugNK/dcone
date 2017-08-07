@@ -1,4 +1,4 @@
-package com.dcone.dtss;
+ï»¿package com.dcone.dtss;
 
 
 import java.util.List;
@@ -56,9 +56,9 @@ public class BalanceController {
 	}
 	@RequestMapping(value="/balance_adding")
 	public String BalanceAdding(@Valid WalletForm walletForm,BindingResult bindingResult,Locale locale,Model model) {
-	logger.info("itcode:" +walletForm.getItcode() +"username:"+walletForm.getUsername() + " ³äÖµ "+ walletForm.getUsername());
+	logger.info("itcode:" +walletForm.getItcode() +"username:"+walletForm.getUsername() + " å……å€¼ "+ walletForm.getUsername());
 //		System.out.println(jdbcTemplate.toString());
-//		System.out.println("itcode:"+itcode+"username:"+username+"³äÖµ"+amount);
+//		System.out.println("itcode:"+itcode+"username:"+username+"å……å€¼"+amount);
 //	
 //		
 //		model.addAttribute("itcode", itcode);
@@ -67,7 +67,7 @@ public class BalanceController {
 	String result="";
 	if(bindingResult.hasErrors())
 	{
-		String msg="ÓÃ»§ĞÕÃû×îÉÙÎª2×î¶àÎª8\nitcode×îÉÙÎª5×î¶àÎª11\n½ğ¶î×îÉÙ100·Ö×î¶à100000·Ö";
+		String msg="ç”¨æˆ·å§“åæœ€å°‘ä¸º2æœ€å¤šä¸º8\nitcodeæœ€å°‘ä¸º5æœ€å¤šä¸º11\né‡‘é¢æœ€å°‘100åˆ†æœ€å¤š100000åˆ†";
 		model.addAttribute("msg",msg);
 		return "balance_add";
 	}
@@ -75,11 +75,11 @@ public class BalanceController {
 		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount(), locale, jdbcTemplate);
 	
 		if(i == 1) {
-			result = "³äÖµ³É¹¦";
+			result = "å……å€¼æˆåŠŸ";
 		} else if(i == -1) {
-			result = "ÓÃ»§ĞÅÏ¢ÌîĞ´´íÎó!";
+			result = "ç”¨æˆ·ä¿¡æ¯å¡«å†™é”™è¯¯!";
 		}else {
-			result = "³äÖµÊ§°Ü,ÇëÉÔºóÔÙÊÔ!";
+			result = "å……å€¼å¤±è´¥,è¯·ç¨åå†è¯•!";
 		}
 
 		}

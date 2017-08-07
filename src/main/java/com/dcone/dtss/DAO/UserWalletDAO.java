@@ -1,4 +1,4 @@
-package com.dcone.dtss.DAO;
+ï»¿package com.dcone.dtss.DAO;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import com.dcone.dtss.model.dc_user_wallet;
 
 public class UserWalletDAO {
 	/**
-	 * Í¨¹ıÓÃ»§·ÃÎÊÊÓÍ¼
-	 * @param user ´«ÈëÓÃ»§
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»ØÒ»¸öÓÃ»§µÄÕË»§ĞÅÏ¢
+	 * é€šè¿‡ç”¨æˆ·è®¿é—®è§†å›¾
+	 * @param user ä¼ å…¥ç”¨æˆ·
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›ä¸€ä¸ªç”¨æˆ·çš„è´¦æˆ·ä¿¡æ¯
 	 */
 	public dc_user_wallet getWallInfoByUser(dc_user user,JdbcTemplate jdbcTemplate) {
 		dc_user_wallet userwallet=null;
@@ -27,29 +27,29 @@ public class UserWalletDAO {
 		return userwallet;
 	}
 	/**
-	 * Í¨¹ıuid·ÃÎÊÊÓÍ¼
+	 * é€šè¿‡uidè®¿é—®è§†å›¾
 	 * @param uid
 	 * @param jdbcTemplate
-	 * @return ·µ»ØÒ»¸öÓÃ»§µÄÕË»§ĞÅÏ¢
+	 * @return è¿”å›ä¸€ä¸ªç”¨æˆ·çš„è´¦æˆ·ä¿¡æ¯
 	 */
 	public dc_user_wallet getWallInfoByUid(int uid,JdbcTemplate jdbcTemplate) {
 		dc_user user = UserDAO.getUserByUid(uid,jdbcTemplate);
 		return getWallInfoByUser(user,jdbcTemplate);
 	}
 	/**
-	 * Í¨¹ıitcode·ÃÎÊÊÓÍ¼
+	 * é€šè¿‡itcodeè®¿é—®è§†å›¾
 	 * @param itcode
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»ØÒ»¸öÓÃ»§µÄÕË»§ĞÅÏ¢
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›ä¸€ä¸ªç”¨æˆ·çš„è´¦æˆ·ä¿¡æ¯
 	 */
 	public dc_user_wallet getWallInfoByItcode(String itcode,JdbcTemplate jdbcTemplate) {
 		dc_user user = UserDAO.getUserByItcode(itcode,jdbcTemplate);
 		return getWallInfoByUser(user,jdbcTemplate);
 	}
 	/**
-	 * ²é¿´ËùÓĞÓÃ»§µÄÕË»§ĞÅÏ¢
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»ØËùÓĞÓÃ»§µÄÕË»§ĞÅÏ¢µÄÒ»¸öÁĞ±í
+	 * æŸ¥çœ‹æ‰€æœ‰ç”¨æˆ·çš„è´¦æˆ·ä¿¡æ¯
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›æ‰€æœ‰ç”¨æˆ·çš„è´¦æˆ·ä¿¡æ¯çš„ä¸€ä¸ªåˆ—è¡¨
 	 */
 	public List<dc_user_wallet> getAllWallInfoByUser(JdbcTemplate jdbcTemplate) {
 		List<dc_user_wallet> userwallets=null;

@@ -1,4 +1,4 @@
-
+ï»¿
 package com.dcone.dtss.DAO;
 
 import java.util.List;
@@ -10,10 +10,10 @@ import org.springframework.jdbc.core.RowMapper;
 import com.dcone.dtss.model.*;
 public class TradeDAO {
 	/**
-	 * Í¨¹ıÇ®°üµÄwidÀ´»ñÈ¡½»Ò×¼ÇÂ¼µÄĞÅÏ¢
-	 * @param wid Ç®°üµÄwid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ½»Ò×¼ÇÂ¼µÄĞÅÏ¢
+	 * é€šè¿‡é’±åŒ…çš„widæ¥è·å–äº¤æ˜“è®°å½•çš„ä¿¡æ¯
+	 * @param wid é’±åŒ…çš„wid
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return äº¤æ˜“è®°å½•çš„ä¿¡æ¯
 	 */
 	public static List<dc_trade> getTradesByWid(String wid,JdbcTemplate jdbcTemplate){
 		RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
@@ -26,10 +26,10 @@ public class TradeDAO {
 		return trades;
 	}
 	/**
-	 * Í¨¹ıÇ®°üµÄuid À´»ñÈ¡µ½½»Ò×µÄĞÅÏ¢
-	 * @param uid ÓÃ»§µÄuid
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Ø½»Ò×¼ÇÂ¼µÄÁĞ±í
+	 * é€šè¿‡é’±åŒ…çš„uid æ¥è·å–åˆ°äº¤æ˜“çš„ä¿¡æ¯
+	 * @param uid ç”¨æˆ·çš„uid
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›äº¤æ˜“è®°å½•çš„åˆ—è¡¨
 	 */
 	public static List<dc_trade> getTradesByUid(int uid,JdbcTemplate jdbcTemplate){
 		dc_wallet wallet=WalletDAO.getWalletByUid(uid, jdbcTemplate);
@@ -44,10 +44,10 @@ public class TradeDAO {
 		return trades;
 	}
 	/**
-	 * Í¨¹ıÓÃ»§µÄitcode»ñÈ¡½»Ò×µÄ¼ÇÂ¼
-	 * @param itcode ÓÃ»§µÄitcode 
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Ø½»Ò×¼ÇÂ¼µÄÁĞ±í
+	 * é€šè¿‡ç”¨æˆ·çš„itcodeè·å–äº¤æ˜“çš„è®°å½•
+	 * @param itcode ç”¨æˆ·çš„itcode 
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›äº¤æ˜“è®°å½•çš„åˆ—è¡¨
 	 */
 	public static List<dc_trade> getTradesByItcode(String itcode,JdbcTemplate jdbcTemplate)
 	{
@@ -56,19 +56,19 @@ public class TradeDAO {
 		return tradeByUid;
 	}
 	/**
-	 * Í¨¹ı¾ßÌåµÄuser¶ÔÏóÀ´»ñÈ¡µ½½»Ò×µÄĞÅÏ¢
-	 * @param user ´«ÈëµÄuserµÄĞÅÏ¢
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Ø½»Ò×¼ÇÂ¼µÄÁĞ±í
+	 * é€šè¿‡å…·ä½“çš„userå¯¹è±¡æ¥è·å–åˆ°äº¤æ˜“çš„ä¿¡æ¯
+	 * @param user ä¼ å…¥çš„userçš„ä¿¡æ¯
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›äº¤æ˜“è®°å½•çš„åˆ—è¡¨
 	 */
 	public static List<dc_trade> getTradesByUser(dc_user user,JdbcTemplate jdbcTemplate)
 	{
 		return getTradesByUid(user.getUid(),jdbcTemplate);
 	}
 	/**
-	 * ²éÑ¯¾ßÌåµÄÄ³¸ö½»Ò×¼ÇÂ¼
+	 * æŸ¥è¯¢å…·ä½“çš„æŸä¸ªäº¤æ˜“è®°å½•
 	 * @param id
-	 * @return ·µ»ØÒ»¸ö½»Ò×¼ÇÂ¼
+	 * @return è¿”å›ä¸€ä¸ªäº¤æ˜“è®°å½•
 	 */
 	public static dc_trade getTradeByTid(int tid,JdbcTemplate jdbcTemplate)
 	{
@@ -82,11 +82,11 @@ public class TradeDAO {
 		return trade;
 	}
 	/**
-	 * ÅĞ¶ÏÒ»ÏÂÇ®°ü»¹ÓĞÃ»ÓĞÇ®
-	 * @param wid Ç®°üid
-	 * @param amount ĞèÒª²Ù×÷µÄ½ğ¶î
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»Øtrue±íÊ¾¿ÉÒÔ½»Ò×£¬false±íÊ¾²»¿ÉÒÔ½»Ò×
+	 * åˆ¤æ–­ä¸€ä¸‹é’±åŒ…è¿˜æœ‰æ²¡æœ‰é’±
+	 * @param wid é’±åŒ…id
+	 * @param amount éœ€è¦æ“ä½œçš„é‡‘é¢
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›trueè¡¨ç¤ºå¯ä»¥äº¤æ˜“ï¼Œfalseè¡¨ç¤ºä¸å¯ä»¥äº¤æ˜“
 	 */
 	private static boolean preTrade(int wid,int amount,JdbcTemplate jdbcTemplate) {
 		dc_wallet wallet=WalletDAO.getWalletByWid(wid, jdbcTemplate);
@@ -96,13 +96,13 @@ public class TradeDAO {
 			return false;
 	}
 	/**
-	 * ´´½¨Ò»¸ö½»Ò×¼ÇÂ¼
-	 * @param wid Ç®°üµÄID
-	 * @param amount ÕË»§µÄÇ®
-	 * @param date Ê±¼äÈÕÆÚ
-	 * @param memo ±¸×¢ĞÅÏ¢
-	 * @param jdbcTemplate Spring¶ÔÏó
-	 * @return ·µ»ØTrue±íÊ¾´´½¨³É¹¦ £¬false±íÊ¾Ê§°Ü
+	 * åˆ›å»ºä¸€ä¸ªäº¤æ˜“è®°å½•
+	 * @param wid é’±åŒ…çš„ID
+	 * @param amount è´¦æˆ·çš„é’±
+	 * @param date æ—¶é—´æ—¥æœŸ
+	 * @param memo å¤‡æ³¨ä¿¡æ¯
+	 * @param jdbcTemplate Springå¯¹è±¡
+	 * @return è¿”å›Trueè¡¨ç¤ºåˆ›å»ºæˆåŠŸ ï¼Œfalseè¡¨ç¤ºå¤±è´¥
 	 */
 	public static boolean createTrade(int wid,int amount,String date,String memo,JdbcTemplate jdbcTemplate) {
 		if(preTrade(wid,amount,jdbcTemplate)) {

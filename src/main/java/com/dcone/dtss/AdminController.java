@@ -1,4 +1,4 @@
-package com.dcone.dtss;
+ï»¿package com.dcone.dtss;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class AdminController {
 		System.out.println(temp.getUid()+" "+temp.getAmount());
 			if(flag) {
 				LuckyDAO.LuckyRain(jdbcTemplate);
-				//·¢ºì°ü,»¹ĞèÍêÉÆ£¬ĞÂ½¨Ò»¸ö±í¸ñ£¬°ÑËùÓĞ·¢µÄºì°üÓêµÄ¼ÇÂ¼¸ø¼ÇÂ¼ÏÂÀ´£¬dc_trade½»Ò×¼ÇÂ¼,½«À´Á½¸öÊÇÒªºË¶ÔµÄ
+				//å‘çº¢åŒ…,è¿˜éœ€å®Œå–„ï¼Œæ–°å»ºä¸€ä¸ªè¡¨æ ¼ï¼ŒæŠŠæ‰€æœ‰å‘çš„çº¢åŒ…é›¨çš„è®°å½•ç»™è®°å½•ä¸‹æ¥ï¼Œdc_tradeäº¤æ˜“è®°å½•,å°†æ¥ä¸¤ä¸ªæ˜¯è¦æ ¸å¯¹çš„
 			}
 		}
 		return null;		

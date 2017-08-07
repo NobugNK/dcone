@@ -1,4 +1,4 @@
-package com.dcone.dtss.model;
+﻿package com.dcone.dtss.model;
 
 public class dc_user {
 	int uid;
