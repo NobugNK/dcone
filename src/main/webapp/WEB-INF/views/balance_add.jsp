@@ -9,6 +9,7 @@
 <body>
 在这里显示充值信息
 <form name="form1" action="balance_adding">
+${msg}
 <table>
 <tr><td>ITcode</td><td><input name="itcode"></td></tr>
 <tr><td>姓名</td><td><input name="username"></td></tr>

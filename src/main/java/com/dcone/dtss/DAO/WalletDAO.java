@@ -34,7 +34,7 @@ public class WalletDAO {
 			Date date = new Date();
 			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 			String formattedDate = dateFormat.format(date);
-			int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?);", new Object[] {wallet.getWid(),amount,formattedDate});
+			int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,\"нч\");", new Object[] {wallet.getWid(),amount,formattedDate});
 			if(i>0) {
 				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ?;", amount);
 				if(j>0) {
