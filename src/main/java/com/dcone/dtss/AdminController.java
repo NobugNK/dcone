@@ -26,6 +26,7 @@ public class AdminController {
 		List<dc_wallet> wallets=WalletDAO.getAllWallets(jdbcTemplate);
 		for(dc_wallet temp:wallets)
 		{
+		//获取到了所有的用户
 		System.out.println(temp.getUid()+" "+temp.getAmount());
 			if(flag) {
 				LuckyDAO.LuckyRain(jdbcTemplate);
