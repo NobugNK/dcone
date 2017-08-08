@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-这个页面显示充值结果
-<p >当前用户为 ${username} ,您刚刚 ${result} 元</p>
-
+<p>登录${res}</p>
+<a href="balance_add">充值</a><br>
+<a href="sort_log">查询记录</a><br>
+<a href="admin">红包雨管理</a><br>
 </body>
 </html>
