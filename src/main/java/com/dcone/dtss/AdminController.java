@@ -1,8 +1,13 @@
 ﻿package com.dcone.dtss;
+import com.dcone.dtss.DAO.*;
+import com.dcone.dtss.model.luckyNumberRecord;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -40,5 +45,12 @@ public class AdminController {
 		t.setFlag(true);
 		t.start();
 		return "luckyon";		
+	}
+	
+	@RequestMapping("/viewrecord")
+	public String ViewRecord(Model model){
+		List<luckyNumberRecord> records=LuckyNumberRecordDAO.getAllRecords(jdbcTemplate);
+		model.addAttribute("records", records);
+		return "view_record";
 	}
 }
