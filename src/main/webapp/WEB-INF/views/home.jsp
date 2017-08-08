@@ -13,7 +13,7 @@ function changeimg(){
 
 </script>
 </head>
-<body>
+<body background="img/luckymoney.jpg">
 现在服务器的时间 ${serverTime}<br>
 ${res}<br>
 <form name="form1" id="form1" action="login">
