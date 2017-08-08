@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<table>
 <c:forEach items="${records}" var="temp">
-${temp}
+<tr><td>${temp}</td></tr>
 </c:forEach>
+</table>
 </body>
 </html>

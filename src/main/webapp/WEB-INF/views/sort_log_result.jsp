@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-这里是查询记录的结果页面,你要查询的wid是<p>${wid},结果是${res}</p>
+这里是查询记录的结果页面,你要查询的wid是<p>${wid}</p>
+结果如下
+<table>
+<c:forEach items="${res}" var="temp">
+<tr><td>${temp}</td></tr>
+</c:forEach>
+</table>
 </body>
 </html>

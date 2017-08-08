@@ -10,5 +10,6 @@
 <body>
 现在服务器的时间 ${serverTime}<a href="balance_add">充值</a>
 <a href="sort_log">查询记录</a>
+<a href="admin">红包雨管理</a>
 </body>
 </html>
