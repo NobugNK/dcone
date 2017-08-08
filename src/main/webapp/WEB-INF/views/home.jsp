@@ -21,7 +21,7 @@ ${res}<br>
 <tr><td>姓名：</td><td><input name="username" id="username"></td></tr>
 <tr><td>itcode：</td><td><input name="itcode" id="itcode"></td></tr>
 <tr><td><img id="img1" name="img1" src="servlet/code" onclick="changeimg()"></td><td><input name="valicode" id="valicode"></td></tr>
-<tr><td><input type="submit"></td></tr>
+<tr><td><input type="submit" value="登录"></td></tr>
 </table>
 </form>
 </body>
