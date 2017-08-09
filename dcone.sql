@@ -57,7 +57,7 @@ CREATE TABLE `dc_user` (
   `isOnthescene` int(11) DEFAULT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `itcode` (`itcode`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `dc_user` (
 
 LOCK TABLES `dc_user` WRITE;
 /*!40000 ALTER TABLE `dc_user` DISABLE KEYS */;
-INSERT INTO `dc_user` VALUES (1,'1','aa',1,1),(2,'2','haha',0,0),(3,'33333','haaaa',0,0);
+INSERT INTO `dc_user` VALUES (1,'1','aa',1,1),(2,'2','haha',0,0),(3,'33333','haaaa',0,0),(4,'123','test',0,1);
 /*!40000 ALTER TABLE `dc_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `dc_wallet` (
   `uid` int(11) NOT NULL,
   `amount` int(11) DEFAULT NULL,
   PRIMARY KEY (`wid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `dc_wallet` (
 
 LOCK TABLES `dc_wallet` WRITE;
 /*!40000 ALTER TABLE `dc_wallet` DISABLE KEYS */;
-INSERT INTO `dc_wallet` VALUES (1,1,21728),(2,2,20648),(3,3,31364);
+INSERT INTO `dc_wallet` VALUES (1,1,21728),(2,2,20648),(3,3,31364),(4,4,2000);
 /*!40000 ALTER TABLE `dc_wallet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +235,7 @@ CREATE TABLE `menu_list` (
 
 LOCK TABLES `menu_list` WRITE;
 /*!40000 ALTER TABLE `menu_list` DISABLE KEYS */;
-INSERT INTO `menu_list` VALUES (1,'play1',10,'单位1'),(2,'play2',20,'单位2'),(3,'play3',30,'单位3');
+INSERT INTO `menu_list` VALUES (1,'play1',10,'单位1'),(2,'play2',20,'单位2'),(3,'play3',31,'单位3');
 /*!40000 ALTER TABLE `menu_list` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,4 +266,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-09 11:33:49
+-- Dump completed on 2017-08-09 15:23:34
