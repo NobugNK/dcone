@@ -2,7 +2,9 @@ package com.dcone.dtss.DAO;
 
 import java.util.List;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.dcone.dtss.model.menu_list;
 /**
@@ -16,12 +18,21 @@ public class MenuListDAO {
 	 * 在列表中添加一个节目
 	 * @param play_name 节目的名字
 	 * @param play_order 节目的顺序
+	 * @param department 节目的单位
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回1表示添加成功，返回0表示添加失败
 	 */
-	public static int menulistAdd(String play_name,int play_order,JdbcTemplate jdbcTemplate){
-		
-		return 0;
+	public static int menulistAdd(String play_name,int play_order,String department,JdbcTemplate jdbcTemplate){
+		int r=0;
+		try
+		{
+			r=jdbcTemplate.update("insert into menu_list values (null,?,?,?);",new Object[] {play_name,play_order,department});
+			if(r>0)
+				r=1;
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return r;
 	}
 	/**
 	 * 通过节目的id获取节目
@@ -30,7 +41,14 @@ public class MenuListDAO {
 	 * @return 返回一个menu_list对象
 	 */
 	public static menu_list getPlayById(int pid,JdbcTemplate jdbcTemplate) {
-		return null;
+		menu_list menu=null;
+		RowMapper<menu_list> menu_list_mapper = new BeanPropertyRowMapper<menu_list>(menu_list.class);
+		try {
+			menu=jdbcTemplate.queryForObject("select * from menu_list where pid=?;", menu_list_mapper,pid);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return menu;
 	}
 	/**
 	 * 通过节目的名字获取节目
@@ -39,7 +57,14 @@ public class MenuListDAO {
 	 * @return 返回一个menu_list对象
 	 */
 	public static menu_list getPlayByName(String play_name,JdbcTemplate jdbcTemplate) {
-		return null;
+		menu_list menu=null;
+		RowMapper<menu_list> menu_list_mapper = new BeanPropertyRowMapper<menu_list>(menu_list.class);
+		try {
+			menu=jdbcTemplate.queryForObject("select * from menu_list where play_name=?;", menu_list_mapper,play_name);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return menu;
 	}
 	/**
 	 * 获取所有的节目信息
@@ -47,7 +72,14 @@ public class MenuListDAO {
 	 * @return 返回节目信息的一个List
 	 */
 	public static List<menu_list> getAllPlays(JdbcTemplate jdbcTemplate){
-		return null;
+		List<menu_list> menus=null;
+		RowMapper<menu_list> menu_list_mapper = new BeanPropertyRowMapper<menu_list>(menu_list.class);
+		try {
+			menus=jdbcTemplate.query("select * from menu_list;", menu_list_mapper);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return menus;
 	}
 	/**
 	 * 更改节目的顺序
@@ -57,6 +89,12 @@ public class MenuListDAO {
 	 * @return int 1表示成功，0表示失败
 	 */
 	public static int updatePlayOrder(int pid,int order,JdbcTemplate jdbcTemplate) {
-		return 0;
+		int r=0;
+		try {
+			r=jdbcTemplate.update("update menu_list set play_order=? where pid=?;",new Object[] {order,pid});
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return r;
 	}
 }
