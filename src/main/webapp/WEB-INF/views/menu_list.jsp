@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>MenuList</title>
 </head>
 <body>
-红包雨的相关记录
+节目列表列表如下
 <table>
-<c:forEach items="${records}" var="temp">
-<tr><td>恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number}分的红包</td></tr>
+<tr><td>序号</td><td>节目名字</td><td>节目的顺序</td><td>节目所属单位</td></tr>
+<c:forEach items="${menus}" var="temp">
+<tr><td>${temp.pid}</td><td>${temp.play_name}</td><td>${temp.play_order}</td><td>${temp.department}</td><td><input type="button" value="打赏"></td></tr>
 </c:forEach>
 </table>
 </body>
