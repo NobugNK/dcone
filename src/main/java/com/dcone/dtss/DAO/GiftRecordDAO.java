@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.dcone.dtss.model.dc_user;
 import com.dcone.dtss.model.gift_record;
+//这是一条注释
 
 public class GiftRecordDAO {
 	/**
