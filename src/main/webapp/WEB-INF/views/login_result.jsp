@@ -11,5 +11,6 @@
 <a href="balance_add">充值</a><br>
 <a href="sort_log">查询记录</a><br>
 <a href="admin">红包雨管理</a><br>
+<a href="menulist">节目列表</a>
 </body>
 </html>
