@@ -168,5 +168,26 @@ public class WalletDAO {
 		}
 		return 0;
 	}
+	/**
+	 * 给用户的账户添加减少的钱数
+	 * @param wid 用户的wid
+	 * @param number 减少的金额
+	 * @param jdbcTemplate Spring对象
+	 * @return 返回1表示添加成功，0表示添加失败
+	 */
+	public static int walletCut(int wid,int number,JdbcTemplate jdbcTemplate)
+	{
+		try {
+	
+				int j = jdbcTemplate.update("update dc_wallet set amount = amount - ? where wid=?;", new Object[] {number,wid});
+				if(j>0) {
+					return 1;
+				}
+		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+	}
 
 }

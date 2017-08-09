@@ -111,6 +111,57 @@ INSERT INTO `dc_wallet` VALUES (1,1,21728),(2,2,20648),(3,3,31364);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `gift_record`
+--
+
+DROP TABLE IF EXISTS `gift_record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gift_record` (
+  `rid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `uid` int(11) DEFAULT NULL,
+  `gift_number` int(11) DEFAULT NULL,
+  `gift_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`rid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gift_record`
+--
+
+LOCK TABLES `gift_record` WRITE;
+/*!40000 ALTER TABLE `gift_record` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gift_record` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gift_result`
+--
+
+DROP TABLE IF EXISTS `gift_result`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gift_result` (
+  `gid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `volume` int(11) DEFAULT NULL,
+  PRIMARY KEY (`gid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gift_result`
+--
+
+LOCK TABLES `gift_result` WRITE;
+/*!40000 ALTER TABLE `gift_result` DISABLE KEYS */;
+INSERT INTO `gift_result` VALUES (1,1,0),(2,2,0),(3,3,0);
+/*!40000 ALTER TABLE `gift_result` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `lucky_money`
 --
 
@@ -163,6 +214,32 @@ INSERT INTO `lucky_money_record` VALUES (1,3,5000,2),(2,2,5000,1),(3,1,1559,1),(
 UNLOCK TABLES;
 
 --
+-- Table structure for table `menu_list`
+--
+
+DROP TABLE IF EXISTS `menu_list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu_list` (
+  `pid` int(11) NOT NULL AUTO_INCREMENT,
+  `play_name` varchar(30) DEFAULT NULL,
+  `play_order` int(11) DEFAULT NULL,
+  `department` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu_list`
+--
+
+LOCK TABLES `menu_list` WRITE;
+/*!40000 ALTER TABLE `menu_list` DISABLE KEYS */;
+INSERT INTO `menu_list` VALUES (1,'play1',10,'单位1'),(2,'play2',20,'单位2'),(3,'play3',30,'单位3');
+/*!40000 ALTER TABLE `menu_list` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Final view structure for view `dc_user_wallet`
 --
 
@@ -189,4 +266,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-08 16:56:13
+-- Dump completed on 2017-08-09 11:33:49
