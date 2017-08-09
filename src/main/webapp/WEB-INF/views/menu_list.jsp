@@ -12,7 +12,7 @@
 <table>
 <tr><td>序号</td><td>节目名字</td><td>节目的顺序</td><td>节目所属单位</td></tr>
 <c:forEach items="${menus}" var="temp">
-<tr><td>${temp.pid}</td><td>${temp.play_name}</td><td>${temp.play_order}</td><td>${temp.department}</td></tr>
+<tr><td>${temp.pid}</td><td>${temp.play_name}</td><td>${temp.play_order}</td><td>${temp.department}</td><td><input type="button" value="打赏"></td></tr>
 </c:forEach>
 </table>
 </body>
