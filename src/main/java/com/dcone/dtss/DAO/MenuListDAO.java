@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.dcone.dtss.model.menu_list;
-
+/**
+ * 
+ * @author ymk
+ *
+ */
 public class MenuListDAO {
 	
 	/**
