@@ -47,7 +47,7 @@ ${res}<br>
 	<form name="form1" id="form1" action="login">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2>请登录</h2>
+                    <h2>登录</h2>
                 </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username"
