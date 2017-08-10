@@ -9,10 +9,11 @@
 </head>
 <body>
 <form name="form2" action="sort_loging">
+当前所有用户的信息
 <table>
 <tr><td>用户序号</td><td>itcode</td><td>用户姓名</td><td>用户余额</td></tr>
 <c:forEach items="${msgs}" var="temp">
-<tr><td>${temp.uid}</td><td>${temp.itcode}</td><td>${temp.username}</td><td>${temp.amount}</td></tr>
+<tr><td>${temp.uid}</td><td>${temp.itcode}</td><td>${temp.username}</td><td>${temp.amount/100}元</td></tr>
 </c:forEach>
 </table>
 请输入要查询的用户的序号<input  id="uid" name="uid">
