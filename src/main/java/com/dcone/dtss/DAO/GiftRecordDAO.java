@@ -1,5 +1,6 @@
 package com.dcone.dtss.DAO;
 
+
 import java.util.List;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -20,13 +21,15 @@ public class GiftRecordDAO {
 	 * @param jdbcTemplate
 	 * @return
 	 */
-	public static int createRecord(int pid,int uid,int gift_number,String gift_time,JdbcTemplate jdbcTemplate)
+	public static int createRecord(int pid,int uid,int gift_number,String gift_time,JdbcTemplate jdbcTemplate) 
 	{
 		int result=0;
-		RowMapper<gift_record> rowMapper=new BeanPropertyRowMapper<gift_record>(gift_record.class);
 		try {
-			String sql="insert into gift_record values(null,?,?,?,?)";
-			result=jdbcTemplate.update(sql,rowMapper,new Object[] {pid,uid,gift_number,gift_time});
+			String sql="insert into gift_record values(null,?,?,?,?);";
+			result=jdbcTemplate.update(sql,new Object[] {pid,uid,gift_number,gift_time});
+			System.out.println(result);
+			if(result>0)
+				result=1;
 		}
 		catch(Exception e)
 		{

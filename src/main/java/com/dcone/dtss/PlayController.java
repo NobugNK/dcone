@@ -63,17 +63,26 @@ public class PlayController {
 		else {
 			int gift_number=giftform.getGift_number()*100;
 			int pid=giftform.getPid();
-//			String username=session.getAttribute("username").toString();
+
 			gift_result temp=GiftResultDAO.getResultByPid(pid, jdbcTemplate);
-			System.out.println(temp);
+			if(temp==null)
+			{
+				String msg="打赏失败,不存在该节目";
+				model.addAttribute("msg",msg);
+				return "menu_list";
+			}
 			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
 			int g_res=GiftResultDAO.giftAdd(temp.getGid(), gift_number, jdbcTemplate);
 			Date date = new Date();
 			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 			String formattedDate2=fdate.format(date);
+			System.out.println(formattedDate2);
 			int g_rec_res=GiftRecordDAO.createRecord(temp.getPid(),user.getUid(), gift_number, formattedDate2, jdbcTemplate);
+			System.out.println(g_rec_res);
 			if(g_res*g_rec_res>0)
+				{
 				return "gift_success";
+				}
 			else
 			{
 				String msg="打赏失败";

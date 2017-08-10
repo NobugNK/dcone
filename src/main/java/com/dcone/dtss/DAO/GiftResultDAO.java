@@ -84,7 +84,8 @@ public class GiftResultDAO {
 		{
 			e.printStackTrace();
 		}
-		return newgiftresult;	}
+		return newgiftresult;	
+		}
 	/**
 	 * 通过gid打赏节目
 	 * @param gid 节目的打赏结果的gid
