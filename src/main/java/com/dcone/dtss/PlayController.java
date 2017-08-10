@@ -1,5 +1,7 @@
 package com.dcone.dtss;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,10 +15,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dcone.dtss.DAO.GiftRecordDAO;
+import com.dcone.dtss.DAO.GiftResultDAO;
 import com.dcone.dtss.DAO.MenuListDAO;
+import com.dcone.dtss.DAO.UserDAO;
 import com.dcone.dtss.DAO.UserWalletDAO;
-
+import com.dcone.dtss.model.dc_user;
 import com.dcone.dtss.model.dc_user_wallet;
+import com.dcone.dtss.model.gift_result;
 import com.dcone.dtss.model.menu_list;
 
 import form.GiftForm;
@@ -55,9 +61,25 @@ public class PlayController {
 			return "menu_list";
 		}
 		else {
-		
-
+			int gift_number=giftform.getGift_number()*100;
+			int pid=giftform.getPid();
+//			String username=session.getAttribute("username").toString();
+			gift_result temp=GiftResultDAO.getResultByPid(pid, jdbcTemplate);
+			System.out.println(temp);
+			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+			int g_res=GiftResultDAO.giftAdd(temp.getGid(), gift_number, jdbcTemplate);
+			Date date = new Date();
+			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+			String formattedDate2=fdate.format(date);
+			int g_rec_res=GiftRecordDAO.createRecord(temp.getPid(),user.getUid(), gift_number, formattedDate2, jdbcTemplate);
+			if(g_res*g_rec_res>0)
+				return "gift_success";
+			else
+			{
+				String msg="打赏失败";
+				model.addAttribute("msg",msg);
+				return "menu_list";
 			}
-		return "menu_list";
+		}
 	}
 }
