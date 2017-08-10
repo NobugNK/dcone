@@ -31,26 +31,19 @@
     </style>
 </head>
 <body>
-<!--  
-<table>
-<c:forEach items="${records}" var="temp">
-<tr><td>恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number}分的红包</td></tr>
-</c:forEach>
-</table>
--->
 <div id="" class="ctxt"></div>  
 <br />  
 <form method="post" action="" align="center">  
 <c:forEach items="${records}" var="temp">
- 恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number}分的红包
+  function(){}
 </c:forEach>
     <input type="text" id="msg" style="height:24px;width:200px;" /> <button type="button" id="submitBut">发布</button>  
 </form>  
   
 <script type="text/javascript">  
-$(document).ready(function(){  
-  
-    $("#submitBut").click(function(){  
+
+$(document).ready(function(){ 
+    	
         var msgtxt='恭喜id为'+$("#temp.wid")+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number}+'分的红包';  
         var colortxt = getReandomColor();  
         var topPos = generateMixed(3);  
@@ -64,9 +57,7 @@ $(document).ready(function(){
         $(".ctxt p").animate({left: '-'+addTextW+"px"}, 30000,function(){  
             $(this).hide();  
         });  
-    });  
-  
-});  
+    });   
 //随机获取颜色值  
     function getReandomColor(){  
         return '#'+(function(h){  
