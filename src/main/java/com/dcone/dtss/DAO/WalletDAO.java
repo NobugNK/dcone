@@ -43,7 +43,7 @@ public class WalletDAO {
 		//	System.out.println(formattedDate);
 			System.out.println(formattedDate2);
 			//int i = jdbcTemplate.update("insert into dc_trade values(null, ?,?,?,null);", new Object[] {wallet.getWid(),amount,formattedDate});
-			int i = TradeDAO.createTrade(wallet.getWid(), amount, formattedDate2, "无", jdbcTemplate);
+			int i = TradeDAO.createTrade(wallet.getWid(), amount, formattedDate2, "充值", jdbcTemplate);
 			System.out.println(i);
 			if(i>0) {
 				int j = jdbcTemplate.update("update dc_wallet set amount = amount + ? where wid=?;", new Object[] {amount,wallet.getWid()});

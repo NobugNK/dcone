@@ -83,15 +83,25 @@ public class PlayController {
 			String formattedDate2=fdate.format(date);
 			//获取当前时间
 			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+			
+			int g_rec_res=GiftRecordDAO.createRecord(temp.getPid(),user.getUid(), gift_number, formattedDate2, jdbcTemplate);
+			if(g_rec_res==0)
+			{
+				String msg="创建记录失败，打赏失败";
+				model.addAttribute("msg",msg);
+				return "menu_list";
+			}
 			int g_res=GiftResultDAO.giftAdd(temp.getGid(), gift_number, jdbcTemplate);
 			//给节目加钱
 			int wid=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate).getWid();
+			//获取用户钱包wid
 			int w_res=WalletDAO.walletCut(wid, gift_number, jdbcTemplate);
+			//钱包扣钱
 			int t_res=TradeDAO.createTrade(wid, gift_number, formattedDate2, "红包打赏支出", jdbcTemplate);
-	
-			System.out.println(formattedDate2);
-			int g_rec_res=GiftRecordDAO.createRecord(temp.getPid(),user.getUid(), gift_number, formattedDate2, jdbcTemplate);
-			System.out.println(g_rec_res);
+			//创造交易记录
+//			System.out.println(formattedDate2);
+			
+//			System.out.println(g_rec_res);
 			if(g_res*w_res*g_rec_res*t_res>0)
 				{
 				return "gift_success";
