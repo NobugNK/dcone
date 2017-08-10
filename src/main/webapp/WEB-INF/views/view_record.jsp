@@ -35,29 +35,42 @@
 <br />  
 <form method="post" action="" align="center">  
 <c:forEach items="${records}" var="temp">
-  function(){}
+  <script>
+  $(document).ready(function(){ 
+		
+	  sleep(100);
+      var msgtxt='恭喜id为'+$("#temp.wid")+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number}+'分的红包';  
+      var colortxt = getReandomColor(); 
+      var topPos = generateMixed(3);  
+      if (topPos > 300)  
+      {  
+          topPos = 30;  
+      }  
+      var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+msgtxt+'</p>';  
+      $(".ctxt").prepend(newtxt);  
+      var addTextW = $(".ctxt").find("p").width(); 
+      $(".ctxt p").animate({left: '-'+addTextW+"px"}, 30000,function(){  
+          $(this).hide();  
+      }); 
+     
+  });  
+  </script> 
 </c:forEach>
     <input type="text" id="msg" style="height:24px;width:200px;" /> <button type="button" id="submitBut">发布</button>  
 </form>  
   
 <script type="text/javascript">  
 
-$(document).ready(function(){ 
-    	
-        var msgtxt='恭喜id为'+$("#temp.wid")+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number}+'分的红包';  
-        var colortxt = getReandomColor();  
-        var topPos = generateMixed(3);  
-        if (topPos > 300)  
-        {  
-            topPos = 30;  
-        }  
-        var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+msgtxt+'</p>';  
-        $(".ctxt").prepend(newtxt);  
-        var addTextW = $(".ctxt").find("p").width();  
-        $(".ctxt p").animate({left: '-'+addTextW+"px"}, 30000,function(){  
-            $(this).hide();  
-        });  
-    });   
+function sleep(numberMillis) { 
+	var now = new Date(); 
+	var exitTime = now.getTime() + numberMillis; 
+	while (true) { 
+	now = new Date(); 
+	if (now.getTime() > exitTime) 
+	return; 
+	} 
+	}
+
 //随机获取颜色值  
     function getReandomColor(){  
         return '#'+(function(h){  
