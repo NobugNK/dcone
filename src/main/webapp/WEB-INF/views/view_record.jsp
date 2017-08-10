@@ -11,7 +11,7 @@
 红包雨的相关记录
 <table>
 <c:forEach items="${records}" var="temp">
-<tr><td>恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number}分的红包</td></tr>
+<tr><td>恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number/100}元红包</td></tr>
 </c:forEach>
 </table>
 </body>
