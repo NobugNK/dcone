@@ -25,6 +25,8 @@ public class LoginController {
 		if(Integer.parseInt(valicode)==answer.intValue()) {
 			if(UserDAO.checkUserInfo(itcode, username, jdbcTemplate))
 			{
+				session.setAttribute("username", username);
+				session.setAttribute("itcode", itcode);
 				res="成功";
 				model.addAttribute("res",res);
 				return "login_result";
