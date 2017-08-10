@@ -67,12 +67,12 @@ public class BalanceController {
 	String result="";
 	if(bindingResult.hasErrors())
 	{
-		String msg="用户姓名最少为2最多为8\nitcode最少为5最多为11\n金额最少100分最多100000分";
+		String msg="用户姓名最少为1最多为8\nitcode最少为1最多为11\n金额最少1元";
 		model.addAttribute("msg",msg);
 		return "balance_add";
 	}
 	else {
-		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount(), locale, jdbcTemplate);
+		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount()*100, locale, jdbcTemplate);
 	
 		if(i == 1) {
 			result = "充值成功"+walletForm.getAmount();

@@ -4,14 +4,14 @@ import javax.validation.constraints.*;
 
 public class WalletForm {
 	@NotNull
-	@Size(min=5,max=11)
+	@Size(min=1,max=11)
 	private String itcode;
 	@NotNull
-	@Size(min=2,max=8)
+	@Size(min=1,max=8)
 	private String username;
 	@NotNull
 	@Min(100)
-	@Max(100000)
+	@Max(1000000)
 	private int amount;
 	public String getUsername() {
 		return username;

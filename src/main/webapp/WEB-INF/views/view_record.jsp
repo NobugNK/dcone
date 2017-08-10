@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
 <meta http-equiv="X-UA-Compatible" content="IE=edge">  
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Generator" content="EditPlus®">  
@@ -91,3 +92,16 @@ function sleep(numberMillis) {
 </script> 
 </body>
 </html> 
+=======
+<title>Insert title here</title>
+</head>
+<body>
+红包雨的相关记录
+<table>
+<c:forEach items="${records}" var="temp">
+<tr><td>恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number/100}元红包</td></tr>
+</c:forEach>
+</table>
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/NobugNK/dcone.git

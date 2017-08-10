@@ -11,9 +11,9 @@
 这里是查询记录的结果页面,你要查询的wid是<p>${wid}</p>
 结果如下
 <table>
-<tr><td>序号</td><td>钱包ID</td><td>交易金额（单位分）</td><td>交易时间</td><td>备注信息</td></tr>
+<tr><td>序号</td><td>钱包ID</td><td>交易金额</td><td>交易时间</td><td>备注信息</td></tr>
 <c:forEach items="${res}" var="temp">
-<tr><td>${temp.tid}</td><td>${temp.wid}</td><td>${temp.volume}</td><td>${temp.tradetime}</td><td>${temp.memo}</td></tr>
+<tr><td>${temp.tid}</td><td>${temp.wid}</td><td>${temp.volume/100}元</td><td>${temp.tradetime}</td><td>${temp.memo}</td></tr>
 </c:forEach>
 </table>
 </body>

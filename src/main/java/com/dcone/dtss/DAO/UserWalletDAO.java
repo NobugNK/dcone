@@ -16,7 +16,7 @@ public class UserWalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回一个用户的账户信息
 	 */
-	public dc_user_wallet getWallInfoByUser(dc_user user,JdbcTemplate jdbcTemplate) {
+	public static dc_user_wallet getWallInfoByUser(dc_user user,JdbcTemplate jdbcTemplate) {
 		dc_user_wallet userwallet=null;
 		RowMapper<dc_user_wallet> userwallet_mapper = new BeanPropertyRowMapper<dc_user_wallet>(dc_user_wallet.class);
 		try {
@@ -32,7 +32,7 @@ public class UserWalletDAO {
 	 * @param jdbcTemplate
 	 * @return 返回一个用户的账户信息
 	 */
-	public dc_user_wallet getWallInfoByUid(int uid,JdbcTemplate jdbcTemplate) {
+	public static dc_user_wallet getWallInfoByUid(int uid,JdbcTemplate jdbcTemplate) {
 		dc_user user = UserDAO.getUserByUid(uid,jdbcTemplate);
 		return getWallInfoByUser(user,jdbcTemplate);
 	}
@@ -42,7 +42,7 @@ public class UserWalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回一个用户的账户信息
 	 */
-	public dc_user_wallet getWallInfoByItcode(String itcode,JdbcTemplate jdbcTemplate) {
+	public static dc_user_wallet getWallInfoByItcode(String itcode,JdbcTemplate jdbcTemplate) {
 		dc_user user = UserDAO.getUserByItcode(itcode,jdbcTemplate);
 		return getWallInfoByUser(user,jdbcTemplate);
 	}
@@ -51,7 +51,7 @@ public class UserWalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回所有用户的账户信息的一个列表
 	 */
-	public List<dc_user_wallet> getAllWallInfoByUser(JdbcTemplate jdbcTemplate) {
+	public static List<dc_user_wallet> getAllWallInfoByUser(JdbcTemplate jdbcTemplate) {
 		List<dc_user_wallet> userwallets=null;
 		RowMapper<dc_user_wallet> userwallet_mapper = new BeanPropertyRowMapper<dc_user_wallet>(dc_user_wallet.class);
 		try {

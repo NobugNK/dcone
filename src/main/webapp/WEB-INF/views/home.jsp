@@ -13,7 +13,7 @@
 <style type="text/css">  
 body {  
     margin: 0;  
-    background-image: url(bg.jpg);    
+    background-image: url(img/bg.jpg);    
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
@@ -50,12 +50,12 @@ ${res}<br>
                     <h2>登录</h2>
                 </div>
 		<div class="col-lg-10">
-			<input type="text" class="form-control" name="username"
+			<input type="text" class="form-control" name="username" id="username"
 				placeholder="请输入用户名" required autofocus />
 		</div>
 
 		<div class="col-lg-10">
-                    <input class="form-control" name="itcode" placeholder="请输入itcode" required autofocus/>
+                    <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
                 </div>
 		<div class="col-lg-10" style="white-space:nowrap" >
 			
