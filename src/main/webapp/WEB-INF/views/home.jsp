@@ -13,7 +13,7 @@
 <style type="text/css">  
 body {  
     margin: 0;  
-    background-image: url(bg.jpg);    
+    background-image: url(img/bg.jpg);    
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
