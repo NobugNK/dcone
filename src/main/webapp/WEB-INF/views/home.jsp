@@ -22,16 +22,14 @@ body {
 .becenter { margin-top: auto;
     margin-left: auto;
     margin-right: auto;
-    height: 350px;
-    width:500px;
+    height: 250px;
+    width:400px;
     padding: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
     }
     .becenter input{
     margin-top:2%;
-    margin-left: 10%;
-    margin-right: 10%;
+   
+   
     }
 </style>
 <script type="text/javascript">
@@ -48,6 +46,9 @@ function changeimg(){
 ${res}<br>
 	<form name="form1" id="form1" action="login">
 	  <div class="becenter">
+	    <div class="col-lg-11 text-center text-info">
+                    <h2>登录</h2>
+                </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username" id="username"
 				placeholder="请输入用户名" required autofocus />
@@ -56,13 +57,14 @@ ${res}<br>
 		<div class="col-lg-10">
                     <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
                 </div>
-		<div class="col-lg-10">
-			<input name="valicode" id="valicode" placeholder="请输入验证码" required autofocus/>
-			<img id="img1" name="img1" src="servlet/code"
-				onclick="changeimg()">
+		<div class="col-lg-10" style="white-space:nowrap" >
+			
+			<div ><input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="请输入验证码" required autofocus/></div>
+			<div><img id="img1" name="img1" src="servlet/code" style="padding-left: 5%"
+				onclick="changeimg()"></div>
 		</div>
 		<div class="col-lg-10">
-			<input class="form-control" type="submit">
+			<input class="form-control" type="submit" style="background-color: #e6f8f9" >
 		</div>
       </div>
 	</form>
