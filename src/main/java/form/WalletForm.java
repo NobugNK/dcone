@@ -3,6 +3,10 @@ package form;
 import javax.validation.constraints.*;
 
 public class WalletForm {
+	@Override
+	public String toString() {
+		return "WalletForm [itcode=" + itcode + ", username=" + username + ", amount=" + amount + "]";
+	}
 	@NotNull
 	@Size(min=1,max=11)
 	private String itcode;

@@ -37,9 +37,18 @@ public class LoginController {
 			{
 				session.setAttribute("username", loginform.getUsername());
 				session.setAttribute("itcode", loginform.getItcode());
+				if(loginform.getUsername()=="test")
+				{
 				res="成功";
 				model.addAttribute("res",res);
 				return "login_result";
+				}//如果用户名为test进入管理员界面
+				else
+				{
+				res="成功";
+				model.addAttribute("res",res);
+				return "login_result_normal";
+				}
 			}else
 			{
 				res="用户不存在";

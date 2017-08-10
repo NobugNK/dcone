@@ -88,9 +88,10 @@ public class TradeDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回true表示可以交易，false表示不可以交易
 	 */
+	@SuppressWarnings("unused")
 	private static boolean preTrade(int wid,int amount,JdbcTemplate jdbcTemplate) {
 		dc_wallet wallet=WalletDAO.getWalletByWid(wid, jdbcTemplate);
-		if(wallet.getAmount()>=amount)
+		if(wallet.getAmount()>=amount*100)
 			return true;
 		else
 			return false;
@@ -98,14 +99,14 @@ public class TradeDAO {
 	/**
 	 * 创建一个交易记录
 	 * @param wid 钱包的ID
-	 * @param amount 账户的钱
+	 * @param amount 交易的钱
 	 * @param date 时间日期
 	 * @param memo 备注信息
 	 * @param jdbcTemplate Spring对象
 	 * @return 返回True表示创建成功 ，false表示失败
 	 */
 	public static int createTrade(int wid,int amount,String date,String memo,JdbcTemplate jdbcTemplate) {
-		if(preTrade(wid,amount,jdbcTemplate)) {
+//		if(preTrade(wid,amount,jdbcTemplate)) {
 			//RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
 //			Date nowdate = new Date();
 //			SimpleDateFormat myFmt=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -119,9 +120,10 @@ public class TradeDAO {
 				// TODO: handle exception
 			}
 			return 0;
-		}else {
-		return 0;
-		}
+//		}else
+//		{
+//		return 0;
+//		}
 		
 	}
 }

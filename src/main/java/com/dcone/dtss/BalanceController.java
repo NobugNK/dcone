@@ -1,9 +1,12 @@
 ﻿package com.dcone.dtss;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -17,7 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dcone.dtss.DAO.*;
-import com.dcone.dtss.model.dc_trade;
+import com.dcone.dtss.model.*;
+
 
 import form.WalletForm;
 
@@ -72,8 +76,10 @@ public class BalanceController {
 		return "balance_add";
 	}
 	else {
+		System.out.println(walletForm);
 		int i = WalletDAO.balance_add(walletForm.getItcode(), walletForm.getUsername(), walletForm.getAmount()*100, locale, jdbcTemplate);
-	
+		
+		
 		if(i == 1) {
 			result = "充值成功"+walletForm.getAmount();
 		} else if(i == -1) {
@@ -89,4 +95,31 @@ public class BalanceController {
 	return "balance_add_result";
 	}
 	
+	
+	@RequestMapping(value="/balance_add_normal")
+	public String BalanceAddingNormal() {
+		return "balance_add_normal";
+	}
+	
+	@RequestMapping(value="/balance_adding_normal")
+	public String BalanceAddNormal(String amount,HttpSession session,Model model) {
+		
+		model.addAttribute("res", "充值失败");
+		String username=session.getAttribute("username").toString();
+		String itcode=session.getAttribute("itcode").toString();
+		dc_wallet wallet=WalletDAO.getWalletByItcode(itcode, jdbcTemplate);
+		Date date = new Date();
+		SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+		String formattedDate2=fdate.format(date);
+		int i=TradeDAO.createTrade(wallet.getWid(),Integer.parseInt(amount)*100, formattedDate2,"用户自己充值", jdbcTemplate);
+		if(i>0)
+		{
+			int j=WalletDAO.walletAdd(wallet.getWid(),Integer.parseInt(amount)*100, jdbcTemplate);
+			if(j>0)
+			{
+				model.addAttribute("res", username+"充值"+amount+"元成功");
+			}
+		}
+		return "balance_add_normal";
+	}
 }
