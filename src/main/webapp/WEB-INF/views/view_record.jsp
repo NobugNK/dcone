@@ -41,6 +41,9 @@
 <div id="" class="ctxt"></div>  
 <br />  
 <form method="post" action="" align="center">  
+<c:forEach items="${records}" var="temp">
+ 恭喜id为${temp.wid}号的钱包，在第${temp.round}轮的红包雨中获得了${temp.luck_number}分的红包
+</c:forEach>
     <input type="text" id="msg" style="height:24px;width:200px;" /> <button type="button" id="submitBut">发布</button>  
 </form>  
   
@@ -48,14 +51,14 @@
 $(document).ready(function(){  
   
     $("#submitBut").click(function(){  
-        var msgtxt=$("#msg").val();  
+        var msgtxt='恭喜id为'+$("#temp.wid")+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number}+'分的红包';  
         var colortxt = getReandomColor();  
         var topPos = generateMixed(3);  
         if (topPos > 300)  
         {  
             topPos = 30;  
         }  
-        var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+$("#msg").val()+'</p>';  
+        var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+msgtxt+'</p>';  
         $(".ctxt").prepend(newtxt);  
         var addTextW = $(".ctxt").find("p").width();  
         $(".ctxt p").animate({left: '-'+addTextW+"px"}, 30000,function(){  
