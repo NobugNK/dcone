@@ -65,6 +65,35 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
           </div>
         </div>
       </div>
+      
+      
+       <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          </a>
+          <div class="caption">
+            <h3>
+                <a href="sort_loging_normal" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">账户信息<br></a>
+            </h3>
+            <p>查看您的账户信息和交易记录</p>
+          </div>
+        </div>
+      </div>
+      
+       <div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          </a>
+          <div class="caption">
+            <h3>
+                <a href="" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
+            </h3>
+            <p>来试一试你的手气</p>
+          </div>
+        </div>
+      </div>
+      
+      
       </div>
 </div>
  
