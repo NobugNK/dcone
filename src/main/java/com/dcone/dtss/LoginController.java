@@ -37,7 +37,8 @@ public class LoginController {
 			{
 				session.setAttribute("username", loginform.getUsername());
 				session.setAttribute("itcode", loginform.getItcode());
-				if(loginform.getUsername()=="test")
+				String test=loginform.getUsername();
+				if(test.equals("test"))
 				{
 				res="成功";
 				model.addAttribute("res",res);
