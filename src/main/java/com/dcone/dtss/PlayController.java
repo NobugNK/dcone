@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.dcone.dtss.DAO.GiftRecordDAO;
 import com.dcone.dtss.DAO.GiftResultDAO;
 import com.dcone.dtss.DAO.MenuListDAO;
+import com.dcone.dtss.DAO.TradeDAO;
 import com.dcone.dtss.DAO.UserDAO;
 import com.dcone.dtss.DAO.UserWalletDAO;
+import com.dcone.dtss.DAO.WalletDAO;
 import com.dcone.dtss.model.dc_user;
 import com.dcone.dtss.model.dc_user_wallet;
 import com.dcone.dtss.model.gift_result;
@@ -63,7 +65,12 @@ public class PlayController {
 		else {
 			int gift_number=giftform.getGift_number()*100;
 			int pid=giftform.getPid();
-
+			if(gift_number>user_wallet.getAmount())
+			{
+				String msg="账户钱包余额不足，请及时<a href=\"balance_add\">充值</a>";
+				model.addAttribute("msg",msg);
+				return "menu_list";
+			}
 			gift_result temp=GiftResultDAO.getResultByPid(pid, jdbcTemplate);
 			if(temp==null)
 			{
@@ -71,15 +78,21 @@ public class PlayController {
 				model.addAttribute("msg",msg);
 				return "menu_list";
 			}
-			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
-			int g_res=GiftResultDAO.giftAdd(temp.getGid(), gift_number, jdbcTemplate);
 			Date date = new Date();
 			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 			String formattedDate2=fdate.format(date);
+			//获取当前时间
+			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+			int g_res=GiftResultDAO.giftAdd(temp.getGid(), gift_number, jdbcTemplate);
+			//给节目加钱
+			int wid=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate).getWid();
+			int w_res=WalletDAO.walletCut(wid, gift_number, jdbcTemplate);
+			int t_res=TradeDAO.createTrade(wid, gift_number, formattedDate2, "红包打赏支出", jdbcTemplate);
+	
 			System.out.println(formattedDate2);
 			int g_rec_res=GiftRecordDAO.createRecord(temp.getPid(),user.getUid(), gift_number, formattedDate2, jdbcTemplate);
 			System.out.println(g_rec_res);
-			if(g_res*g_rec_res>0)
+			if(g_res*w_res*g_rec_res*t_res>0)
 				{
 				return "gift_success";
 				}
