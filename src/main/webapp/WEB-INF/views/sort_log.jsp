@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,9 +10,13 @@
 <body>
 <form name="form2" action="sort_loging">
 <table>
-<tr><td>请输入要查询的wid</td><td><input  id="wid" name="wid"></td></tr>
-<tr><td><input type="submit"></td></tr>
+<tr><td>用户序号</td><td>itcode</td><td>用户姓名</td><td>用户余额</td></tr>
+<c:forEach items="${msgs}" var="temp">
+<tr><td>${temp.uid}</td><td>${temp.itcode}</td><td>${temp.username}</td><td>${temp.amount}</td></tr>
+</c:forEach>
 </table>
+请输入要查询的用户的序号<input  id="uid" name="uid">
+<input type="submit">
 </form>
 </body>
 </html>

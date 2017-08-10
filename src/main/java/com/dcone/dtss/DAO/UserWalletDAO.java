@@ -32,8 +32,8 @@ public class UserWalletDAO {
 	 * @param jdbcTemplate
 	 * @return 返回一个用户的账户信息
 	 */
-	public static dc_user_wallet getWallInfoByUid(int uid,JdbcTemplate jdbcTemplate) {
-		dc_user user = UserDAO.getUserByUid(uid,jdbcTemplate);
+	public static dc_user_wallet getWallInfoByUid(String uid,JdbcTemplate jdbcTemplate) {
+		dc_user user = UserDAO.getUserByUid(Integer.parseInt(uid),jdbcTemplate);
 		return getWallInfoByUser(user,jdbcTemplate);
 	}
 	/**

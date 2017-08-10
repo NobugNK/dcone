@@ -34,16 +34,20 @@ public class BalanceController {
 	JdbcTemplate jdbcTemplate;
 
 	@RequestMapping(value="/sort_log",method=RequestMethod.GET)
-	public String sortlog() {
+	public String sortlog(Model model) {
+		List<dc_user_wallet> msgs=UserWalletDAO.getAllWallInfoByUser(jdbcTemplate);
+		model.addAttribute("msgs", msgs);
 		return "sort_log";
 	}
 	
 	@RequestMapping(value="/sort_loging",method=RequestMethod.GET)
-	public String sortlogres(String wid,Model model) {
-		model.addAttribute("wid",wid);
-		List<dc_trade> res=TradeDAO.getTradesByWid(wid,jdbcTemplate);
+	public String sortlogres(int uid,Model model) {
+		dc_wallet wallet=WalletDAO.getWalletByUid(uid, jdbcTemplate);
+		dc_user user=UserDAO.getUserByUid(uid, jdbcTemplate);
+		List<dc_trade> res=TradeDAO.getTradesByWid(wallet.getWid()+"",jdbcTemplate);
 		model.addAttribute("res",res);
-		
+		model.addAttribute("user",user);
+		model.addAttribute("wallet",wallet);
 //		System.out.println(UserDAO.createUser("2", "haha", 0,jdbcTemplate));
 //		System.out.println(UserDAO.checkUserInfo("1", "aa",jdbcTemplate));
 //		
