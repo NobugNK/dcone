@@ -49,12 +49,12 @@ ${res}<br>
 	<form name="form1" id="form1" action="login">
 	  <div class="becenter">
 		<div class="col-lg-10">
-			<input type="text" class="form-control" name="username"
+			<input type="text" class="form-control" name="username" id="username"
 				placeholder="请输入用户名" required autofocus />
 		</div>
 
 		<div class="col-lg-10">
-                    <input class="form-control" name="itcode" placeholder="请输入itcode" required autofocus/>
+                    <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
                 </div>
 		<div class="col-lg-10">
 			<input name="valicode" id="valicode" placeholder="请输入验证码" required autofocus/>
