@@ -74,8 +74,17 @@ public class GiftResultDAO {
 	 * @return 1成功 0失败
 	 */
 	public static gift_result getResultByPid(int pid,JdbcTemplate jdbcTemplate) {
-		return null;
-	}
+		gift_result newgiftresult = null;
+		RowMapper<gift_result> rowMapper=new BeanPropertyRowMapper<gift_result>(gift_result.class);
+		String sql="select * from gift_result where pid=?";
+		try {
+			newgiftresult=jdbcTemplate.queryForObject(sql, rowMapper,pid);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return newgiftresult;	}
 	/**
 	 * 通过gid打赏节目
 	 * @param gid 节目的打赏结果的gid
@@ -84,7 +93,15 @@ public class GiftResultDAO {
 	 * @return 1成功 0失败
 	 */
 	public static int giftAdd(int gid,int number,JdbcTemplate jdbcTemplate) {
-		
-		return 0;
+		int result=0;
+		try {
+			String sql="update gift_result set volume = volume + ? where gid=?";
+			result=jdbcTemplate.update(sql,new Object[]{number,gid});
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return result;
 	} 
 }
