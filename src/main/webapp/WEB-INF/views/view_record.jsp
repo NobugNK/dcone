@@ -12,7 +12,7 @@
     <meta name="Author" content="">  
     <meta name="Keywords" content="">  
     <meta name="Description" content="">
-<title>Insert title here</title>
+<title>红包雨记录</title>
 <link href="" rel="stylesheet" />  
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>  
     <style type="text/css"> 
@@ -40,7 +40,7 @@
   $(document).ready(function(){ 
 		
 	  sleep(100);
-      var msgtxt='恭喜id为'+$("#temp.wid")+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number}+'分的红包';  
+      var msgtxt='恭喜id为'+${temp.wid}+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number/100}+'元的红包';  
       var colortxt = getReandomColor(); 
       var topPos = generateMixed(3);  
       if (topPos > 300)  
