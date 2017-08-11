@@ -31,12 +31,12 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 </style>
 </head>
 <body>
-<p>登录${res}</p>
+
 <div class="container projects">
 
     <div class="projects-header page-header">
-      <h2>普通年会会员选项</h2>
-      <p>这些操作是对年会系统普通用户开放的</p>
+      <h2 style="color:white;">普通年会会员选项</h2>
+      <p style="color:white;">这些操作是对年会系统普通用户开放的</p>
     </div>
 
     <div class="row">
