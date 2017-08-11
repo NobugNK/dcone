@@ -1,5 +1,9 @@
 package com.dcone.dtss;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -22,8 +26,15 @@ public class LoginController {
 	JdbcTemplate jdbcTemplate;
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(@Valid LoginForm loginform,BindingResult bindingResult,HttpSession session,Model model) {
-
+	public String login(@Valid LoginForm loginform,BindingResult bindingResult,Locale locale,HttpSession session,Model model) {
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
 		String res="失败";
 		Integer answer = (Integer)(session.getAttribute("answer"));
 		if(bindingResult.hasErrors()) {
