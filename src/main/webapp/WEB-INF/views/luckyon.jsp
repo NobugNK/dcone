@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-</script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/CFS.Snow.min.js"></script>
 <script type="text/javascript" src="https://raw.githubusercontent.com/loktar00/JQuery-Snowfall/master/src/snowfall.jquery.js"></script>
 <title>Insert title here</title>
