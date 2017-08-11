@@ -31,7 +31,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 </style>
 </head>
 <body>
-<p>登录${res}</p>
+<font color="white">登录${res}</font><br>
 <div class="container projects">
 
     <div class="projects-header page-header">
