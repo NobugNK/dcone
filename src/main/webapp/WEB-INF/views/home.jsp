@@ -42,12 +42,12 @@ function changeimg(){
 <body>
 <div class="container">
 </div>
-现在服务器的时间 ${serverTime}<br>
-${res}<br>
+<font color="white">现在服务器的时间 ${serverTime}</font><br>
+<font color="white">${res}</font><br>
 	<form name="form1" id="form1" action="login">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2>登录</h2>
+                    <h2 style="color:white;">登录</h2>
                 </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username" id="username"
