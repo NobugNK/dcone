@@ -40,11 +40,10 @@ body {
 	<form name="form1" id="form1" action="balance_adding">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2 style="color:white;">充值信息</h2>
-                </div>
+                    <h2 style="color:white;">管理员充值信息</h2>
+        </div>
 		<div class="col-lg-10">
-			<input type="text" class="form-control" name="username" id="username"
-				placeholder="请输入姓名" required autofocus />
+			<input type="text" class="form-control" name="username" id="username"	placeholder="请输入姓名" required autofocus />
 		</div>
 
 		<div class="col-lg-10">
