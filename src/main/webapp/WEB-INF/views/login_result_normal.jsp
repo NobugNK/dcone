@@ -61,7 +61,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
             <h3>
                 <a href="menulist" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
             </h3>
-            <p>查询年会节目列表。</p>
+            <p>查询年会节目列表</p>
           </div>
         </div>
       </div>

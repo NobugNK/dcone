@@ -61,7 +61,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
             <h3>
                 <a href="sort_log" title="Yarn 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">查询记录 <br></a>
             </h3>
-            <p>查询充值记录。</p>
+            <p>查询充值记录</p>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
             <h3>
                 <a href="admin" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'react'])">红包雨管理<br></a>
             </h3>
-            <p>进入红包雨管理界面。</p>
+            <p>进入红包雨管理界面</p>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
             <h3>
                 <a href="menulist" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
             </h3>
-            <p>查询年会节目列表。</p>
+            <p>查询年会节目列表</p>
           </div>
         </div>
       </div>
