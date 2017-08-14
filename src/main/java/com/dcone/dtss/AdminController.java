@@ -98,6 +98,7 @@ public class AdminController {
 	public String AddingList(@Valid ListForm listform,BindingResult bindingResult,Locale locale,Model model) {
 	    //参数没加Session，没加Logger
 		String result="";
+		//如果填写不符合要求跳转回填写的空页面
 		if(bindingResult.hasErrors())
 		{
 			String msg="信息填写有误";
@@ -105,7 +106,8 @@ public class AdminController {
 			return "add_list";
 		}
 		else {
-			
+			System.out.println(listForm);
+			int i = MenuListDAO.menulistAdd(listForm.getshowname(), listForm.getshowplace(), listForm.getdepartment()*100, locale, jdbcTemplate);
 		}
 		
 		return "";
