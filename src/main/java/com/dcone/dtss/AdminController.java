@@ -1,6 +1,7 @@
 ﻿package com.dcone.dtss;
 import com.dcone.dtss.DAO.*;
 import com.dcone.dtss.model.luckyNumberRecord;
+import com.dcone.dtss.model.menu_list;
 
 import java.util.List;
 import java.util.Locale;
@@ -74,7 +75,7 @@ public class AdminController {
 		{
 			String msg="信息填写错误！";
 			model.addAttribute("msg",msg);
-			return "balance_add";
+			return "manage_result";
 		}
 		else {
 			int i = UserDAO.createUser(userForm.getItcode(), userForm.getUsername(),userForm.getisOnthescene(), locale, jdbcTemplate);
@@ -101,7 +102,27 @@ public class AdminController {
 		return "change_list";
 	}
 	@RequestMapping("/listchanging")
-	public String ChangingList(Model model) {
-		return "";
+	public String ChangingList(@Valid ChangeForm changeForm,BindingResult bindingResult,Locale locale,Model model) {
+		String result="";
+		try {
+		if(bindingResult.hasErrors())
+		{
+			String msg="信息填写错误！";
+			model.addAttribute("msg",msg);
+			return "balance_add";
+		}
+		else {
+			menu_list menulist = MenuListDAO.getPlayByName(changeForm.getplay_name(),jdbcTemplate);
+			int i = MenuListDAO.updatePlayOrder(menulist.getPid(),changeForm.getorder(),jdbcTemplate);
+			if(i == 1) {
+				result = "更改成功！";
+			} else{
+				result = "信息填写错误!";
+			}
+		}
+		}catch(Exception e) {
+			result = "没有找到该节目！";
+		}
+		return "manage_result";
 	}
 }
