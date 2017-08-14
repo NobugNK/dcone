@@ -1,6 +1,8 @@
 ﻿package com.dcone.dtss.DAO;
 
 
+import java.util.Locale;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -51,7 +53,7 @@ public class UserDAO {
 	 * @param jdbcTemplate  Spring对象
 	 * @return 返回1表示创建成功，返回0表示其他错误，返回-1表示用户信息错误
 	 */
-	public static int createUser(String itcode,String username,int isOnthescene,JdbcTemplate jdbcTemplate) {
+	public static int createUser(String itcode,String username,int isOnthescene,Locale locale,JdbcTemplate jdbcTemplate) {
 		int i=0;
 		try {
 			 i = jdbcTemplate.update("insert into dc_user values(null, ?,?,0,?);", new Object[] {itcode,username,isOnthescene});

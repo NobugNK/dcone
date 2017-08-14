@@ -96,7 +96,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
           </a>
           <div class="caption">
             <h3>
-                <a href="" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">信息管理<br></a>
+                <a href="manage" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">信息管理<br></a>
             </h3>
             <p>添加用户以及添加相关的节目</p>
           </div>
