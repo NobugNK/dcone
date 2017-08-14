@@ -6,6 +6,7 @@ import com.dcone.dtss.model.menu_list;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import MyThread.LuckyNumberThread;
 import form.*;
@@ -89,12 +90,24 @@ public class AdminController {
 		}
 		return "manage_result";
 	}
-	@RequestMapping("/addlist")
-	public String AddList(Model model) {
+	@RequestMapping(value = "/addlist")
+	public String AddList() {
 		return "add_list";
 	}
-	@RequestMapping("/listadding")
-	public String AddingList(Model model) {
+	@RequestMapping(value ="/listadding", method = RequestMethod.GET)
+	public String AddingList(@Valid ListForm listform,BindingResult bindingResult,Locale locale,Model model) {
+	    //参数没加Session，没加Logger
+		String result="";
+		if(bindingResult.hasErrors())
+		{
+			String msg="信息填写有误";
+			model.addAttribute("msg",msg);
+			return "add_list";
+		}
+		else {
+			
+		}
+		
 		return "";
 	}
 	@RequestMapping("/changelist")
