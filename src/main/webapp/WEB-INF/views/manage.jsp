@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="add_list">添加节目</a><br>
+<a href="addlist">添加节目</a><br>
 <a href="add_user">添加用户</a><br>
 <a href="change_list">更改节目顺序</a><br>
 </body>
