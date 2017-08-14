@@ -104,7 +104,9 @@ public class PlayController {
 //			System.out.println(g_rec_res);
 			if(g_res*w_res*g_rec_res*t_res>0)
 				{
-				return "gift_success";
+				String msg="打赏成功";
+				model.addAttribute("msg",msg);
+				return "menu_list";
 				}
 			else
 			{
