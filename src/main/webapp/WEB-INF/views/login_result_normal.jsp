@@ -86,7 +86,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
           </a>
           <div class="caption">
             <h3>
-                <a href="" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
+                <a href="getluck" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
             </h3>
             <p>来试一试你的手气</p>
           </div>
