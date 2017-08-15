@@ -58,7 +58,7 @@ public class PlayController {
 		
 		if(bindingResult.hasErrors())
 		{
-			String msg="节目序号和节目打赏金额必须为正整数且不能为负";
+			String msg="节目序号和节目打赏金额只能为正整数";
 			model.addAttribute("msg",msg);
 			return "menu_list";
 		}
@@ -104,7 +104,7 @@ public class PlayController {
 //			System.out.println(g_rec_res);
 			if(g_res*w_res*g_rec_res*t_res>0)
 				{
-				String msg="打赏成功";
+				String msg="打赏节目"+pid+"一共" +giftform.getGift_number()+"元成功，谢谢您的支持";
 				model.addAttribute("msg",msg);
 				return "menu_list";
 				}

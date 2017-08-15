@@ -30,7 +30,6 @@ text-align:center;
 
 table{
 background-color:grey;
-
 }
  
 body {  
@@ -52,7 +51,13 @@ body {
  .becenter input{
   margin-top:2%;
  }
+ .becenter button{
+  margin-top:2%;
+ }
+ 
+ 
 </style>
+
 </head>
 <body>
 <p>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</p>
@@ -67,19 +72,26 @@ body {
  
 <form action="gifting">
  		<div class="becenter">
-		<div class="col-lg-10">
+	<div class="col-lg-10">
 			<input type="text" class="form-control" name="pid" id="pid"
 				placeholder="请输入要打赏的节目的序号" required autofocus />
-		</div>
-		
-		<div class="col-lg-10">
+	</div>
+	<div class="col-lg-10">
 			<input type="text" class="form-control" name="gift_number" id="gift_number"
 				placeholder="请输入要打赏的金额" required autofocus />
-		</div>			
-		<button type="submit" class="btn btn-default btn-sm">
- 		<span class="glyphicon glyphicon-jpy" aria-hidden="true"></span> 打赏</button>
+	</div>
+	
+	<div class="col-lg-10">
+		<button type="submit" class="form-control" onclick="showmsg()">
+ 		<span class="glyphicon glyphicon-jpy" aria-hidden="true"></span>打赏</button>
+ 	</div>
+ 	
+ 	<div class="col-lg-10">
+ 	${msg}
+ 	</div>
  		</div>
-${msg}
+	
+	
 
 
 </form>

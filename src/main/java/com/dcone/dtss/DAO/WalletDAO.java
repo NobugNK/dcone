@@ -111,16 +111,16 @@ public class WalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return
 	 */
-	public static boolean initWalletById(int uid,JdbcTemplate jdbcTemplate) {
+	public static int initWalletById(int uid,JdbcTemplate jdbcTemplate) {
 		int i=0;
 		try {
 			i=jdbcTemplate.update("insert into dc_wallet values(null,?,1000);",uid);
 			if(i>0)
-				return true;
+				return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return false;
+		return 0;
 	}
 	/**
 	 * 通过itcode来初始化钱包
@@ -128,7 +128,7 @@ public class WalletDAO {
 	 * @param jdbcTemplate Spring对象
 	 * @return
 	 */
-	public static boolean initWalletByItcode(String itcode,JdbcTemplate jdbcTemplate) {
+	public static int initWalletByItcode(String itcode,JdbcTemplate jdbcTemplate) {
 		dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);	
 		return WalletDAO.initWalletById(user.getUid(), jdbcTemplate);
 	}
