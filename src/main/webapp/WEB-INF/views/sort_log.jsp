@@ -14,10 +14,19 @@ background-image: url(img/bg667.jpg);
 background-size:100%;
 color:white;
 }
+tr:hover
+{
+color: black;
+} 
+th:hover
+{
+color: white;
+}
+
 .inputarea 
 {
 background-color:black;
-border-color:white
+border-color:white;
 }
 </style>
 <title>Insert title here</title>
@@ -28,8 +37,8 @@ border-color:white
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-hover">
-			<caption>当前所有用户的信息</caption>
-			<thead>
+			<caption style="color:#FFFFE0;font-size:20px">当前所有用户的信息</caption>
+			<thead style="color:#FFFFE0;font-size:16px">
 			<tr><th class="col-3 text-center">用户序号</th><th class="col-3 text-center">itcode</th><th class="col-3 text-center">用户姓名</th><th class="col-3 text-center">用户余额</th></tr>
 			</thead>
 			<tbody>

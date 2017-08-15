@@ -8,7 +8,7 @@
 <link href="js/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>账户记录信息</title>
 <style type="text/css">
 body{
 background-image: url(img/bg667.jpg);
