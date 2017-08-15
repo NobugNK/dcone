@@ -25,6 +25,18 @@ public class TradeDAO {
 		}
 		return trades;
 	}
+	
+	public static List<dc_trade> getTradesByWidAndTime(String wid,String starttime,String endtime,JdbcTemplate jdbcTemplate){
+		RowMapper<dc_trade> trade_mapper = new BeanPropertyRowMapper<dc_trade>(dc_trade.class);
+		List<dc_trade> trades=null;
+		try {
+		trades = jdbcTemplate.query("select * from dc_trade where wid=? and tradetime >= ? and tradetime <= ?;", trade_mapper, new Object[] {wid,starttime,endtime});
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return trades;
+	}
+	
 	/**
 	 * 通过钱包的uid 来获取到交易的信息
 	 * @param uid 用户的uid
@@ -124,6 +136,5 @@ public class TradeDAO {
 //		{
 //		return 0;
 //		}
-		
 	}
 }

@@ -15,6 +15,11 @@ background-image: url(img/bg667.jpg);
 background-size:100%;
 color:white;
 }
+
+tr:hover
+{
+color: black;
+} 
 </style>
 </head>
 <body>
@@ -23,6 +28,12 @@ color:white;
 当前查询的用户是${user.username},账户余额为${wallet.amount/100}元
 </h2>
 </div>
+<form action="sort_loging_bytime" >
+<table>
+<tr><td>起始时间</td><td><input type="date" id="starttime" name="starttime" style="color:black"></td>
+<td>结束时间</td><td><input type="date" id="endtime" name="endtime" style="color:black"></td><td><input type="submit" value="查询" style="color:black"></td></tr>
+</table>
+</form>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
