@@ -6,7 +6,6 @@ import com.dcone.dtss.model.menu_list;
 import java.util.List;
 import java.util.Locale;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
