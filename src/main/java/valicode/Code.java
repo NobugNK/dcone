@@ -45,7 +45,7 @@ public class Code extends HttpServlet {
 		response.addHeader("Pragma","no-cache"); 
 		response.addDateHeader("Expires",0); 
 		
-		BufferedImage img =new BufferedImage(80, 25, BufferedImage.TYPE_INT_RGB);
+		BufferedImage img =new BufferedImage(80, 30, BufferedImage.TYPE_INT_RGB);
 		java.awt.Graphics g= img.getGraphics();
 		Random r = new Random();
 		int a=r.nextInt(10);
@@ -55,17 +55,17 @@ public class Code extends HttpServlet {
 		session.setAttribute("answer", answer);
 		g.setFont(new Font("宋体",Font.BOLD,24)); 
 		g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-		g.drawString(a+"" ,10 , 20);
+		g.drawString(a+"" ,10 ,25);
 		g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-		g.drawString("+",25 , 20);
+		g.drawString("+",25 , 25);
 		g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-		g.drawString(b+"",40 , 20);
+		g.drawString(b+"",40 , 25);
 		g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-		g.drawString("=",55 , 20);
+		g.drawString("=",55 , 25);
 		for(int i=0;i<10;i++)
 		{
 			g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-			g.drawLine(r.nextInt(80), r.nextInt(25),r.nextInt(80), r.nextInt(25));
+			g.drawLine(r.nextInt(80), r.nextInt(30),r.nextInt(80), r.nextInt(30));
 		}
 		ImageIO.write(img, "jpeg", response.getOutputStream());
 //		System.out.println("当前的答案为"+session.getAttribute("answer"));

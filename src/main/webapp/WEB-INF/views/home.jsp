@@ -47,7 +47,7 @@ function changeimg(){
 	<form name="form1" id="form1" action="login">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2 style="color:white;">登录</h2>
+                    <h2 style="color:white;">欢迎</h2>
                 </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username" id="username"
@@ -58,13 +58,22 @@ function changeimg(){
                     <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
                 </div>
 		<div class="col-lg-10" style="white-space:nowrap" >
+			<div class="row">
+				<div class="col-lg-5">
+				
+				<img id="img1" name="img1" src="servlet/code" 
+				onclick="changeimg()">
+				
+				</div>
+				<div class="col-lg-7">
+				
+				<input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>
+				</div>
+			</div>
 			
-			<div ><input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="请输入验证码" required autofocus/></div>
-			<div><img id="img1" name="img1" src="servlet/code" style="padding-left: 5%"
-				onclick="changeimg()"></div>
 		</div>
 		<div class="col-lg-10">
-			<input class="form-control" type="submit" style="background-color: #e6f8f9" >
+			<input class="form-control" type="submit" style="background-color: #e6f8f9" value="登录">
 		</div>
       </div>
 	</form>
