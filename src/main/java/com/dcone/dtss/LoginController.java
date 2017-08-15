@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dcone.dtss.DAO.UserDAO;
+import com.dcone.dtss.DAO.WalletDAO;
+import com.dcone.dtss.model.dc_user;
+import com.dcone.dtss.model.dc_wallet;
 
 import form.LoginForm;
 
@@ -78,5 +81,30 @@ public class LoginController {
 		}
 	
 	}
-	
+	//用于激活钱包的操作
+	@RequestMapping(value = "/activate", method = RequestMethod.GET)
+	public String activatewallet (HttpSession session,Model model){
+		String itcode=session.getAttribute("itcode").toString();
+		dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+		String res="";
+		dc_wallet wallet=WalletDAO.getWalletByItcode(itcode, jdbcTemplate);
+		if(wallet==null)
+		{
+			int j=WalletDAO.initWalletByItcode(itcode, jdbcTemplate);
+			if(j>0)
+			{
+				res="用户"+user.getUsername()+"的钱包账户激活成功";
+			}
+			else
+			{
+				res="钱包激活失败";
+			}
+		}
+		else
+		{
+			res="该账户钱包已经激活";
+		}
+		model.addAttribute("res", res);
+		return "activate_result";
+	}
 }
