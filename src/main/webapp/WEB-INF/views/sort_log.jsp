@@ -5,19 +5,59 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="js/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+body{
+background-image: url(img/bg667.jpg);
+background-size:100%;
+color:white;
+}
+.inputarea 
+{
+background-color:black;
+border-color:white
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <form name="form2" action="sort_loging">
-当前所有用户的信息
-<table>
-<tr><td>用户序号</td><td>itcode</td><td>用户姓名</td><td>用户余额</td></tr>
-<c:forEach items="${msgs}" var="temp">
-<tr><td>${temp.uid}</td><td>${temp.itcode}</td><td>${temp.username}</td><td>${temp.amount/100}元</td></tr>
-</c:forEach>
-</table>
-请输入要查询的用户的序号<input  id="uid" name="uid">
-<input type="submit">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-hover">
+			<caption>当前所有用户的信息</caption>
+			<thead>
+			<tr><th class="col-3 text-center">用户序号</th><th class="col-3 text-center">itcode</th><th class="col-3 text-center">用户姓名</th><th class="col-3 text-center">用户余额</th></tr>
+			</thead>
+			<tbody>
+			<c:forEach items="${msgs}" var="temp">
+			<tr><td class="col-3 text-center">${temp.uid}</td><td class="col-3 text-center">${temp.itcode}</td><td class="col-3 text-center">${temp.username}</td><td class="col-3 text-center">${temp.amount/100}元</td></tr>
+			</c:forEach>
+			</tbody>
+			</table>
+			
+			<div class="row">
+				<div class="col-lg-3">
+					请输入要查询的用户的序号
+				</div>
+				<br>
+				<div class="col-lg-3">
+					<div class="input-group inputarea">
+					<input id="uid" name="uid" type="text" class="form-control">
+		                    <span class="input-group-btn">
+		                        <input id="uid" name="uid" class="btn btn-default" type="submit">
+		                    </span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 </form>
+
 </body>
 </html>

@@ -18,8 +18,8 @@
     <style type="text/css"> 
     .ctxt{  
             background:#f8f6e9;  
-            width:1000px;  
-            height:400px;  
+            width:100%;  
+            height:100vh;  
             overflow:hidden;  
             margin:0 auto;  
         }  
@@ -30,6 +30,20 @@
             padding:0;  
         }  
     </style>
+    <script type="text/javascript">
+    function randomspeed()
+    {
+    	  var s=Math.random()*50000+20000;
+    	  s=parseInt(s,10);
+    	  return s;
+    }
+/*     function randomtime()
+    {
+    	  var s=Math.random()*1000;
+    	  s=parseInt(s,10);
+    	  return s;
+    } */
+    </script>
 </head>
 <body>
 <div id="" class="ctxt"></div>  
@@ -37,9 +51,10 @@
 <form method="post" action="" align="center">  
 <c:forEach items="${records}" var="temp">
   <script>
-  $(document).ready(function(){ 
-		
-	  sleep(100);
+/*   sleep(randomtime());*/  
+ 
+	$(document).ready(function(){ 
+	sleep(100)
       var msgtxt='恭喜id为'+${temp.wid}+'号的钱包，在第'+${temp.round}+'轮的红包雨中获得了'+${temp.luck_number/100}+'元的红包';  
       var colortxt = getReandomColor(); 
       var topPos = generateMixed(3);  
@@ -50,15 +65,16 @@
       var newtxt = '<p style="top:'+topPos+'px; color:'+colortxt+'">'+msgtxt+'</p>';  
       $(".ctxt").prepend(newtxt);  
       var addTextW = $(".ctxt").find("p").width(); 
-      $(".ctxt p").animate({left: '-'+addTextW+"px"}, 30000,function(){  
+      $(".ctxt p").animate({left: '-'+addTextW+"px"}, randomspeed(),function(){  
           $(this).hide();  
       }); 
      
   });  
   </script> 
 </c:forEach>
-    <input type="text" id="msg" style="height:24px;width:200px;" /> <button type="button" id="submitBut">发布</button>  
-</form>  
+<!--     <input type="text" id="msg" style="height:24px;width:200px;" /> <button type="button" id="submitBut">发布</button>  
+ -->
+ </form>  
   
 <script type="text/javascript">  
 
