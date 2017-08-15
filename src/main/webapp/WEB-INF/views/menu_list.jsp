@@ -21,7 +21,7 @@ color: Orange;
 tr:hover
 {
 color: black;
-text-decoration: underline; /*鼠标移近：红色、下划线 -*/
+text-decoration: underline; /*鼠标移近：黑色、下划线 -*/
 } 
 td
 {
