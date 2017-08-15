@@ -41,6 +41,19 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 
     <div class="row">
 
+		<div class="col-sm-6 col-md-4 col-lg-3 ">
+        <div class="thumbnail">
+          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          </a>
+          <div class="caption">
+            <h3>
+                <a href="activate" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">激活钱包<br></a>
+            </h3>
+            <p>只有激活钱包后才能参加相关的活动哟</p>
+          </div>
+        </div>
+      	</div>
+
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
           <a href="" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
