@@ -80,7 +80,7 @@ body {
 	</div>
 	
 	<div class="col-lg-10">
-		<button type="submit" class="form-control" onclick="showmsg()">
+		<button type="submit" class="form-control" >
  		<span class="glyphicon glyphicon-jpy" aria-hidden="true"></span>打赏</button>
  	</div>
  	

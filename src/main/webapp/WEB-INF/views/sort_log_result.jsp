@@ -20,6 +20,18 @@ tr:hover
 {
 color: black;
 } 
+
+.becenter { margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    width:800px;
+    padding: 0%;
+    
+    }
+ .becenter tr{
+	color: #FFFFE0;
+	font-size:22px;
+ }
 </style>
 </head>
 <body>
@@ -28,12 +40,18 @@ color: black;
 当前查询的用户是${user.username},账户余额为${wallet.amount/100}元
 </h2>
 </div>
+
+<div class="becenter">
 <form action="sort_loging_bytime" >
-<table>
-<tr><td>起始时间</td><td><input type="date" id="starttime" name="starttime" style="color:black"></td>
-<td>结束时间</td><td><input type="date" id="endtime" name="endtime" style="color:black"></td><td><input type="submit" value="查询" style="color:black"></td></tr>
+<table class="table table-condensed">
+<tr><td>起始时间</td><td><input class="form-control" type="date" id="starttime" name="starttime" style="color:black"></td>
+<td>结束时间</td><td><input class="form-control" type="date" id="endtime" name="endtime" style="color:black"></td><td><input class="form-control" type="submit" value="查询" style="color:black"></td></tr>
 </table>
 </form>
+</div>
+
+
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
