@@ -26,7 +26,7 @@ public class LuckyController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	@RequestMapping(value ="/", method = RequestMethod.GET)
+	@RequestMapping(value ="/lucknumber", method = RequestMethod.GET)
 	public String showluckynumber(HttpSession session,Model model) {
 		List<menu_list> menus=MenuListDAO.getAllPlays(jdbcTemplate);
 		

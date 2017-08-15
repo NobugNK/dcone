@@ -24,10 +24,13 @@ public class MenuListDAO {
 	 */
 	public static int menulistAdd(String play_name,int play_order,String department,JdbcTemplate jdbcTemplate){
 		int r=0;
+		int i=0;
 		try
 		{
 			r=jdbcTemplate.update("insert into menu_list values (null,?,?,?);",new Object[] {play_name,play_order,department});
-			if(r>0)
+			menu_list temp=MenuListDAO.getPlayByName(play_name, jdbcTemplate);
+			i=GiftResultDAO.initGiftResultByPid(temp.getPid(), jdbcTemplate);
+			if(r*i>0)
 				r=1;
 		}catch (Exception e) {
 			// TODO: handle exception

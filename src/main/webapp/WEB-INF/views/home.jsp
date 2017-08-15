@@ -59,13 +59,13 @@ function changeimg(){
                 </div>
 		<div class="col-lg-10" style="white-space:nowrap" >
 			<div class="row">
-				<div class="col-lg-5">
+				<div class="col-xs-5">
 				
 				<img id="img1" name="img1" src="servlet/code" 
 				onclick="changeimg()">
 				
 				</div>
-				<div class="col-lg-7">
+				<div class="col-xs-7">
 				
 				<input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>
 				</div>
