@@ -14,7 +14,7 @@ public class WalletForm {
 	@Size(min=1,max=8)
 	private String username;
 	@NotNull
-	@Min(100)
+	@Min(1)
 	@Max(1000000)
 	private int amount;
 	public String getUsername() {

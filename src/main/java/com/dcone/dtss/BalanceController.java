@@ -9,8 +9,6 @@ import java.util.Locale;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -28,8 +26,6 @@ import form.WalletForm;
 
 @Controller
 public class BalanceController {
-	private static final Logger logger = LoggerFactory.getLogger(BalanceController.class);
-
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -80,14 +76,7 @@ public class BalanceController {
 	}
 	@RequestMapping(value="/balance_adding")
 	public String BalanceAdding(@Valid WalletForm walletForm,BindingResult bindingResult,Locale locale,Model model) {
-	logger.info("itcode:" +walletForm.getItcode() +"username:"+walletForm.getUsername() + " 充值 "+ walletForm.getUsername());
-//		System.out.println(jdbcTemplate.toString());
-//		System.out.println("itcode:"+itcode+"username:"+username+"充值"+amount);
-//	
-//		
-//		model.addAttribute("itcode", itcode);
-//		model.addAttribute("username", username);
-//		model.addAttribute("amount", amount);
+
 	String result="";
 	if(bindingResult.hasErrors())
 	{
@@ -101,7 +90,7 @@ public class BalanceController {
 		
 		
 		if(i == 1) {
-			result = "充值成功"+walletForm.getAmount();
+			result = "给用户"+walletForm.getUsername()+"成功充值"+walletForm.getAmount()+"元";
 		} else if(i == -1) {
 			result = "用户信息填写错误!";
 		}else {
@@ -110,9 +99,9 @@ public class BalanceController {
 
 		}
 	model.addAttribute("username",walletForm.getUsername());
-	model.addAttribute("result",result);
+	model.addAttribute("addresult",result);
 	
-	return "balance_add_result";
+	return "balance_add";
 	}
 	
 	

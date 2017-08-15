@@ -30,6 +30,7 @@ public class LuckyController {
 	private int i=0;  //执行判断的变量
 	
 	@RequestMapping(value ="/luckycontrol", method = RequestMethod.GET)
+
 	public String showluckynumber(HttpSession session,Model model) {
 		List<menu_list> menus=MenuListDAO.getAllPlays(jdbcTemplate);
 		

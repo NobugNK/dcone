@@ -56,10 +56,8 @@ public class UserDAO {
 	public static int createUser(String itcode,String username,int isOnthescene,Locale locale,JdbcTemplate jdbcTemplate) {
 		int i=0;
 		try {
-			 i = jdbcTemplate.update("insert into dc_user values(null, ?,?,0,?);", new Object[] {itcode,username,isOnthescene});
-			 int j=0;
-			 j=WalletDAO.initWalletByItcode(itcode, jdbcTemplate);
-			 if(i * j>0)
+			 i = jdbcTemplate.update("insert into dc_user values(null, ?,?,0,?);", new Object[] {itcode,username,isOnthescene});	
+			 if(i>0)
 			 return 1;
 		} catch (Exception e) {
 			return -1;

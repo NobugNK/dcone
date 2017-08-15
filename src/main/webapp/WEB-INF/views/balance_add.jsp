@@ -13,7 +13,7 @@
 <style type="text/css">  
 body {  
     margin: 0;  
-    background-image: url(img/bg.jpg);    
+   	background-image: url(img/bg.jpg);  
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
@@ -35,12 +35,15 @@ body {
 
 </head>
 <body>
+
+<div style="color:white">${msg}</div>
+
 <div class="container">
 </div>
 	<form name="form1" id="form1" action="balance_adding">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2 style="color:white;">管理员充值信息</h2>
+                    <h2 style="color:white;">充值管理</h2>
         </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username" id="username"	placeholder="请输入姓名" required autofocus />
@@ -56,7 +59,15 @@ body {
 		<div class="col-lg-10">
 			<input class="form-control" type="submit" value="提交" style="background-color: #e6f8f9" >
 		</div>
+		
+		<div class="col-lg-10">
+     		 <div style="color:white">${addresult}</div>
+		<!-- 显示充值的结果 -->
+		
+		</div>
+		
       </div>
+     
 	</form>
 </body>
 </html>
