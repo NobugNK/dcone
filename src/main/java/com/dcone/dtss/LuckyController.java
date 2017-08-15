@@ -19,12 +19,15 @@ import com.dcone.dtss.DAO.*;
 import com.dcone.dtss.model.dc_user_wallet;
 import com.dcone.dtss.model.menu_list;
 
+import MyThread.LuckyNumberThread;
 import form.*;
 
 @Controller
 public class LuckyController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
+	
+	private int i=0;  //执行判断的变量
 	
 	@RequestMapping(value ="/luckycontrol", method = RequestMethod.GET)
 
@@ -35,5 +38,29 @@ public class LuckyController {
 		
 		
 		return "";
+	}
+	@RequestMapping("/deliverlucky")
+	public String deliverLuck() {
+		return "deliverlucky";		
+	}
+	
+	@RequestMapping("/deliveringluck")
+	public String deliveringLuck() {
+		i=1;
+		return "";		
+	}
+	//用户点击抢红包时调用
+	@RequestMapping("/getluck")
+	public String getLuck() {
+		if (i==1) {
+			//调用函数生成随机数等等
+			//并跳转到显示红包数额的页面
+			return "";
+		}
+		else {
+			//跳转页面提示用户抢红包还没有开启
+			return "";
+		}
+		
 	}
 }
