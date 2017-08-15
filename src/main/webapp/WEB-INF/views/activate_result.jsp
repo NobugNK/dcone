@@ -5,8 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+body
+{
+background-image: url(img/firework1.jpg);
+background-size: 100%;
+color:white;
+}
+
+
+</style>
 </head>
 <body>
+<div class="page-header text-center">
+<h3>
 ${res}
+</h3>
+</div>
+
 </body>
 </html>

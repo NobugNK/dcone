@@ -10,7 +10,9 @@
 <title>Insert title here</title>
 <style type="text/css">
 body {
- background-color: #f8f6e9; 
+ background-image:url(img/firework3.jpg); 
+ background-size: 100%;
+ color:red;
 }
 </style>
 </head>
