@@ -37,12 +37,12 @@ body {
                     <h2 style="color:white;">输入节目信息</h2>
                 </div>
 		<div class="col-lg-10">
-			<input type="text" class="form-control" name="showname" id="showname"
+			<input type="text" class="form-control" name="play_name" id="play_name"
 				placeholder="请输入节目名称" required autofocus />
 		</div>
 
 		<div class="col-lg-10">
-                    <input class="form-control" name="showplace" id="showplace" placeholder="请输入节目顺序" required autofocus/>
+                    <input class="form-control" name="play_order" id="play_order" placeholder="请输入节目顺序" required autofocus/>
                 </div>
 		<div class="col-lg-10">
                     <input class="form-control" name="department" id="department" placeholder="请输入节目所属部门" required autofocus/>

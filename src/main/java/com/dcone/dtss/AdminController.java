@@ -90,27 +90,37 @@ public class AdminController {
 		}
 		return "manage_result";
 	}
+	
 	@RequestMapping(value = "/addlist")
 	public String AddList() {
 		return "add_list";
 	}
 	@RequestMapping(value ="/listadding", method = RequestMethod.GET)
-	public String AddingList(@Valid ListForm listform,BindingResult bindingResult,Locale locale,Model model) {
+	public String AddingList(@Valid ListForm listForm,BindingResult bindingResult,Locale locale,Model model) {
 	    //参数没加Session，没加Logger
 		String result="";
-		//如果填写不符合要求跳转回填写的空页面
-		if(bindingResult.hasErrors())
+		//如果填写不符合要求跳转回填写的空页面，似乎有问题，总是有误
+		/*if(bindingResult.hasErrors())
 		{
 			String msg="信息填写有误";
 			model.addAttribute("msg",msg);
 			return "add_list";
 		}
-		else {
-			System.out.println(listForm);
-			int i = MenuListDAO.menulistAdd(listForm.getshowname(), listForm.getshowplace(), listForm.getdepartment()*100, locale, jdbcTemplate);
+		else*/ {
+			System.out.println(listForm.getPlay_name());
+			
+		    int i = MenuListDAO.menulistAdd(listForm.getPlay_name(), listForm.getPlay_order(), listForm.getDepartment(),  jdbcTemplate);
+		    System.out.println(i);
+			
+			if(i == 1) {
+				result = "添加节目成功！节目名称："+listForm.getPlay_name();
+			}else {
+				result = "添加节目失败";
+			}
 		}
+		model.addAttribute("result",result);
 		
-		return "";
+		return "add_list_result";
 	}
 	@RequestMapping("/changelist")
 	public String ChangeList(Model model) {
