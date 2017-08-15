@@ -78,7 +78,7 @@ public class MenuListDAO {
 		List<menu_list> menus=null;
 		RowMapper<menu_list> menu_list_mapper = new BeanPropertyRowMapper<menu_list>(menu_list.class);
 		try {
-			menus=jdbcTemplate.query("select * from menu_list;", menu_list_mapper);
+			menus=jdbcTemplate.query("select * from menu_list order by play_order;", menu_list_mapper);
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -94,6 +94,16 @@ public class MenuListDAO {
 	public static int updatePlayOrder(int pid,int order,JdbcTemplate jdbcTemplate) {
 		int r=0;
 		try {
+			List<menu_list> menus=MenuListDAO.getAllPlays(jdbcTemplate);
+			
+			for(menu_list temp:menus)
+			{
+				if(temp.getPid()!=pid)
+				{
+					if(temp.getPlay_order()==order)
+						return 0;
+				}
+			}
 			r=jdbcTemplate.update("update menu_list set play_order=? where pid=?;",new Object[] {order,pid});
 		} catch (Exception e) {
 			// TODO: handle exception

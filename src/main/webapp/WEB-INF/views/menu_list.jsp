@@ -9,9 +9,7 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
-  	
-  	
-  	
+ 	
  <style type="text/css">  
 caption
 {
@@ -63,9 +61,9 @@ body {
 <p>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</p>
 <table class="table table-hover">
 <caption>节目列表</caption>
-<tr><td>序号</td><td>节目名字</td><td>节目的顺序</td><td>节目所属单位</td></tr>
+<tr><td>节目名字</td><td>节目编号</td><td>节目所属单位</td></tr>
 <tbody><c:forEach items="${menus}" var="temp">
-<tr><td>${temp.pid}</td><td>${temp.play_name}</td><td>${temp.play_order}</td><td>${temp.department}</td></tr>
+<tr><td>${temp.play_name}</td><td>${temp.pid}</td><td>${temp.department}</td></tr>
 </c:forEach></tbody>
 </table>
 <br>
