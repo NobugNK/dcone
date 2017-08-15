@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="addlist">添加节目</a><br>
-<a href="adduser">添加用户</a><br>
-<a href="changelist">更改节目顺序</a><br>
-
+<p > ${result} </p>
+<a href="">返回管理员选项</a>
+<a href="addlist">返回添加节目页面</a>
 </body>
 </html>
