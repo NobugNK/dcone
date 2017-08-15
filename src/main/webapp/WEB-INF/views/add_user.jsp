@@ -25,7 +25,7 @@
 				</select></td>
 			</tr>
 			<tr>
-			    <input type="submit">
+			    <td><input type="submit"></td>
 			</tr>
 		</table>
 	</form>
