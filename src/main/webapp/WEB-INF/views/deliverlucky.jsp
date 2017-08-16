@@ -9,12 +9,17 @@
 <script type="text/javascript">
 function ok()
 {
-	alert("红包开启成功");
+	window.location.href="deliveringluck";
+
 
 }
 function shutdown()
 {
-	alert("红包开启成功");
+	window.location.href="shutdownluck";
+	
+}
+
+function control(){
 	
 }
 </script>
@@ -24,5 +29,8 @@ function shutdown()
 <h3><a href="deliveringluck" onclick="ok()">开启抢红包</a></h3>
 <h3><a href="shutdownluck" onclick="shutdown()">关闭抢红包</a></h3>
 
+<h3><a onclick="ok()">开启抢红包</a></h3>
+<h3><a onclick="shutdown()">关闭抢红包</a></h3>
+<button type="button" name="switch" id="switch" class="btn btn-primary btn-lg"  onclick="control()" >原始按钮</button>
 </body>
 </html>
