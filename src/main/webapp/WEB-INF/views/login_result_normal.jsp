@@ -108,7 +108,7 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
           </div>
         </div>
       </div>
-      <p>${getluckresult}</p>
+      <p style="color:yellow">${getluckresult}</p>
       
       
       </div>
