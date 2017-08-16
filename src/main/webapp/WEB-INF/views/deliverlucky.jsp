@@ -6,29 +6,65 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>发红包</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+  	<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link href="css/buttons.css" rel="stylesheet">
+<style>
+body {  
+    margin: 0;  
+    background-image: url();    
+    background-repeat:no-repeat;  
+        background-position:0% 0%;  
+    background-size:cover;  
+    background-color: #f8f6e9;  
+}  
+a:hover
+{
+color:red;
+}
+
+</style>
+
 <script type="text/javascript">
-function ok()
-{
-	window.location.href="deliveringluck";
-
-
-}
-function shutdown()
-{
-	window.location.href="shutdownluck";
-}
-
 function control(){
+	var status=document.getElementById("status").innerHTML;
+	
+	if(status=="开")
+		{
+		window.location.href="shutdownluck";
+		}
+	else
+		{
+		window.location.href="deliveringluck";
+		}
 }
+function setSwitch(){
+	var status=document.getElementById("status").innerHTML;
+	if(status=="开")
+	{
+	document.getElementById("switch").innerHTML="OFF";
+	}
+	else
+	{
+	document.getElementById("switch").innerHTML="ON";
+	}
+}
+
 </script>
+
 </head>
 <body>
-<h3>当前抢红包功能状态：${status}</h3>
-<h3><a href="deliveringluck" onclick="ok()">开启抢红包</a></h3>
-<h3><a href="shutdownluck" onclick="shutdown()">关闭抢红包</a></h3>
 
-<h3><a onclick="ok()">开启抢红包</a></h3>
-<h3><a onclick="shutdown()">关闭抢红包</a></h3>
-<button type="button" name="switch" id="switch" class="btn btn-primary btn-lg"  onclick="control()" >原始按钮</button>
+<h3>当前抢红包功能状态：</h3><h3 id="status">${status}</h3>
+
+ <span class="button-wrap">
+    <a id="switch" onclick="control()" class="button button-pill">抢红包开关</a>
+  </span>
+  
+  
+<script type="text/javascript">
+setSwitch();
+</script>
 </body>
 </html>
