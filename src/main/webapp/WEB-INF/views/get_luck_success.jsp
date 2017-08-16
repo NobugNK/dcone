@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="js/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 <h3>${getluckresult}</h3>
+<!-- <div class="container">
+	<div class="row">
+		<div >
+			
+		</div>
+	</div>
+</div> -->
 </body>
 </html>
