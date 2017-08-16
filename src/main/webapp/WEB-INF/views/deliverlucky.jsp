@@ -16,11 +16,9 @@ function ok()
 function shutdown()
 {
 	window.location.href="shutdownluck";
-	
 }
 
 function control(){
-	
 }
 </script>
 </head>
