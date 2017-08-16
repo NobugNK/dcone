@@ -14,7 +14,7 @@ function ok()
 }
 function shutdown()
 {
-	alert("红包开启成功");
+	alert("红包关闭成功");
 	
 }
 </script>
