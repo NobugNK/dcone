@@ -90,6 +90,14 @@ public class LuckyController {
 			String itcode=session.getAttribute("itcode").toString();
 			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
 			//调用函数生成随机数等等
+			dc_wallet wallet=WalletDAO.getWalletByItcode(itcode, jdbcTemplate);
+			if(wallet==null)
+			{
+				getluckresult="您还未激活您的用户";
+				model.addAttribute("getluckresult", getluckresult);
+				return "login_result_normal";
+			}
+			
 			int bonus=LuckyBounsDAO.bonusGet(user,jdbcTemplate);
 			System.out.println(bonus);
 			//并跳转到显示红包数额的页面
@@ -100,6 +108,7 @@ public class LuckyController {
 		else {
 			//跳转页面提示用户抢红包还没有开启
 			getluckresult="抢红包还没有开启~";
+			model.addAttribute("getluckresult", getluckresult);
 			return "login_result_normal";
 		}
 		
