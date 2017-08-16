@@ -21,7 +21,7 @@ import com.dcone.dtss.model.*;
 
 import MyThread.LuckyNumberThread;
 import form.*;
-
+@SuppressWarnings("unused")
 @Controller
 public class LuckyController {
 	@Autowired
@@ -32,6 +32,7 @@ public class LuckyController {
 	@RequestMapping(value ="/luckycontrol", method = RequestMethod.GET)
 
 	public String showluckynumber(HttpSession session,Model model) {
+	
 		List<menu_list> getluckresult=MenuListDAO.getAllPlays(jdbcTemplate);
 		
 		String itcode=session.getAttribute("itcode").toString();
@@ -40,13 +41,43 @@ public class LuckyController {
 		return "";
 	}
 	@RequestMapping("/deliverlucky")
-	public String deliverLuck() {
+	public String deliverLuck(Model model) {
+		if(i==1)
+		{
+			model.addAttribute("status", "开");
+		}
+		else
+		{
+			model.addAttribute("status", "关");
+		}
 		return "deliverlucky";		
 	}
 	
 	@RequestMapping("/deliveringluck")
-	public String deliveringLuck() {
+	public String deliveringLuck(Model model) {
 		i=1;
+		if(i==1)
+		{
+			model.addAttribute("status", "开");
+		}
+		else
+		{
+			model.addAttribute("status", "关");
+		}
+		System.out.println(i);
+		return "deliverlucky";		
+	}
+	@RequestMapping("/shutdownluck")
+	public String shutdownLuck(Model model) {
+		i=0;
+		if(i==1)
+		{
+			model.addAttribute("status", "开");
+		}
+		else
+		{
+			model.addAttribute("status", "关");
+		}
 		System.out.println(i);
 		return "deliverlucky";		
 	}
@@ -56,20 +87,28 @@ public class LuckyController {
 		String getluckresult="";
 		if (i==1) {
 			//获取用户
-			String username=session.getAttribute("username").toString();
 			String itcode=session.getAttribute("itcode").toString();
 			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
 			//调用函数生成随机数等等
+			dc_wallet wallet=WalletDAO.getWalletByItcode(itcode, jdbcTemplate);
+			if(wallet==null)
+			{
+				getluckresult="您还未激活您的用户";
+				model.addAttribute("getluckresult", getluckresult);
+				return "login_result_normal";
+			}
+			
 			int bonus=LuckyBounsDAO.bonusGet(user,jdbcTemplate);
 			System.out.println(bonus);
 			//并跳转到显示红包数额的页面
-			getluckresult = "恭喜您获得"+bonus+"元红包";
+			getluckresult = "恭喜您获得了"+bonus+"元红包";
 			model.addAttribute("getluckresult", getluckresult);
 			return "get_luck_success";
 		}
 		else {
 			//跳转页面提示用户抢红包还没有开启
 			getluckresult="抢红包还没有开启~";
+			model.addAttribute("getluckresult", getluckresult);
 			return "login_result_normal";
 		}
 		

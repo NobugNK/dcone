@@ -13,6 +13,7 @@ import com.dcone.dtss.model.dc_user;
 import com.dcone.dtss.model.dc_wallet;
 import com.dcone.dtss.model.gift_record;
 
+@SuppressWarnings("unused")
 public class LuckyBounsDAO {
 
 	public static int bonusRandom(int isthe,JdbcTemplate jdbcTemplate ) {
@@ -41,15 +42,16 @@ public class LuckyBounsDAO {
 	
 	public static int bonusGet(dc_user user,JdbcTemplate jdbcTemplate) {
 		int bonus;
+		dc_wallet wallet=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate);
 		bonus=bonusRandom(user.getIsOnthescene(),jdbcTemplate);
 		int m = LuckyNumberDAO.luckyRain(4,bonus,jdbcTemplate);
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
-		dc_wallet wallet = WalletDAO.getWalletByUid(user.getUid(),jdbcTemplate);
 		int i=WalletDAO.walletAdd(wallet.getWid(),bonus,jdbcTemplate);
 		Date nowdate = new Date();
 		SimpleDateFormat myFmt=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time=myFmt.format(nowdate);
 		int j=jdbcTemplate.update("insert into lucky_record values(null,?,?,?);",new Object[] {user.getUid(),bonus,time});
+		int n=TradeDAO.createTrade(wallet.getWid(), bonus, time, "抢红包获得", jdbcTemplate);
 		return bonus;
 	}
 }
