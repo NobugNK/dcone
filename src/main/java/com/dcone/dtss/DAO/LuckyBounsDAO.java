@@ -16,7 +16,7 @@ import com.dcone.dtss.model.gift_record;
 public class LuckyBounsDAO {
 
 	public static int bonusRandom(int isthe,JdbcTemplate jdbcTemplate ) {
-		String sql="select total from luckyNumber where round=4";
+		String sql="select total from lucky_money where round=4";
 		int amount =jdbcTemplate.queryForInt(sql);
 		int min,max;
 		int bonus;
@@ -49,7 +49,7 @@ public class LuckyBounsDAO {
 		Date nowdate = new Date();
 		SimpleDateFormat myFmt=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time=myFmt.format(nowdate);
-		int j=jdbcTemplate.update("insert into lucky_money_record values(null,?,?,?);",new Object[] {user.getUid(),bonus,time});
+		int j=jdbcTemplate.update("insert into lucky_record values(null,?,?,?);",new Object[] {user.getUid(),bonus,time});
 		return bonus;
 	}
 }

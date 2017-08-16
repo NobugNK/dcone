@@ -32,7 +32,7 @@ public class LuckyController {
 	@RequestMapping(value ="/luckycontrol", method = RequestMethod.GET)
 
 	public String showluckynumber(HttpSession session,Model model) {
-		List<menu_list> menus=MenuListDAO.getAllPlays(jdbcTemplate);
+		List<menu_list> getluckresult=MenuListDAO.getAllPlays(jdbcTemplate);
 		
 		String itcode=session.getAttribute("itcode").toString();
 		
@@ -64,6 +64,7 @@ public class LuckyController {
 			System.out.println(bonus);
 			//并跳转到显示红包数额的页面
 			getluckresult = "恭喜您获得"+bonus+"元红包";
+			model.addAttribute("getluckresult", getluckresult);
 			return "get_luck_success";
 		}
 		else {
