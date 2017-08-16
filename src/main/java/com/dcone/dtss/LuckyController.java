@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dcone.dtss.DAO.*;
-import com.dcone.dtss.model.dc_user_wallet;
-import com.dcone.dtss.model.menu_list;
+import com.dcone.dtss.model.dc_user;
+import com.dcone.dtss.model.*;
 
 import MyThread.LuckyNumberThread;
 import form.*;
@@ -53,17 +53,22 @@ public class LuckyController {
 	//用户点击抢红包时调用
 	@RequestMapping("/getluck")
 	public String getLuck(HttpSession session,Model model) {
+		String getluckresult="";
 		if (i==1) {
-			//获取用户id
+			//获取用户
 			String username=session.getAttribute("username").toString();
 			String itcode=session.getAttribute("itcode").toString();
-			System.out.println(username);
+			dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
 			//调用函数生成随机数等等
+			int bonus=LuckyBounsDAO.bonusGet(user,jdbcTemplate);
+			System.out.println(bonus);
 			//并跳转到显示红包数额的页面
-			return "login_result_normal";
+			getluckresult = "恭喜您获得"+bonus+"元红包";
+			return "get_luck_success";
 		}
 		else {
 			//跳转页面提示用户抢红包还没有开启
+			getluckresult="抢红包还没有开启~";
 			return "login_result_normal";
 		}
 		
