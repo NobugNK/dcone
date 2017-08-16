@@ -47,19 +47,24 @@ public class LuckyController {
 	@RequestMapping("/deliveringluck")
 	public String deliveringLuck() {
 		i=1;
-		return "";		
+		System.out.println(i);
+		return "deliverlucky";		
 	}
 	//用户点击抢红包时调用
 	@RequestMapping("/getluck")
-	public String getLuck() {
+	public String getLuck(HttpSession session,Model model) {
 		if (i==1) {
+			//获取用户id
+			String username=session.getAttribute("username").toString();
+			String itcode=session.getAttribute("itcode").toString();
+			System.out.println(username);
 			//调用函数生成随机数等等
 			//并跳转到显示红包数额的页面
-			return "";
+			return "login_result_normal";
 		}
 		else {
 			//跳转页面提示用户抢红包还没有开启
-			return "";
+			return "login_result_normal";
 		}
 		
 	}
