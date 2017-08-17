@@ -169,7 +169,7 @@
 		<div class="sen">
 			<div class="red"><!-- shake-chunk -->
 			    <span style="background-image: url(img/red-w.png);"></span>
-			    <button class="redbutton" type="领取红包">拆红包</button>
+			    <button class="redbutton" >拆红包</button>
 			    <div class="red-jg">
 		        <h1>恭喜您！</h1>
 		        <h5>${getluckresult}</h5>

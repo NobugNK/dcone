@@ -12,6 +12,7 @@
 body{
 background-image: url(img/bg667.jpg);
 background-size:100%;
+background-attachment:fixed;
 color:white;
 }
 tr:hover

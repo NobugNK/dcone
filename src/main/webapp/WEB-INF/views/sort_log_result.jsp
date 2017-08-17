@@ -14,6 +14,7 @@ body{
 background-image: url(img/bg667.jpg);
 background-size:100%;
 background-repeat:no-repeat;
+background-attachment:fixed;
 color:white;
 }
 
