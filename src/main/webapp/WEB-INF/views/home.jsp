@@ -14,7 +14,7 @@
 body {  
     margin: 0;  
     background-image: url(img/bg.jpg);    
-    background-repeat:no-repeat;  
+    background-repeat:repeat-y;  
         background-position:0% 0%;  
     background-size:cover;  
     background-color: #f8f6e9;  
