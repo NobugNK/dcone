@@ -22,7 +22,8 @@ body {
 				margin: 0;
 				padding: 0;
 				position: relative;
-				
+				background-repeat:no-repeat;
+				background-attachment:fixed;
 				width: 100%;
 				height: 100%;
 				overflow-y: hidden;
