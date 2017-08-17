@@ -30,7 +30,7 @@ color:red;
 function control(){
 	var status=document.getElementById("status").innerHTML;
 	
-	if(status=="开")
+	if(status=="当前抢红包功能状态：开")
 		{
 		window.location.href="shutdownluck";
 		}
@@ -41,7 +41,7 @@ function control(){
 }
 function setSwitch(){
 	var status=document.getElementById("status").innerHTML;
-	if(status=="开")
+	if(status=="当前抢红包功能状态：开")
 	{
 	document.getElementById("switch").innerHTML="OFF";
 	}
@@ -56,13 +56,23 @@ function setSwitch(){
 </head>
 <body>
 
-<h3>当前抢红包功能状态：</h3><h3 id="status">${status}</h3>
-
- <span class="button-wrap">
-    <a id="switch" onclick="control()" class="button button-pill">抢红包开关</a>
-  </span>
-  
-  
+ 
+ <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h1 class="text-center" style="color:red;font-size:60px;">
+				抢红包功能管理
+			</h1>
+			<h1 id="status" style="width:900px; margin:0 auto;">当前抢红包功能状态：${status}</h1>
+			<span class="button-wrap" style=" margin:0 auto;">
+   			 <a id="switch" onclick="control()" class="button button-pill">抢红包开关</a>
+ 			</span>
+		</div>
+	</div>
+</div>
+ 
+ 
+ 
 <script type="text/javascript">
 setSwitch();
 </script>
