@@ -15,7 +15,7 @@ body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino S
 body{padding-top:30px;
   background-image: url(img/bg669.jpg);
   background-size: 100% 100%;
-  background-color:#CC3333;
+  background-color:white;
   background-repeat:no-repeat;  
   background-position:0% 0%;  
   background-attachment:fixed;  

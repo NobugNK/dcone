@@ -38,7 +38,7 @@ caption
      background-repeat:no-repeat;  
          background-position:0% 0%;  
     background-size:100% 100%; 
-     background-color: #CC3333;  
+     background-color:white;
   
 
      

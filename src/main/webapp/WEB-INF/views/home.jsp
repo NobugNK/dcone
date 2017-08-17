@@ -18,7 +18,8 @@ body {
      background-position:0% 0%;  
     background-size:100% 100%;  
     background-color: #f8f6e9;
-  background-attachment:fixed;
+ 	background-color:white;
+ 	background-attachment: fixed;
 /*   position: fixed;
   z-index: -1;
   top: 0;

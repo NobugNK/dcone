@@ -15,7 +15,7 @@ background-image: url(img/bg668.jpg);
 background-size:100% 100%;
 background-repeat:no-repeat;
 background-attachment:fixed;
-background-color:#CC3333;
+  background-color:black;
 color:white;
 }
 tr:hover

@@ -19,7 +19,7 @@
     background-position:0% 0%;  
     background-size:100% 100%;
     background-attachment:fixed;  
-    background-color: #CC3333;  
+     background-color:white;
 }  
 
  body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif}

@@ -13,7 +13,9 @@
 <style type="text/css">
 body {
  background-image:url(img/firework3.jpg); 
- background-size: 100%;
+ background-size: 100% 100%;
+ background-attachment:fixed;
+ background-color:white;
  color:red;
 }
 </style>

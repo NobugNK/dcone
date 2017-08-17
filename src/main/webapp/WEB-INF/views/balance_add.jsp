@@ -18,7 +18,7 @@ body {
     background-position:0% 0%;  
     background-size:100% 100%;
     background-attachment:fixed;  
-    background-color: #CC3333;  
+    background-color:white; 
 }  
 .becenter { 
     margin: auto;

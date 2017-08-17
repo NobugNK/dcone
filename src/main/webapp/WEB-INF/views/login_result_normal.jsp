@@ -18,7 +18,7 @@ body{padding-top:30px;
  background-attachment:fixed;
  background-position:0% 0%;
  background-size:100% 100%;
-background-color:#CC3333;}
+background-color:white;}
 
 
 .masthead{padding:60px 0 80px;margin-bottom:0;color:#fff}
@@ -37,7 +37,6 @@ background-color:#CC3333;}
 </style>
 </head>
 <body>
-<font color="white">登录${res}</font><br>
 <div class="container projects">
 
     <div class="projects-header page-header">
