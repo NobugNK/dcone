@@ -23,7 +23,6 @@ a:hover {
 }
 
 body {
-<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -33,71 +32,6 @@ body {
 	background: url(img/bg1.png) no-repeat top left;
 	background-size: 100%;
 }
-=======
-				margin: 0;
-				padding: 0;
-				position: relative;
-				background-repeat:no-repeat;
-				background-attachment:fixed;
-				width: 100%;
-				height: 100%;
-				overflow-y: hidden;
-				background:url(images/bj.jpg) no-repeat top left ;
-				background-size:  100%;
-			}
-			.couten {
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-				overflow-y: hidden;
-			}
-			.couten li {
-				position: absolute;
-				animation: all 3s linear;
-				top:-100px;
-				-webkit-tap-highlight-color:  rgba(0, 0, 0, 0);
-				list-style-type:none;
-			}
-			.couten li a{
-				display: block;
-			}
-			.mo {
-				position: absolute;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, .2);
-				z-index: 100;
-				display: none;
-			}
-			.mo .sen {
-				
-			}
-			.backward{
-				width: 100%;
-				background:#ccc;
-				opacity: 0.5;
-				position: absolute;
-				top: 0;
-				
-			}
-			.backward span{
-				display: inline-block;
-				width: 100px;
-				height: 100px;
-				color: #000;
-				font-weight: bold;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				text-align: center;
-				line-height: 100px;
-				font-size: 1000%;
-			}
->>>>>>> branch 'master' of https://github.com/NobugNK/dcone.git
 
 .couten {
 	width: 100%;
