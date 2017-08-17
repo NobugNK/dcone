@@ -13,8 +13,13 @@
 
 body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif}
 .h1,.h2,.h3,.h4,.lead,h1,h2,h3,h4{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
-body{padding-top:30px;  background-image: url();
-background-color:#CC3333; }
+body{padding-top:30px; 
+ background-image: url(img/test6.jpg);
+ background-attachment:fixed;
+ background-position:0% 0%;
+ background-size:100% 100%;
+background-color:#CC3333; 
+}
 
 
 .masthead{padding:60px 0 80px;margin-bottom:0;color:#fff}
