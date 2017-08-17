@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,17 +19,17 @@ body {
     background-size:cover;  
     background-color: #f8f6e9;  
 }  
-.becenter { margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+.welcomeheader{
+padding-top:60px;
+padding-bottom:50px;
+}
+.becenter { margin:auto;
     height: 250px;
     width:400px;
     padding: 5%;
     }
     .becenter input{
     margin-top:2%;
-   
-   
     }
 </style>
 <script type="text/javascript">
@@ -40,39 +40,33 @@ function changeimg(){
 </script>
 </head>
 <body>
-<div class="container">
-</div>
+
 <font color="white">现在服务器的时间 ${serverTime}</font><br>
 <font color="white">${res}</font><br>
 	<form name="form1" id="form1" action="login">
-	  <div class="becenter">
-	    <div class="col-lg-11 text-center text-info">
-                    <h2 style="color:white;">欢迎</h2>
-                </div>
-		<div class="col-lg-10">
+	  <div class="becenter container">
+	    <div class=" text-center text-info welcomeheader">
+          <h1 style="color:white;">欢迎</h1>
+          <h2 style="color:white;">xx公司年会系统</h2>
+        </div>
+		<div >
 			<input type="text" class="form-control" name="username" id="username"
 				placeholder="请输入用户名" required autofocus />
 		</div>
-
-		<div class="col-lg-10">
+		<div >
                     <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
                 </div>
-		<div class="col-lg-10" style="white-space:nowrap" >
+		<div  style="white-space:nowrap" >
 			<div class="row">
 				<div class="col-xs-5">
-				
-				<img id="img1" name="img1" src="servlet/code" 
-				onclick="changeimg()">
-				
+				  <img id="img1" name="img1" src="servlet/code" onclick="changeimg()">
 				</div>
-				<div class="col-xs-7">
-				
-				<input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>
+			    <div class="col-xs-7">
+				  <input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>
 				</div>
 			</div>
-			
 		</div>
-		<div class="col-lg-10">
+		<div >
 			<input class="form-control" type="submit" style="background-color: #e6f8f9" value="登录">
 		</div>
       </div>
