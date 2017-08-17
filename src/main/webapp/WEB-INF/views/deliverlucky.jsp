@@ -39,6 +39,7 @@ body {
 				animation: all 3s linear;
 				top:-100px;
 				-webkit-tap-highlight-color:  rgba(0, 0, 0, 0);
+				list-style-type:none;
 			}
 			.couten li a{
 				display: block;
@@ -129,15 +130,11 @@ function setSwitch(){
 </div>
 
 		
-			<ul class="couten">
-			<!--<li>
-				<a href="#"><img src="images/hb_1.png"></a>
-			</li>-->
+		<ul class="couten">
+			
 		</ul>
-		<div class="mo">
-			<div class="sen">
-			</div>
-		</div>
+		
+
 		
  
 <script type="text/javascript">
