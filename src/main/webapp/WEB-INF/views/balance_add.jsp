@@ -15,22 +15,23 @@ body {
     margin: 0;  
    	background-image: url();  
     background-repeat:no-repeat;  
-        background-position:0% 0%;  
+    background-position:0% 0%;  
     background-size:cover;  
  	background-color: #CC3333;  
 }  
-.becenter { margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+.becenter { 
+    margin: auto;
     height: 250px;
-    width:400px;
-    padding: 0%;
+    width: 400px;
+    padding-top: 10%;
     }
     .becenter input{
     margin-top:2%;
-   
-   
     }
+ .header{
+ padding-top:10%;
+ padding-bottom:10%;
+ }
 </style>
 
 </head>
@@ -38,36 +39,33 @@ body {
 
 <div style="color:white">${msg}</div>
 
-<div class="container">
-</div>
+
 	<form name="form1" id="form1" action="balance_adding">
-	  <div class="becenter">
-	    <div class="col-lg-11 text-center text-info">
+	  <div class="becenter container">
+	    <div class="header text-center text-info">
                   <h1 Style="color:white">充值页面<small class="text-muted" Style="color:white">管理员</small></h1>
         </div>
-		<div class="col-lg-10">
+		<div class="col-lg-12">
 			<input type="text" class="form-control" name="username" id="username"	placeholder="请输入姓名" required autofocus />
 		</div>
 
-		<div class="col-lg-10">
+		<div class="col-lg-12">
                     <input class="form-control" name="itcode" id="itcode" placeholder="请输入itcode" required autofocus/>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-12">
                     <input class="form-control" name="amount" id="amount" placeholder="请输入充值金额" required autofocus/>
         </div>
 		
-		<div class="col-lg-10">
+		<div class="col-lg-12">
 			<input class="form-control" type="submit" value="提交" style="background-color: #e6f8f9" >
 		</div>
 		
-		<div class="col-lg-10">
-     		 <div Style="color:yellow">${addresult}</div>
+		<div class="col-lg-12" Style="color:yellow">${addresult}</div>
 		<!-- 显示充值的结果 -->
 		
-		</div>
 		
-      </div>
+     </div>
      
-	</form>
+  </form>
 </body>
 </html>
