@@ -5,7 +5,8 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>抢红包！拼手气</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">		
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 	<!--在iPhone 手机上禁止了把数字转化为拨号链接-->
@@ -169,7 +170,7 @@
 		<div class="sen">
 			<div class="red"><!-- shake-chunk -->
 			    <span style="background-image: url(img/red-w.png);"></span>
-			    <button class="redbutton" type="领取红包">拆红包</button>
+			    <button class="redbutton" >拆红包</button>
 			    <div class="red-jg">
 		        <h1>恭喜您！</h1>
 		        <h5>${getluckresult}</h5>

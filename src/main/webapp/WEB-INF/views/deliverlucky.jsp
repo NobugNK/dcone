@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <title>发红包</title>
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
@@ -21,7 +22,8 @@ body {
 				margin: 0;
 				padding: 0;
 				position: relative;
-				
+				background-repeat:no-repeat;
+				background-attachment:fixed;
 				width: 100%;
 				height: 100%;
 				overflow-y: hidden;
