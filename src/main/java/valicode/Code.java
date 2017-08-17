@@ -46,13 +46,19 @@ public class Code extends HttpServlet {
 		response.addDateHeader("Expires",0); 
 		
 		BufferedImage img =new BufferedImage(80, 30, BufferedImage.TYPE_INT_RGB);
+		
 		java.awt.Graphics g= img.getGraphics();
+	
 		Random r = new Random();
 		int a=r.nextInt(10);
 		int b=r.nextInt(10);
 		int answer =a+b;
 		HttpSession session=request.getSession();
 		session.setAttribute("answer", answer);
+		
+		g.setColor(new Color(255,251,240));
+		g.fillRect(0, 0, 80, 30);
+		
 		g.setFont(new Font("宋体",Font.BOLD,24)); 
 		g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
 		g.drawString(a+"" ,10 ,25);
