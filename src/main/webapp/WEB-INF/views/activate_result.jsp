@@ -7,13 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>用户账户钱包激活</title>
 <style type="text/css">
-body
-{
-background-color:#CC3333;
-background-image: url();
-background-size: 100%;
-color:white;
-}
+ body {  
+    margin: 0;  
+   	background-image: url(img/bg_moun.jpg);  
+    background-repeat:no-repeat;  
+        background-position:0% 0%;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
+    background-color: #CC3333;  
+    color:white;
+} 
 
 .becenter { margin-top: auto;
     margin-left: auto;
@@ -36,8 +39,8 @@ window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000);
 } 
 function doUpdate(num) 
 { 
-document.getElementById('ShowDiv').innerHTML = '本页面将在'+num+'秒后自动消失' ;
-if(num == 0) {window.opener=null;window.close();}
+document.getElementById('ShowDiv').innerHTML = '点击返回，本页面将在'+num+'秒后自动跳转' ;
+if(num == 0) {window.opener=null;window.history.back(-1);window.history.reload();}
 } 
 
 </script>
@@ -48,7 +51,7 @@ if(num == 0) {window.opener=null;window.close();}
 <h1>
 ${res}
 </h1>
- <div id="ShowDiv"></div> 
+ <div ><a href="" id="ShowDiv" style="color:white" onclick="window.history.back(-1);window.history.reload();"></a></div> 
 
 </div>
 <script language="javascript" type="text/javascript"> 

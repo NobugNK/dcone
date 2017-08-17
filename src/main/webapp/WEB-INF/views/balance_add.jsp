@@ -12,12 +12,13 @@
 <title>管理员充值界面</title>
 <style type="text/css">  
 body {  
-    margin: 0;  
-   	background-image: url();  
+     margin: 0;  
+   	background-image: url(icon/icon_8.jpg);  
     background-repeat:no-repeat;  
     background-position:0% 0%;  
-    background-size:cover;  
- 	background-color: #CC3333;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
+    background-color: #CC3333;  
 }  
 .becenter { 
     margin: auto;

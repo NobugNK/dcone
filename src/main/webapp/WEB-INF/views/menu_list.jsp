@@ -12,52 +12,52 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
  <style type="text/css">  
 caption
-{
-color: Orange;
-}
-
-tr:hover
-{
-color:#000066;
-
-font-size: 21px;
-} 
-tr
-{
-color:#FF9966 ;
-font-size: 21px;
-} 
-td
-{
-text-align:center;
-}
-
-table{
-background-color:#FFFFCC;
-}
+  {
+ color: Orange;
+ }
  
-body {  
-	color:white;
-    margin: 0;  
-    background-image: url();    
-    background-repeat:no-repeat;  
-        background-position:0% 0%;  
-    background-size:cover;  
-    background-color: #CC3333;
-}  
-.becenter { margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width:400px;
-    padding: 5%;
-    }
- .becenter input{
-  margin-top:2%;
+ tr:hover
+ {
+ color: black;
+ } 
+ td
+ {
+ text-align:center;
  }
- .becenter button{
-  margin-top:2%;
+ 
+ table{
+ background-color:grey;
  }
+  
+ body {  
+ 	color:white;
+     margin: 0;  
+  
+	background-attachment: fixed;
+     background-image: url(img/playbg.jpg);    
+     background-repeat:no-repeat;  
+         background-position:0% 0%;  
+    background-size:100% 100%; 
+     background-color: #CC3333;  
+  
+
+     
+ }  
+ .becenter { margin-top: auto;
+     margin-left: auto;
+     margin-right: auto;
+     height: 250px;
+     width:400px;
+     padding: 5%;
+     }
+  .becenter input{
+   margin-top:2%;
+  }
+  .becenter button{
+   margin-top:2%;
+  }
+  
+  
  
  
 </style>
@@ -67,7 +67,7 @@ body {
 <h1>节目列表</h1>
 <table class="table table-hover">
 <caption>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</caption>
-<tr Style="color:#000066;font-size:21px"><td>节目名字</td><td>节目编号</td><td>节目所属单位</td></tr>
+<tr Style="color:yellow;font-size:21px"><td>节目名字</td><td>节目编号</td><td>节目所属单位</td></tr>
 <tbody><c:forEach items="${menus}" var="temp">
 <tr><td>${temp.play_name}</td><td>${temp.pid}</td><td>${temp.department}</td></tr>
 </c:forEach></tbody>

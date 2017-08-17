@@ -33,11 +33,12 @@ background-color:grey;
 body {  
 	color:white;
     margin: 0;  
-    background-image: url();    
+    background-image: url(img/bg666.jpg);  
     background-repeat:no-repeat;  
-        background-position:0% 0%;  
-    background-size:cover;  
-	background-color:#CC3333;
+    background-position:0% 0%;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
+    background-color: #CC3333;  
 }  
 .becenter { margin-top: auto;
     margin-left: auto;

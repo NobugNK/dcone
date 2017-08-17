@@ -13,9 +13,9 @@
 <title>账户记录信息</title>
 <style type="text/css">
 body{
-background-color:#CC3333;
-background-image: url();
-background-size:100%;
+background-color:black;
+background-image: url(img/bg668.jpg);
+background-size:100% 100%;
 background-repeat:no-repeat;
 background-attachment:fixed;
 color:white;

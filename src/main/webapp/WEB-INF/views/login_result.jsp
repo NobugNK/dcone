@@ -44,7 +44,7 @@ background-color:#CC3333; }
 
 		<div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-        <a href="activate" title="激活钱包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+        <a href="activate" title="激活钱包" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_9.jpg" width="300" height="100">
           </a>
           <div class="caption">

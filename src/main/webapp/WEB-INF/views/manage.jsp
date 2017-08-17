@@ -11,14 +11,15 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style>
  	 body {  
-	color:white;
+	color:white;   
     margin: 0;  
-    background-image: url();    
+    margin-top:8%;
+   	background-image: url(img/bg666.jpg);  
     background-repeat:no-repeat;  
-        background-position:0% 0%;  
-    background-size:cover;  
-	background-color:#CC3333;
-    padding-top:30px;
+    background-position:0% 0%;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
+    background-color: #CC3333;  
 }  
 
  body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif}

@@ -12,38 +12,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 	
 <style>
 caption
-{
-color: Orange;
-}
-
-tr:hover
-{
-color:#000066;
-
-font-size: 21px;
-} 
-tr
-{
-color:#FF9966 ;
-font-size: 21px;
-} 
-td
-{
-text-align:center;
-}
-
-table{
-background-color:#FFFFCC;
-}
+  {
+ color: Orange;
+ }
+ 
+ tr:hover
+ {
+ color: black;
+ } 
+ td
+ {
+ text-align:center;
+ }
+ 
+ table{
+ background-color:grey;
+ }
+  
  
 body {  
 	color:white;
     margin: 0;  
-    background-image: url();    
+    background-image: url(img/bg666.jpg);  
     background-repeat:no-repeat;  
-        background-position:0% 0%;  
-    background-size:cover;  
-    background-color: #CC3333;
+    background-position:0% 0%;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
+    background-color: #CC3333;  
 }  
 .becenter { margin-top: auto;
     margin-left: auto;
@@ -62,10 +57,11 @@ body {
 
 </head>
 <body>
-
+<div class="col-lg-11 text-center text-info">
+<h2 style="color:white;">修改节目顺序</h2>
+</div>
 <table class="table table-hover">
-<caption>节目列表</caption>
-<tr Style="color:#000066;font-size:21px;"><td>节目名字</td><td>节目编号</td><td>节目的顺序</td><td>节目所属单位</td></tr>
+<tr Style="color:yellow;font-size:21px;"><td>节目名字</td><td>节目编号</td><td>节目的顺序</td><td>节目所属单位</td></tr>
 <tbody><c:forEach items="${menus}" var="temp">
 <tr><td>${temp.play_name}</td><td>${temp.pid}</td><td>${temp.play_order}</td><td>${temp.department}</td></tr>
 </c:forEach></tbody>

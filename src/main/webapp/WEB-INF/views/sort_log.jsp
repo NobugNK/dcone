@@ -11,8 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style type="text/css">
 body{
-background-image: url();
-background-size:100%;
+background-image: url(img/bg668.jpg);
+background-size:100% 100%;
 background-repeat:no-repeat;
 background-attachment:fixed;
 background-color:#CC3333;
@@ -64,6 +64,9 @@ border-color:white;
 		                        <input id="uid" name="uid" class="btn btn-default" type="submit">
 		                    </span>
 					</div>
+				</div>
+				<div class="col-lg-3" style="font-size:22px">
+					${msg}
 				</div>
 			</div>
 

@@ -13,10 +13,11 @@
  <style>
  body {  
     margin: 0;  
-   	background-image: url();  
+   	background-image: url(img/bg_add_nor.jpg);  
     background-repeat:no-repeat;  
         background-position:0% 0%;  
-    background-size:cover;  
+    background-size:100% 100%;
+    background-attachment:fixed;  
     background-color: #CC3333;  
 }  
 .becenter { margin-top: auto;
@@ -24,7 +25,7 @@
     margin-right: auto;
     height: 250px;
     width:400px;
-    padding: 5%;
+    padding: 2%;
     }
     .becenter input{
     margin-top:2%;

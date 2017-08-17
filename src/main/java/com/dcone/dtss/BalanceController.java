@@ -40,6 +40,15 @@ public class BalanceController {
 	public String sortlogres(HttpSession session,int uid,Model model) {
 		dc_wallet wallet=WalletDAO.getWalletByUid(uid, jdbcTemplate);
 		dc_user user=UserDAO.getUserByUid(uid, jdbcTemplate);
+		if(wallet==null)
+		{
+			model.addAttribute("msg","请输入正确的用户序号");
+			List<dc_user_wallet> msgs=UserWalletDAO.getAllWallInfoByUser(jdbcTemplate);
+			model.addAttribute("msgs", msgs);
+			return "sort_log";
+		}
+		
+		
 		List<dc_trade> res=TradeDAO.getTradesByWid(wallet.getWid()+"",jdbcTemplate);
 		model.addAttribute("res",res);
 		model.addAttribute("user",user);
