@@ -27,6 +27,7 @@
 		<url-pattern>/jsp/*</url-pattern>
 		<url-pattern>/servlet/*</url-pattern>
 		<url-pattern>/images/*</url-pattern>
+		<url-pattern>/icon/*</url-pattern>
 		
 	
 	</servlet-mapping>

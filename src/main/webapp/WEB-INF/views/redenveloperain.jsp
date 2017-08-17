@@ -3,25 +3,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title></title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
-		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-		<!--在iPhone 手机上禁止了把数字转化为拨号链接-->
-	    <meta content="telephone=no" name="format-detection" />
-	    <!--删除默认的苹果工具栏和菜单栏-->
-	    <meta content="yes" name="apple-mobile-web-app-capable">
-	    <!-- 网站开启对web app程序的支持，在web app应用下状态条（屏幕顶部条）的颜色，默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）-->
-   		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-   		<link rel="stylesheet" href="css/csshake.min.css">
-		<link rel="stylesheet" href="css/style1.css">
-		<script src="js/zepto.min.js"></script>
-		<script src="js/red.js"></script>
-		<link rel="stylesheet" href="css/demo.css" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>抢红包！拼手气</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">		
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<!--在iPhone 手机上禁止了把数字转化为拨号链接-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--删除默认的苹果工具栏和菜单栏-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- 网站开启对web app程序的支持，在web app应用下状态条（屏幕顶部条）的颜色，默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）-->
+  		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  		<link rel="stylesheet" href="css/csshake.min.css">
+	<link rel="stylesheet" href="css/style1.css">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/red.js"></script>
+	<link rel="stylesheet" href="css/demo.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
 
-		<style type="text/css">
+	<style type="text/css">
 			body {
 				margin: 0;
 				padding: 0;
@@ -60,50 +61,7 @@
 			.mo .sen {
 				
 			}
-/* 			.mo .sen img {
-			    width: 60%;
-			    height: 127px;
-			    position: absolute;
-			    top: 0px;
-			    left: 0;
-			    right: 0;
-			    bottom: 212px;
-			    margin: auto;
-			    vertical-align: top;
-			}
-			.mo .sen h3 {
-			    width: 50%;
-			    height: 30px;
-			    position: absolute;
-			    top: -35px;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			    margin: auto;
-			    text-align: center;
-			    color: red;
-			    font-size: 140%;
-			    font-weight: bold;
-			    z-index: 999;
-			}
-			
-			.mo .sen a {
-			    width: 26%;
-			    height: 50px;
-			    background-color: rgb(174, 222, 244);
-			    box-shadow: rgba(174, 222, 244, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;
-			    position: absolute;
-			    top: 100px;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			    margin: auto;
-			    color: #fff;
-			    border-radius: 5px;
-			    text-align: center;
-			    line-height: 50px;
-			    text-decoration: none;
-			} */
+
 			.backward{
 				width: 100%;
 				background:#ccc;
@@ -129,8 +87,8 @@
 				font-size: 1000%;
 			}
 		</style>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
 			$(document).ready(function() {
 				var win = (parseInt($(".couten").css("width"))) - 60;
 				$(".mo").css("height", $(document).height());
@@ -203,31 +161,27 @@
 			})
 		</script>
 
-	</head>
-	<body>
-		<ul class="couten">
-			<!--<li>
-				<a href="#"><img src="images/hb_1.png"></a>
-			</li>-->
-		</ul>
-		<div class="mo">
-			<div class="sen">
-				<div class="red"><!-- shake-chunk -->
-				    <span style="background-image: url(img/red-w.png);"></span>
-				    <button class="redbutton" type="领取红包">拆红包</button>
-				    <div class="red-jg">
-			        <h1>恭喜您！</h1>
-			        <h5>${getluckresult}</h5>
-			    		</div>
-				<!-- <img src="images/gx.png">
-				<h3>获得红包3元</h3>
-				<a href="#">确定</a> -->
-				</div>
+</head>
+<body>
+	<ul class="couten">
+ 
+	</ul>
+	<div class="mo">
+		<div class="sen">
+			<div class="red"><!-- shake-chunk -->
+			    <span style="background-image: url(img/red-w.png);"></span>
+			    <button class="redbutton" >拆红包</button>
+			    <div class="red-jg">
+		        <h1>恭喜您！</h1>
+		        <h5>${getluckresult}</h5>
+		    		</div>
+
 			</div>
 		</div>
-		<div class="backward">
-			<span></span>
-		</div>	
-		
-	</body>
+	</div>
+	<div class="backward">
+		<span></span>
+	</div>	
+	
+</body>
 </html>

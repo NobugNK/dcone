@@ -4,15 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>普通年会会员选项</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style type="text/css">
 
 body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif}
 .h1,.h2,.h3,.h4,.lead,h1,h2,h3,h4{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
-body{padding-top:30px;  background-image: url(img/bg.jpg); }
+body{padding-top:30px;  background-image: url(); 
+background-color:#CC3333;}
 
 
 .masthead{padding:60px 0 80px;margin-bottom:0;color:#fff}
@@ -43,8 +45,9 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 
 
 		<div class="col-sm-6 col-md-4 col-lg-3 ">
-        <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+        	<div class="thumbnail">
+          <a href="activate" title="激活钱包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_9.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -57,11 +60,12 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 		
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+          <a href="balance_add_normal" title="充值钱包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_2.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="balance_add_normal" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
+                <a href="balance_add_normal" title="给钱包充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
             </h3>
             <p>给用户账户充值</p>
           </div>
@@ -69,7 +73,8 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="menulist" title="节目列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_5.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -83,7 +88,8 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="sort_loging_normal" title="账户记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_6.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -98,11 +104,12 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="getluck" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_3.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="getluck" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
+                <a href="getluck" title="" target="_blank"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
             </h3>
             <p>来试一试你的手气</p>
           </div>

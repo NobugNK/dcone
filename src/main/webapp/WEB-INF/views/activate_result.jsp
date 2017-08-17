@@ -4,82 +4,56 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户账户钱包激活</title>
 <style type="text/css">
 body
 {
-background-image: url(img/firework1.jpg);
+background-color:#CC3333;
+background-image: url();
 background-size: 100%;
 color:white;
 }
 
-	$(document).ready(function() {
-				var win = (parseInt($(".couten").css("width"))) - 60;
-				$(".mo").css("height", $(document).height());
-				$(".couten").css("height", $(document).height());
-				$(".backward").css("height", $(document).height());
-				$("li").css({});
-				// 点击确认的时候关闭模态层
-				$(".sen a").click(function(){
-				  $(".mo").css("display", "none")
-				});
-				
-				var del = function(){
-					nums++;
-//					console.info(nums);
-//					console.log($(".li" + nums).css("left"));
-					$(".li" + nums).remove();
-					setTimeout(del,200)
-				}
-				
-				var add = function() {
-					var hb = parseInt(Math.random() * (3 - 1) + 1);
-					var Wh = parseInt(Math.random() * (70 - 30) + 20);
-					var Left = parseInt(Math.random() * (win - 0) + 0);
-					var rot = (parseInt(Math.random() * (45 - (-45)) - 45)) + "deg";
-					//				console.log(rot)
-					num++;
-					$(".couten").append("<li class='li" + num + "' ><a href='javascript:;'><img src='images/hb_" + hb + ".png'></a></li>");
-					$(".li" + num).css({
-						"left": Left,
-					});
-					$(".li" + num + " a img").css({
-						"width": Wh,
-						"transform": "rotate(" + rot + ")",
-						"-webkit-transform": "rotate(" + rot + ")",
-						"-ms-transform": "rotate(" + rot + ")", /* Internet Explorer */
-						"-moz-transform": "rotate(" + rot + ")", /* Firefox */
-						"-webkit-transform": "rotate(" + rot + ")",/* Safari 和 Chrome */
-						"-o-transform": "rotate(" + rot + ")" /* Opera */
-					});	
-					$(".li" + num).animate({'top':$(window).height()+20},5000,function(){
-						//删掉已经显示的红包
-						this.remove()
-					});
-					//点击红包的时候弹出模态层
-					$(".li" + num).click(function(){
-						$(".mo").css("display", "block")
-					});
-					setTimeout(add,200)
-				}	
-				
-				//增加红包
-				var num = 0;
-				setTimeout(add,3000);
-
-
-			
-})
-
-
+.becenter { margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width:400px;
+    padding: 5%;
+    }
 </style>
+
+<script type="text/javascript">
+
+
+var secs =3; //倒计时的秒数 
+function Load(){ 
+for(var i=secs;i>=0;i--) 
+{ 
+window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
+} 
+} 
+function doUpdate(num) 
+{ 
+document.getElementById('ShowDiv').innerHTML = '本页面将在'+num+'秒后自动消失' ;
+if(num == 0) {window.opener=null;window.close();}
+} 
+
+</script>
+
 </head>
 <body>
-<div class="page-header text-center">
-<h3>
+<div class="becenter">
+<h1>
 ${res}
-</h3>
+</h1>
+ <div id="ShowDiv"></div> 
+
 </div>
+<script language="javascript" type="text/javascript"> 
+Load(); 
+</script>
 
 </body>
 </html>
