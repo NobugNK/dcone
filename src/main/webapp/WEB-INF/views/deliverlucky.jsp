@@ -5,11 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
-
-=======
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
->>>>>>> branch 'master' of https://github.com/NobugNK/dcone.git
 <title>发红包</title>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -23,6 +19,7 @@ a:hover {
 }
 
 body {
+
 	margin: 0;
 	padding: 0;
 	position: relative;

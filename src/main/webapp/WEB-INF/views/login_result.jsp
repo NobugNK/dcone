@@ -13,7 +13,8 @@
 
 body{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif}
 .h1,.h2,.h3,.h4,.lead,h1,h2,h3,h4{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
-body{padding-top:30px;  background-image: url(img/bg.jpg); }
+body{padding-top:30px;  background-image: url();
+background-color:#CC3333; }
 
 
 .masthead{padding:60px 0 80px;margin-bottom:0;color:#fff}
@@ -32,7 +33,6 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 </style>
 </head>
 <body>
-<p>登录${res}</p>
 <div class="container projects">
 
     <div class="projects-header page-header">
@@ -44,7 +44,8 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 
 		<div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+        <a href="activate" title="激活钱包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_9.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -57,11 +58,12 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
 
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+          <a href="balance_add" title="用户充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_8.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="balance_add" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
+                <a href="balance_add" title="用户充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
             </h3>
             <p>给用户账户充值</p>
           </div>
@@ -69,19 +71,21 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://yarn.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">
+         <a href="sort_log" title="查询记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_6.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="sort_log" title="Yarn 中文文档" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">查询记录 <br></a>
+                <a href="sort_log" title="查询记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">查询记录 <br></a>
             </h3>
-            <p>查询充值记录</p>
+            <p>查询账户记录</p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://react.bootcss.com/" title="React - 用于构建用户界面的 JavaScript 框架" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'react'])">
+          <a href="admin" title="红包雨管理界面" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_7.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -93,7 +97,8 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+        <a href="menulist" title="节目列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_5.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -106,7 +111,8 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+         <a href="manage" title="功能列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_2.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
@@ -118,11 +124,12 @@ body{padding-top:30px;  background-image: url(img/bg.jpg); }
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="https://webpack.bootcss.com/" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="deliverlucky" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_4.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="deliverlucky" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">发红包<br></a>
+                <a href="deliverlucky" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">发红包<br></a>
             </h3>
             <p>开启抢红包功能</p>
           </div>

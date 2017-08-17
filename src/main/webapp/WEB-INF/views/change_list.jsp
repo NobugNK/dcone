@@ -18,8 +18,14 @@ color: Orange;
 
 tr:hover
 {
-color: black;
-text-decoration: underline; /*鼠标移近：黑色、下划线 -*/
+color:#000066;
+
+font-size: 21px;
+} 
+tr
+{
+color:#FF9966 ;
+font-size: 21px;
 } 
 td
 {
@@ -27,17 +33,17 @@ text-align:center;
 }
 
 table{
-background-color:grey;
+background-color:#FFFFCC;
 }
  
 body {  
 	color:white;
     margin: 0;  
-    background-image: url(img/playbg.jpg);    
+    background-image: url();    
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
-    background-color: #f8f6e9;  
+    background-color: #CC3333;
 }  
 .becenter { margin-top: auto;
     margin-left: auto;
@@ -59,7 +65,7 @@ body {
 
 <table class="table table-hover">
 <caption>节目列表</caption>
-<tr><td>节目名字</td><td>节目编号</td><td>节目的顺序</td><td>节目所属单位</td></tr>
+<tr Style="color:#000066;font-size:21px;"><td>节目名字</td><td>节目编号</td><td>节目的顺序</td><td>节目所属单位</td></tr>
 <tbody><c:forEach items="${menus}" var="temp">
 <tr><td>${temp.play_name}</td><td>${temp.pid}</td><td>${temp.play_order}</td><td>${temp.department}</td></tr>
 </c:forEach></tbody>

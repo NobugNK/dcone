@@ -17,7 +17,7 @@
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>  
     <style type="text/css"> 
     .ctxt{  
-            background:#f8f6e9;  
+    	    background:#f8f6e9;  
             width:100%;  
             height:100vh;  
             overflow:hidden;  

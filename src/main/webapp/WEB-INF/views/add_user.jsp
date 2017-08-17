@@ -33,11 +33,11 @@ background-color:grey;
 body {  
 	color:white;
     margin: 0;  
-    background-image: url(img/playbg.jpg);    
+    background-image: url();    
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
-    background-color: #f8f6e9;  
+	background-color:#CC3333;
 }  
 .becenter { margin-top: auto;
     margin-left: auto;
