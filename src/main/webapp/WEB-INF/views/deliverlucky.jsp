@@ -17,9 +17,7 @@
 a:hover {
 	color: red;
 }
-
 body {
-
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -29,7 +27,6 @@ body {
 	background: url(img/bg1.png) no-repeat top left;
 	background-size: 100%;
 }
-
 .couten {
 	width: 100%;
 	height: 100%;
@@ -37,7 +34,6 @@ body {
 	overflow-y: hidden;
 	z-index: 100;
 }
-
 .couten li {
 	position: absolute;
 	animation: all 3s linear;
@@ -45,11 +41,9 @@ body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	list-style-type: none;
 }
-
 .couten li a {
 	display: block;
 }
-
 .mo {
 	position: absolute;
 	top: 0;
@@ -59,11 +53,9 @@ body {
 	z-index: 100;
 	display: none;
 }
-
 .mo .sen {
 	
 }
-
 .backward {
 	width: 100%;
 	background: #ccc;
@@ -71,7 +63,6 @@ body {
 	position: absolute;
 	top: 0;
 }
-
 .backward span {
 	display: inline-block;
 	width: 100px;
@@ -88,11 +79,16 @@ body {
 	line-height: 100px;
 	font-size: 1000%;
 }
+.pos{
+ position: absolute; 
+ top: 300px; 
+ left: 33%;
+}
 </style>
 
 <script type="text/javascript">
 function control(){
-	var status=document.getElementById("switch").innerHTML;
+	var status=document.getElementById("status").innerHTML;
 	
 	if(status=="ON")
 		{
@@ -107,56 +103,50 @@ function control(){
 	
 }
 function setSwitch(){
-	var status=document.getElementById("switch").innerHTML;
+	var status=document.getElementById("status").innerHTML;
 	if(status=="ON")
 	{
-	document.getElementById("switch").innerHTML="ON";
+	document.getElementById("switch").innerHTML="OFF";
 	//document.getElementById("imgshake").style.visibility="hidden";
 	}
 	else
 	{
-	document.getElementById("switch").innerHTML="OFF";
+	document.getElementById("switch").innerHTML="ON";
 	//document.getElementById("imgshake").style.visibility="visible";
 	}
 }
-
 </script>
 
 </head>
 <body>
+<p id="status">${status}</p>
 
-	<div style="position: absolute; top: 35%; left: 33%">
-		<span class="shake shake-constant shake-delay"><img
+	<div class ="pos">
+		<span id="shake" ><img
 			id="imgshake"src="img/h-text2.png"
 			></span>
 		<br>
 		
-		<span style="background: transparent;"> <a
+		<span style="background: transparent;"><a
 			id="switch" onclick="control()"
 			class="button button-glow button-rounded button-caution"  >OFF</a>
 		</span>
-
-
-
 	</div>
+
 
 	<ul class="couten">
 
 	</ul>
 
-
-
-
-	<script type="text/javascript">
+<script type="text/javascript">
 		
 	setSwitch();
-		$(document)
-				.ready(
-						function() {
-							var status = document.getElementById("switch").innerHTML;
-
-							if (status == "OFF") {
-								var win = (parseInt($(".couten").css("width"))) - 60;
+$(document)
+	.ready(
+		function() {
+					var status=document.getElementById("status").innerHTML;
+						if (status == "ON") {
+							var win = (parseInt($(".couten").css("width"))) - 60;
 								$(".mo").css("height", $(document).height());
 								$(".couten")
 										.css("height", $(document).height());
@@ -167,7 +157,6 @@ function setSwitch(){
 								$(".sen a").click(function() {
 									$(".mo").css("display", "none")
 								});
-
 								var del = function() {
 									nums++;
 									//		console.info(nums);
@@ -175,7 +164,6 @@ function setSwitch(){
 									$(".li" + nums).remove();
 									setTimeout(del, 200)
 								}
-
 								var add = function() {
 									var hb = parseInt(Math.random() * (3 - 1)
 											+ 1);
@@ -221,14 +209,15 @@ function setSwitch(){
 										$(".mo").css("display", "block")
 									});
 									setTimeout(add, 200)
+								
 								}
-
 								//增加红包
 								var num = 0;
-
 								setTimeout(add, 1);
+								var div = document.getElementById('shake'); 
+								div.setAttribute("class", "shake shake-constant shake-delay"); 	
 							} else {
-
+												
 							}
 						})
 	</script>

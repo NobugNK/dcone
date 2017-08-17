@@ -44,11 +44,11 @@ public class LuckyController {
 	public String deliverLuck(Model model) {
 		if(i==1)
 		{
-			model.addAttribute("status", "开");
+			model.addAttribute("status", "ON");
 		}
 		else
 		{
-			model.addAttribute("status", "关");
+			model.addAttribute("status", "OFF");
 		}
 		return "deliverlucky";		
 	}
@@ -56,14 +56,14 @@ public class LuckyController {
 	@RequestMapping("/deliveringluck")
 	public String deliveringLuck(Model model) {
 		i=1;
-		
+		model.addAttribute("status", "ON");
 		System.out.println(i);
 		return "deliverlucky";		
 	}
 	@RequestMapping("/shutdownluck")
 	public String shutdownLuck(Model model) {
 		i=0;
-		
+		model.addAttribute("status", "OFF");
 		System.out.println(i);
 		return "deliverlucky";		
 	}
