@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <title>账户记录信息</title>
 <style type="text/css">
 body{

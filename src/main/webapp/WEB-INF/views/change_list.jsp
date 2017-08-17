@@ -9,7 +9,7 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
-  	
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 	
 <style>
 caption
 {
