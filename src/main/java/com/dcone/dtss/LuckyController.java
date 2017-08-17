@@ -56,28 +56,14 @@ public class LuckyController {
 	@RequestMapping("/deliveringluck")
 	public String deliveringLuck(Model model) {
 		i=1;
-		if(i==1)
-		{
-			model.addAttribute("status", "开");
-		}
-		else
-		{
-			model.addAttribute("status", "关");
-		}
+		
 		System.out.println(i);
 		return "deliverlucky";		
 	}
 	@RequestMapping("/shutdownluck")
 	public String shutdownLuck(Model model) {
 		i=0;
-		if(i==1)
-		{
-			model.addAttribute("status", "开");
-		}
-		else
-		{
-			model.addAttribute("status", "关");
-		}
+		
 		System.out.println(i);
 		return "deliverlucky";		
 	}
