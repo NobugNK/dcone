@@ -13,11 +13,11 @@
  <style>
  body {  
     margin: 0;  
-   	background-image: url(img/bg.jpg);  
+   	background-image: url();  
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
-    background-color: #f8f6e9;  
+    background-color: #CC3333;  
 }  
 .becenter { margin-top: auto;
     margin-left: auto;
@@ -35,7 +35,7 @@
 <form action="balance_adding_normal">
   <div class="becenter">
   	<div class="col-lg-10">
-			<h1 Style="color:white">充值页面<small class="text-muted">普通用户</small></h1>
+			<h1 Style="color:white">充值页面<small class="text-muted" Style="color:white">普通用户</small></h1>
 		</div>
   <div class="col-lg-10">
                     <input class="form-control" name="amount" id="amount" placeholder="请输入充值金额" required autofocus/>
@@ -44,7 +44,7 @@
 			<input class="form-control" type="submit" value="确认充值" style="background-color: #e6f8f9" >
 	</div>
 	 <div class="col-lg-10">
-	<h3 Style="color:grey">${res}</h3>
+	<h3 Style="color:yellow">${res}</h3>
 	</div>
 	
 </div>
