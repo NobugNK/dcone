@@ -13,18 +13,18 @@
 <style type="text/css">  
 body {  
     margin: 0;  
-   	background-image: url(img/bg.jpg);  
+   	background-image: url();  
     background-repeat:no-repeat;  
         background-position:0% 0%;  
     background-size:cover;  
-    background-color: #f8f6e9;  
+ 	background-color: #CC3333;  
 }  
 .becenter { margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     height: 250px;
     width:400px;
-    padding: 5%;
+    padding: 0%;
     }
     .becenter input{
     margin-top:2%;
@@ -43,7 +43,7 @@ body {
 	<form name="form1" id="form1" action="balance_adding">
 	  <div class="becenter">
 	    <div class="col-lg-11 text-center text-info">
-                    <h2 style="color:white;">充值管理</h2>
+                  <h1 Style="color:white">充值页面<small class="text-muted" Style="color:white">管理员</small></h1>
         </div>
 		<div class="col-lg-10">
 			<input type="text" class="form-control" name="username" id="username"	placeholder="请输入姓名" required autofocus />
@@ -61,7 +61,7 @@ body {
 		</div>
 		
 		<div class="col-lg-10">
-     		 <div style="color:white">${addresult}</div>
+     		 <div Style="color:yellow">${addresult}</div>
 		<!-- 显示充值的结果 -->
 		
 		</div>

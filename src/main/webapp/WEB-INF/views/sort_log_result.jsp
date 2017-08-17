@@ -13,7 +13,8 @@
 <title>账户记录信息</title>
 <style type="text/css">
 body{
-background-image: url(img/bg667.jpg);
+background-color:#CC3333;
+background-image: url();
 background-size:100%;
 background-repeat:no-repeat;
 background-attachment:fixed;
@@ -61,9 +62,6 @@ color: black;
 		<div class="col-md-12">
 
 			<table class="table table-hover">
-			<caption>
-			交易记录如下:
-			</caption>
 			<tr><th class="col-2 text-center">交易序号</th><th class="col-2 text-center">钱包ID</th><th class="col-2 text-center">交易金额</th><th class="col-3 text-center">交易时间</th><th class="col-3 text-center">备注信息</th></tr>
 			<c:forEach items="${res}" var="temp">
 			<tr><td class="col-2 text-center">${temp.tid}</td><td class="col-2 text-center">${temp.wid}</td><td class="col-2 text-center">${temp.volume/100}元</td><td class="col-3 text-center">${temp.tradetime}</td><td class="col-3 text-center">${temp.memo}</td></tr>

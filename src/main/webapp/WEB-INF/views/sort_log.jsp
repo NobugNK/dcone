@@ -11,9 +11,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style type="text/css">
 body{
-background-image: url(img/bg667.jpg);
+background-image: url();
 background-size:100%;
+background-repeat:no-repeat;
 background-attachment:fixed;
+background-color:#CC3333;
 color:white;
 }
 tr:hover
@@ -31,7 +33,7 @@ background-color:black;
 border-color:white;
 }
 </style>
-<title>Insert title here</title>
+<title>用户查询</title>
 </head>
 <body>
 <form name="form2" action="sort_loging">
