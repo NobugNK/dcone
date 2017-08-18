@@ -54,7 +54,7 @@ background-color:white;}
           </a>
           <div class="caption">
             <h3>
-                <a href="activate" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">激活钱包<br></a>
+                <a href="activate" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">激活钱包<br></a>
             </h3>
             <p>只有激活钱包后才能参加相关的活动哟</p>
           </div>
@@ -63,12 +63,12 @@ background-color:white;}
 		
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="balance_add_normal" title="充值钱包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="balance_add_normal" title="充值钱包"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_2.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="balance_add_normal" title="给钱包充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
+                <a href="balance_add_normal" title="给钱包充值"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
             </h3>
             <p>给用户账户充值</p>
           </div>
@@ -76,12 +76,12 @@ background-color:white;}
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="menulist" title="节目列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="menulist" title="节目列表"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_5.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="menulist" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
+                <a href="menulist" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
             </h3>
             <p>查询年会节目列表</p>
           </div>
@@ -96,7 +96,7 @@ background-color:white;}
           </a>
           <div class="caption">
             <h3>
-                <a href="sort_loging_normal" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">账户信息<br></a>
+                <a href="sort_loging_normal" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">账户信息<br></a>
             </h3>
             <p>查看您的账户信息和交易记录</p>
           </div>
@@ -107,12 +107,12 @@ background-color:white;}
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="getluck" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="getluck" title="抢红包"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_3.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="getluck" title="" target="_blank"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
+                <a href="getluck" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
             </h3>
             <p>来试一试你的手气</p>
           </div>
