@@ -65,10 +65,15 @@ public class BalanceController {
 	@RequestMapping(value="/sort_loging_normal",method=RequestMethod.GET)
 	public String sortlogres(HttpSession session,Model model) {
 		String itcode=session.getAttribute("itcode").toString();
-		dc_user user=UserDAO.getUserByUid(Integer.parseInt(itcode), jdbcTemplate);
+		System.out.println(itcode);
+		System.out.println(Integer.parseInt(itcode));
+		dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+		System.out.println(user);
 		dc_wallet wallet=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate);
-	
+		System.out.println(wallet);
 		List<dc_trade> res=TradeDAO.getTradesByWid(wallet.getWid()+"",jdbcTemplate);
+		System.out.println(res);
+		
 		model.addAttribute("res",res);
 		model.addAttribute("user",user);
 		model.addAttribute("wallet",wallet);
@@ -87,9 +92,11 @@ public class BalanceController {
 		dc_wallet wallet=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate);
 	
 		List<dc_trade> res=TradeDAO.getTradesByWidAndTime(wallet.getWid()+"", starttime, endtime, jdbcTemplate);
+		
 		model.addAttribute("res",res);
 		model.addAttribute("user",user);
 		model.addAttribute("wallet",wallet);
+		
 //		System.out.println(UserDAO.createUser("2", "haha", 0,jdbcTemplate));
 //		System.out.println(UserDAO.checkUserInfo("1", "aa",jdbcTemplate));
 		session.setAttribute("sort_uid", user.getUid());

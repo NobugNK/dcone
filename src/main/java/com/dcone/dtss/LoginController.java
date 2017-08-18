@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dcone.dtss.DAO.TradeDAO;
 import com.dcone.dtss.DAO.UserDAO;
 import com.dcone.dtss.DAO.WalletDAO;
 import com.dcone.dtss.model.dc_user;

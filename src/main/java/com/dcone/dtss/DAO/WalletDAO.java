@@ -113,10 +113,17 @@ public class WalletDAO {
 	 */
 	public static int initWalletById(int uid,JdbcTemplate jdbcTemplate) {
 		int i=0;
+		
 		try {
 			i=jdbcTemplate.update("insert into dc_wallet values(null,?,1000);",uid);
-			if(i>0)
+			dc_wallet wallet=WalletDAO.getWalletByUid(uid, jdbcTemplate);
+			Date date = new Date();
+			SimpleDateFormat fdate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+			String formattedDate2=fdate.format(date);
+			int j=TradeDAO.createTrade(wallet.getWid(), 1000, formattedDate2, "账号初始金额", jdbcTemplate);
+			if(i*j>0)
 				return 1;
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -142,6 +149,7 @@ public class WalletDAO {
 		List<dc_wallet> wallets=null;
 		try {
 			wallets=jdbcTemplate.query("select * from dc_wallet;",walletMapper);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

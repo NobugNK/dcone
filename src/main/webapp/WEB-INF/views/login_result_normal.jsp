@@ -91,7 +91,7 @@ background-color:white;}
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="sort_loging_normal" title="账户记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="sort_loging_normal" title="账户记录" target="" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_6.jpg" width="300" height="100">
           </a>
           <div class="caption">
