@@ -9,6 +9,9 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
  <style type="text/css">  
 caption
@@ -61,9 +64,15 @@ caption
  
  
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+$(".animsition").animsition();
+});
+</script>
 
 </head>
 <body>
+<div class="animsition">
 <h1>节目列表</h1>
 <table class="table table-hover">
 <caption>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</caption>
@@ -99,6 +108,6 @@ caption
 
 
 </form>
-
+</div>
 </body>
 </html>

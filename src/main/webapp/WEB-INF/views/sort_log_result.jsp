@@ -9,6 +9,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <title>账户记录信息</title>
 <style type="text/css">
@@ -38,8 +41,14 @@ color: black;
 	font-size:22px;
  }
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <div class="page-header text-center">
 <h2>
 当前查询的用户是${user.username},账户余额为${wallet.amount/100}元
@@ -70,6 +79,7 @@ color: black;
 			
 		</div>
 	</div>
+</div>
 </div>
 </body>
 </html>

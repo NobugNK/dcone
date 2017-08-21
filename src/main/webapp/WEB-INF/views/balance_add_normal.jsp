@@ -8,6 +8,9 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
  <style>
@@ -31,8 +34,14 @@
     margin-top:2%;
 }
  </style>
+ <script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <form action="balance_adding_normal">
   <div class="becenter">
   	<div class="col-lg-10">
@@ -50,5 +59,6 @@
 	
 </div>
 </form>
+</div>
 </body>
 </html>

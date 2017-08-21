@@ -6,6 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <title>红包雨管理</title>
 <style type="text/css">
@@ -36,8 +40,14 @@ body{padding-top:30px;
 @media screen and (min-width:768px){.projects-header h2{font-size:42px}}
 
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <div class="container projects">
 <div class="row">
 <div class="col-sm-6 col-md-4 col-lg-3 ">
@@ -79,6 +89,6 @@ body{padding-top:30px;
 </div>
 </div>
 
-
+</div>
 </body>
 </html>
