@@ -8,9 +8,6 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/animsition.min.css">
-<script src="js/animsition.min.js"></script>
-<script src="js/aimsition.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>登录</title>
 <style type="text/css">  
@@ -36,17 +33,11 @@ body {
 padding-top:60px;
 padding-bottom:50px;
 }
-
-.becenter { margin-top: auto;
-     margin-left: auto;
-     margin-right: auto;
-     height: 250px;
-     width:400px;
-     padding: 5%;
-     }
-@media screen and (max-width: 500px) { 
-.becenter {width: auto;} 
-} 
+.becenter { margin:auto;
+    height: 250px;
+    width:400px;
+    padding: 5%;
+    }
     .becenter input{
     margin-top:2%;
     }
@@ -57,14 +48,9 @@ function changeimg(){
 }
 
 </script>
-<script type="text/javascript">
-$(document).ready(function() {
-	  $(".animsition").animsition();
-});
-</script>
 </head>
 <body>
-<div class="animsition">
+
 <font color="white">现在服务器的时间 ${serverTime}</font><br>
 <font color="white">${res}</font><br>
 	<form name="form1" id="form1" action="login">
@@ -82,10 +68,10 @@ $(document).ready(function() {
                 </div>
 		<div  style="white-space:nowrap" >
 			<div class="row">
-				<div class="col-xs-5">
-				  <img id="img1" name="img1" src="servlet/code" onclick="changeimg()" style="margin-top: auto;margin-left: auto;margin-right: auto;margin-bottom: auto;">
+				<div class="col-xs-4" style="margin-top: 5.5px;height: 30px;">
+				  <img id="img1" name="img1" src="servlet/code" onclick="changeimg()">
 				</div>
-			    <div class="col-xs-7">
+			    <div class="col-xs-8" >
 				  <input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>
 				</div>
 			</div>
@@ -95,6 +81,5 @@ $(document).ready(function() {
 		</div>
       </div>
 	</form>
-	</div>
 </body>
 </html>
