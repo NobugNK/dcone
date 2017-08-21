@@ -47,7 +47,7 @@ caption
      margin-left: auto;
      margin-right: auto;
      height: 250px;
-     width:400px;
+     width:auto;
      padding: 5%;
      }
   .becenter input{
