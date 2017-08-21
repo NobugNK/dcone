@@ -67,7 +67,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="animsition">
+<div class="" style="padding:5%;">
 <div class="col-lg-11 text-center text-info">
 <h2 style="color:white;">修改节目顺序</h2>
 </div>

@@ -73,7 +73,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-	<div class="animsition">
+	<div class="" style="padding:5%;">
 	<form name="auform" id="auform" action="useradding">
  		<div class="becenter">
 	

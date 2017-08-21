@@ -76,7 +76,9 @@ $(".animsition").animsition();
 </head>
 <body>
 <div class="" style="padding:5%;">
-<h1>节目列表</h1>
+<div class="col-lg-11 text-center text-info">
+<h2 style="color:white;">节目列表</h2>
+</div>
 <table class="table table-hover">
 <caption>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</caption>
 <tr Style="color:yellow;font-size:21px"><td>节目名字</td><td>节目编号</td><td>节目所属单位</td></tr>
