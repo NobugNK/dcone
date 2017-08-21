@@ -33,10 +33,28 @@ background-color:black;
 border-color:white;
 }
 </style>
+
+<script type="text/javascript">
+function check(){
+	var uid=document.getElementById("uid").value;
+	var patern=new RegExp("^[0-9]*$");
+	if(patern.exec(uid))
+		{
+		document.getElementById("form2").submit();
+		}
+	else
+		{	
+		document.getElementById("msg").innerHTML="序号只能为数字";
+		}
+
+}
+
+</script>
+
 <title>用户查询</title>
 </head>
 <body>
-<form name="form2" action="sort_loging">
+<form id="form2" name="form2" action="sort_loging">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -61,11 +79,11 @@ border-color:white;
 					<div class="input-group inputarea">
 					<input id="uid" name="uid" type="text" class="form-control">
 		                    <span class="input-group-btn">
-		                        <input id="uid" name="uid" class="btn btn-default" type="submit">
+		                        <input id="uid" name="uid" class="btn btn-default" type="button" onclick="check()" value="查询">
 		                    </span>
 					</div>
 				</div>
-				<div class="col-lg-3" style="font-size:22px">
+				<div id="msg" class="col-lg-3" style="font-size:22px">
 					${msg}
 				</div>
 			</div>
