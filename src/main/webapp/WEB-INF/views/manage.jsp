@@ -8,6 +8,9 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style>
  	 body {  
@@ -40,9 +43,14 @@
 .projects-header h2{font-size:30px;letter-spacing:-1px}
 @media screen and (min-width:768px){.projects-header h2{font-size:42px}}
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
-<div class="container projects">
+<div class="container projects animsition">
 <div class="row">
 	
         <div class="col-sm-6 col-md-4 col-lg-3 ">

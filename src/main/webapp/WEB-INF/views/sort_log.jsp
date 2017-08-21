@@ -43,12 +43,26 @@ border-color:white;
 $(document).ready(function() {
 	  $(".animsition").animsition();
 });
+function check(){
+	var uid=document.getElementById("uid").value;
+	var patern=new RegExp("^[0-9]*$");
+	if(patern.exec(uid))
+		{
+		document.getElementById("form2").submit();
+		}
+	else
+		{	
+		document.getElementById("msg").innerHTML="序号只能为数字";
+		}
+
+}
 
 </script>
+
 <title>用户查询</title>
 </head>
 <body>
-<form name="form2" action="sort_loging">
+<form id="form2" name="form2" action="sort_loging">
 <div class="container animsition">
 	<div class="row">
 		<div class="col-md-12">
@@ -73,11 +87,11 @@ $(document).ready(function() {
 					<div class="input-group inputarea">
 					<input id="uid" name="uid" type="text" class="form-control">
 		                    <span class="input-group-btn">
-		                        <input id="uid" name="uid" class="btn btn-default" type="submit">
+		                        <input id="uid" name="uid" class="btn btn-default" type="button" onclick="check()" value="查询">
 		                    </span>
 					</div>
 				</div>
-				<div class="col-lg-3" style="font-size:22px">
+				<div id="msg" class="col-lg-3" style="font-size:22px">
 					${msg}
 				</div>
 			</div>

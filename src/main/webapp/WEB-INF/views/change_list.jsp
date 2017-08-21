@@ -9,6 +9,9 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 	
 <style>
 caption
@@ -54,9 +57,14 @@ body {
   margin-top:2%;
  }
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <div class="col-lg-11 text-center text-info">
 <h2 style="color:white;">修改节目顺序</h2>
 </div>
@@ -90,6 +98,6 @@ body {
  	
  	</div>
 </form>
-	
+</div>
 </body>
 </html>

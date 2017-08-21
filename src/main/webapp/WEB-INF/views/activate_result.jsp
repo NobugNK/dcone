@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/jquery-3.2.1.js"></script>
+
+<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
 <title>用户账户钱包激活</title>
 <style type="text/css">
  body {  
@@ -44,9 +49,14 @@ if(num == 0) {window.opener=null;window.history.back(-1);window.history.reload()
 } 
 
 </script>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <div class="becenter animistion" >
 <h1>
 ${res}
@@ -57,6 +67,6 @@ ${res}
 <script language="javascript" type="text/javascript"> 
 Load(); 
 </script>
-
+</div>
 </body>
 </html>

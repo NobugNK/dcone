@@ -9,7 +9,9 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<link href="css/bootstrap.min.css" rel="stylesheet">
-  	
+  	<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
 <style>
 caption
   {
@@ -54,9 +56,14 @@ body {
  }
  
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+</script>
 </head>
 <body>
+<div class="animsition">
 <div class="col-lg-11 text-center text-info">
 <h2 style="color:white;">添加节目</h2>
 </div>
@@ -91,6 +98,6 @@ body {
 		</div>
       </div>
 	</form>
-
+</div>
 </body>
 </html>

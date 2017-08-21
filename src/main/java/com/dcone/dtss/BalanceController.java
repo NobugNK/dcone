@@ -38,6 +38,7 @@ public class BalanceController {
 	
 	@RequestMapping(value="/sort_loging",method=RequestMethod.GET)
 	public String sortlogres(HttpSession session,int uid,Model model) {
+		
 		dc_wallet wallet=WalletDAO.getWalletByUid(uid, jdbcTemplate);
 		dc_user user=UserDAO.getUserByUid(uid, jdbcTemplate);
 		if(wallet==null)
