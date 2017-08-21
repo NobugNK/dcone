@@ -47,11 +47,11 @@ if(num == 0) {window.opener=null;window.history.back(-1);window.history.reload()
 
 </head>
 <body>
-<div class="becenter">
+<div class="becenter animistion" >
 <h1>
 ${res}
 </h1>
- <div ><a href="" id="ShowDiv" style="color:white" onclick="window.history.back(-1);window.history.reload();"></a></div> 
+<div ><a href="" id="ShowDiv" style="color:white" onclick="window.history.back(-1);window.history.reload();"></a></div> 
 
 </div>
 <script language="javascript" type="text/javascript"> 

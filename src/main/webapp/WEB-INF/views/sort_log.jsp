@@ -6,8 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/bootstrap.min.css" rel="stylesheet">
+
 <script src="js/jquery-3.2.1.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/animsition.min.css">
+<script src="js/animsition.min.js"></script>
+<script src="js/aimsition.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
 <style type="text/css">
 body{
@@ -32,12 +37,19 @@ color: white;
 background-color:black;
 border-color:white;
 }
+
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".animsition").animsition();
+});
+
+</script>
 <title>用户查询</title>
 </head>
 <body>
 <form name="form2" action="sort_loging">
-<div class="container">
+<div class="container animsition">
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-hover">
