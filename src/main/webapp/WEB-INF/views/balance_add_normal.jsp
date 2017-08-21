@@ -46,7 +46,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="animsition">
+<div class="">
 <form action="balance_adding_normal">
   <div class="becenter">
   	<div class="col-lg-10">

@@ -72,12 +72,12 @@ $(document).ready(function() {
 
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="balance_add" title="用户充值"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="balance_add" title="用户充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_8.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="balance_add" title="用户充值"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
+                <a href="balance_add" title="用户充值" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">充值操作<br></a>
             </h3>
             <p>给用户账户充值</p>
           </div>
@@ -85,12 +85,12 @@ $(document).ready(function() {
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-         <a href="sort_log" title="查询记录"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
-          <img class="lazy" src="icon/icon_6.jpg" width="300" height="100">
+         <a href="sort_log" title="查询记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <img class="lazy" src="icon/icon_6.jpg"  width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="sort_log" title="查询记录"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">查询记录 <br></a>
+                <a href="sort_log" title="查询记录" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'Yarn'])">查询记录 <br></a>
             </h3>
             <p>查询账户记录</p>
           </div>
@@ -98,12 +98,12 @@ $(document).ready(function() {
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="admin" title="红包雨管理界面"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="admin" title="红包雨管理界面" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_7.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="admin" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'react'])">红包雨管理<br></a>
+                <a href="admin" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'react'])">红包雨管理<br></a>
             </h3>
             <p>进入红包雨管理界面</p>
           </div>
@@ -111,12 +111,12 @@ $(document).ready(function() {
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-        <a href="menulist" title="节目列表"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+        <a href="menulist" title="节目列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_5.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="menulist" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
+                <a href="menulist" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">节目列表<br></a>
             </h3>
             <p>查询年会节目列表</p>
           </div>
@@ -125,12 +125,12 @@ $(document).ready(function() {
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-         <a href="manage" title="功能列表"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+         <a href="manage" title="功能列表" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_2.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="manage" title=""  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">信息管理<br></a>
+                <a href="manage" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">信息管理<br></a>
             </h3>
             <p>添加用户以及添加相关的节目</p>
           </div>
@@ -138,12 +138,12 @@ $(document).ready(function() {
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="deliverlucky" title="抢红包" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="deliverlucky" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_4.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="deliverlucky" title="抢红包"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">发红包<br></a>
+                <a href="deliverlucky" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">发红包<br></a>
             </h3>
             <p>开启抢红包功能</p>
           </div>
