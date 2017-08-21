@@ -43,12 +43,15 @@ body {
     background-color:white;  
 }  
 .becenter { margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width:400px;
-    padding: 5%;
-    }
+     margin-left: auto;
+     margin-right: auto;
+     height: 250px;
+     width:400px;
+     padding: 5%;
+     }
+@media screen and (max-width: 500px) { 
+.becenter {width: auto;} 
+} 
  .becenter input{
   margin-top:2%;
  }

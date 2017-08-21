@@ -36,11 +36,17 @@ body {
 padding-top:60px;
 padding-bottom:50px;
 }
-.becenter { margin:auto;
-    height: 250px;
-    width:400px;
-    padding: 5%;
-    }
+
+.becenter { margin-top: auto;
+     margin-left: auto;
+     margin-right: auto;
+     height: 250px;
+     width:400px;
+     padding: 5%;
+     }
+@media screen and (max-width: 500px) { 
+.becenter {width: auto;} 
+} 
     .becenter input{
     margin-top:2%;
     }
@@ -77,7 +83,7 @@ $(document).ready(function() {
 		<div  style="white-space:nowrap" >
 			<div class="row">
 				<div class="col-xs-5">
-				  <img id="img1" name="img1" src="servlet/code" onclick="changeimg()">
+				  <img id="img1" name="img1" src="servlet/code" onclick="changeimg()" style="margin-top: auto;margin-left: auto;margin-right: auto;margin-bottom: auto;">
 				</div>
 			    <div class="col-xs-7">
 				  <input class="form-control" name="valicode" id="valicode" style="width:100%" placeholder="验证码" required autofocus/>

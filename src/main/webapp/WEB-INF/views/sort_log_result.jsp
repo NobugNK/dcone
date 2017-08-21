@@ -29,13 +29,15 @@ tr:hover
 color: black;
 } 
 
-.becenter { margin-top:auto;
-    margin-left: auto;
-    margin-right: auto;
-    width:800px;
-    padding: 0%;
-    
-    }
+.becenter { margin-top: 0;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom：0;
+     padding: 1%;
+     }
+@media screen and (max-width: 500px) { 
+.becenter {width: auto;} 
+} 
  .becenter tr{
 	color: #FFFFE0;
 	font-size:22px;
@@ -48,7 +50,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="animsition">
+<div class="">
 <div class="page-header text-center">
 <h2>
 当前查询的用户是${user.username},账户余额为${wallet.amount/100}元
@@ -57,10 +59,21 @@ $(document).ready(function() {
 
 <div class="becenter">
 <form action="sort_loging_bytime" >
-<table class="table table-condensed">
-<tr><td>起始时间</td><td><input class="form-control" type="date" id="starttime" name="starttime" style="color:black"></td>
-<td>结束时间</td><td><input class="form-control" type="date" id="endtime" name="endtime" style="color:black"></td><td><input class="form-control" type="submit" value="查询" style="color:black"></td></tr>
-</table>
+
+<div class="row">
+<div class="col-xs-12 col-md-5">
+起始时间
+<input class="form-control" type="date" id="starttime" name="starttime" style="color:black">
+</div>
+<div class="col-xs-12 col-md-5">
+结束时间
+<input class="form-control" type="date" id="endtime" name="endtime" style="color:black">
+</div>
+<div class="col-xs-12 col-md-2">
+&nbsp
+<input class="form-control" type="submit" value="查询" style="color:black;width:200px;">
+</div>
+</div>
 </form>
 </div>
 

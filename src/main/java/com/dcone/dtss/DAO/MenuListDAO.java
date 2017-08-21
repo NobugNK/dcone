@@ -31,11 +31,11 @@ public class MenuListDAO {
 			menu_list temp=MenuListDAO.getPlayByName(play_name, jdbcTemplate);
 			i=GiftResultDAO.initGiftResultByPid(temp.getPid(), jdbcTemplate);
 			if(r*i>0)
-				r=1;
+				return 1;
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
-		return r;
+		return 0;
 	}
 	/**
 	 * 通过节目的id获取节目

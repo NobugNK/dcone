@@ -23,12 +23,16 @@ body {
     background-attachment:fixed;  
     background-color:white; 
 }  
-.becenter { 
-    margin: auto;
-    height: 250px;
-    width: 400px;
-    padding-top: 10%;
-    }
+.becenter { margin-top: auto;
+     margin-left: auto;
+     margin-right: auto;
+     height: 250px;
+     width:400px;
+     padding: 5%;
+     }
+@media screen and (max-width: 500px) { 
+.becenter {width: auto;} 
+}
     .becenter input{
     margin-top:2%;
     }
@@ -45,7 +49,7 @@ $(document).ready(function() {
 
 </head>
 <body>
-<div class="animsition">
+<div class="">
 <div style="color:white">${msg}</div>
 
 

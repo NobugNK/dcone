@@ -50,9 +50,12 @@ caption
      margin-left: auto;
      margin-right: auto;
      height: 250px;
-     width:auto;
+     width:400px;
      padding: 5%;
      }
+@media screen and (max-width: 500px) { 
+.becenter {width: auto;} 
+} 
   .becenter input{
    margin-top:2%;
   }
@@ -72,7 +75,7 @@ $(".animsition").animsition();
 
 </head>
 <body>
-<div class="animsition">
+<div class="" style="padding:5%;">
 <h1>节目列表</h1>
 <table class="table table-hover">
 <caption>当前用户为${user_msg.username},您的余额为${user_msg.amount/100}元</caption>

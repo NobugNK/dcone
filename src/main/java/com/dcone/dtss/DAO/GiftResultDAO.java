@@ -18,16 +18,16 @@ public class GiftResultDAO {
 	 */
 	public static int initGiftResultByPid(int pid,JdbcTemplate jdbcTemplate)
 	{
-		int result=0;
 		try {
 			String sql="insert into gift_result values(null,?,?);";
 			jdbcTemplate.update(sql, new Object[] {pid,0});
+			return 1;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return result;
+		return 0;
 	}
 	/**
 	 * 返回所有的节目的打赏的结果
