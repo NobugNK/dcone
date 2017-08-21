@@ -22,10 +22,8 @@ import com.dcone.dtss.DAO.TradeDAO;
 import com.dcone.dtss.DAO.UserDAO;
 import com.dcone.dtss.DAO.UserWalletDAO;
 import com.dcone.dtss.DAO.WalletDAO;
-import com.dcone.dtss.model.dc_user;
-import com.dcone.dtss.model.dc_user_wallet;
-import com.dcone.dtss.model.gift_result;
-import com.dcone.dtss.model.menu_list;
+import com.dcone.dtss.model.*;
+
 
 import form.GiftForm;
 
@@ -36,16 +34,29 @@ public class PlayController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
+	@SuppressWarnings("unused")
 	@RequestMapping(value ="/menulist", method = RequestMethod.GET)
 	public String showmenu(HttpSession session,Model model) {
+		try{
 		List<menu_list> menus=MenuListDAO.getAllPlays(jdbcTemplate);
 		//String username=session.getAttribute("username").toString();
 		String itcode=session.getAttribute("itcode").toString();
 		dc_user_wallet user_wallet=UserWalletDAO.getWallInfoByItcode(itcode, jdbcTemplate);
+		dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+		dc_wallet wallet=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate);
+
+		
+		
 		model.addAttribute("user_msg",user_wallet);
 		model.addAttribute("menus", menus);
 		
 		return "menu_list";
+		}
+		catch (Exception e) {
+			model.addAttribute("getluckresult", "钱包未激活");
+			return "login_result_normal";
+			// TODO: handle exception
+		}
 	}
 	
 	@RequestMapping(value ="/gifting",method = RequestMethod.GET)

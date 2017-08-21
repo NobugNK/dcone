@@ -65,6 +65,7 @@ public class BalanceController {
 	
 	@RequestMapping(value="/sort_loging_normal",method=RequestMethod.GET)
 	public String sortlogres(HttpSession session,Model model) {
+		try {
 		String itcode=session.getAttribute("itcode").toString();
 		System.out.println(itcode);
 		System.out.println(Integer.parseInt(itcode));
@@ -82,7 +83,12 @@ public class BalanceController {
 //		System.out.println(UserDAO.checkUserInfo("1", "aa",jdbcTemplate));
 //		
 		session.setAttribute("sort_uid", user.getUid());
-		return "sort_log_result";
+		return "sort_log_result";}
+		catch (Exception e) {
+			model.addAttribute("getluckresult", "钱包未激活");
+			return "login_result_normal";
+			// TODO: handle exception
+		}
 	}
 	
 	
@@ -142,13 +148,29 @@ public class BalanceController {
 	
 	
 	@RequestMapping(value="/balance_add_normal")
-	public String BalanceAddingNormal() {
-		return "balance_add_normal";
+	public String BalanceAddingNormal(HttpSession session,Model model) {
+		
+		try{String itcode=session.getAttribute("itcode").toString();
+	
+		dc_user user=UserDAO.getUserByItcode(itcode, jdbcTemplate);
+	
+		dc_wallet wallet=WalletDAO.getWalletByUid(user.getUid(), jdbcTemplate);
+
+		@SuppressWarnings("unused")
+		List<dc_trade> res=TradeDAO.getTradesByWid(wallet.getWid()+"",jdbcTemplate);
+	
+		
+		return "balance_add_normal";}
+		catch (Exception e) {
+			model.addAttribute("getluckresult", "钱包未激活");
+			return "login_result_normal";
+			// TODO: handle exception
+		}
 	}
 	
 	@RequestMapping(value="/balance_adding_normal")
 	public String BalanceAddNormal(String amount,HttpSession session,Model model) {
-		
+		try {
 		model.addAttribute("res", "充值失败");
 		String username=session.getAttribute("username").toString();
 		String itcode=session.getAttribute("itcode").toString();
@@ -166,5 +188,11 @@ public class BalanceController {
 			}
 		}
 		return "balance_add_normal";
+		}
+		catch (Exception e) {
+			model.addAttribute("getluckresult", "钱包未激活");
+			return "login_result_normal";
+			// TODO: handle exception
+		}
 	}
 }
