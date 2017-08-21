@@ -46,12 +46,12 @@ public class LuckyBounsDAO {
 		bonus=bonusRandom(user.getIsOnthescene(),jdbcTemplate);
 		int m = LuckyNumberDAO.luckyRain(4,bonus,jdbcTemplate);
 		RowMapper<dc_user> user_mapper = new BeanPropertyRowMapper<dc_user>(dc_user.class);
-		int i=WalletDAO.walletAdd(wallet.getWid(),bonus,jdbcTemplate);
+		int i=WalletDAO.walletAdd(wallet.getWid(),bonus*100,jdbcTemplate);
 		Date nowdate = new Date();
 		SimpleDateFormat myFmt=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time=myFmt.format(nowdate);
-		int j=jdbcTemplate.update("insert into lucky_record values(null,?,?,?);",new Object[] {user.getUid(),bonus,time});
-		int n=TradeDAO.createTrade(wallet.getWid(), bonus, time, "抢红包获得", jdbcTemplate);
+		int j=jdbcTemplate.update("insert into lucky_record values(null,?,?,?);",new Object[] {user.getUid(),bonus*100,time});
+		int n=TradeDAO.createTrade(wallet.getWid(), bonus*100, time, "抢红包获得", jdbcTemplate);
 		return bonus;
 	}
 }

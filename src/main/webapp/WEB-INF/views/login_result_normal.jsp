@@ -47,6 +47,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<p style="color:yellow">${getluckresult}</p>
 <div class="container projects animsition">
 
     <div class="projects-header page-header">
@@ -117,18 +118,18 @@ $(document).ready(function() {
       
        <div class="col-sm-6 col-md-4 col-lg-3 ">
         <div class="thumbnail">
-          <a href="getluck" title="抢红包" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
+          <a href="getluck" title="抢红包"  onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy" src="icon/icon_3.jpg" width="300" height="100">
           </a>
           <div class="caption">
             <h3>
-                <a href="getluck" title="" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
+                <a href="getluck" title="" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">抢红包<br></a>
             </h3>
             <p>来试一试你的手气</p>
           </div>
         </div>
       </div>
-      <p style="color:yellow">${getluckresult}</p>
+     
       
       
       </div>

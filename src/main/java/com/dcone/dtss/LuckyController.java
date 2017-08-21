@@ -86,6 +86,7 @@ public class LuckyController {
 		else {
 			//跳转页面提示用户抢红包还没有开启
 			getluckresult="抢红包还没有开启~";
+			model.addAttribute("getluckresult", getluckresult);
 			return "login_result_normal";
 		}
 		
