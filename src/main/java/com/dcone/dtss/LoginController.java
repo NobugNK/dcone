@@ -107,4 +107,11 @@ public class LoginController {
 		model.addAttribute("res", res);
 		return "activate_result";
 	}
+	
+	@RequestMapping(value = "/temp", method = RequestMethod.GET)
+	public String temp(){
+		
+		return "temp";
+	}
+	
 }

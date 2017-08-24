@@ -89,13 +89,14 @@
 			
 @media screen and (max-width: 500px) { 
 .red {
-    width: 110%;
+    width: 100%;
     height: 200%;
     background-size: 200% 200%;
     padding-top: 120%;
     margin: 0px 0px;
     position: relative;
 } 
+
 } 		
 		</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -152,22 +153,9 @@
 				
 				//增加红包
 				var num = 0;
-				setTimeout(add,3000);
+				setTimeout(add,1);
 				
-				//倒数计时
-				var backward = function(){
-					numz--;
-					if(numz>0){
-						$(".backward span").html(numz);
-					}else{
-						$(".backward").remove();
-					}
-					setTimeout(backward,1000)
-							
-				}
-				
-				var numz = 4;
-				backward();
+			
 			
 			})
 		</script>
@@ -184,15 +172,13 @@
 			    <button class="redbutton" >拆红包</button>
 			    <div class="red-jg">
 		        <h1>恭喜您！</h1>
-		        <h5>${getluckresult}</h5>
+		        <h5>您获得了500元</h5>
 		    		</div>
 
 			</div>
 		</div>
 	</div>
-	<div class="backward">
-		<span></span>
-	</div>	
+
 	
 </body>
 </html>
